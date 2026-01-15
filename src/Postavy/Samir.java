@@ -1,8 +1,8 @@
 package Postavy;
 
 public class Samir extends Postavy {
-    public int urovenDaydreamingu;
-    public int urovenLucidnihoSneni;
+    private int urovenDaydreamingu;
+    private int urovenLucidnihoSneni;
 
     public Samir(String jmeno, int zivoty, int fyzickaSila) {
         super(jmeno, zivoty, fyzickaSila);

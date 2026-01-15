@@ -1,7 +1,7 @@
 package Predmety;
 
 public class Predmet {
-    public String nazev;
-    public int zvyseniLucidnihoSneni;
-    public int zvyseniDaydreamingu;
+    private String nazev;
+    private int zvyseniLucidnihoSneni;
+    private int zvyseniDaydreamingu;
 }
