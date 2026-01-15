@@ -6,7 +6,7 @@ public class Napoveda implements Command {
 
         return "";
     }
-    public boolean odejt() {
+    public boolean odejit() {
         return false;
     }
 }

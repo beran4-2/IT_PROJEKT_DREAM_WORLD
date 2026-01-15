@@ -4,7 +4,7 @@ public class Komunikace implements Command {
     public String vykonat() {
 
         return "";
-    } public boolean odejt() {
+    } public boolean odejit() {
         return false;
     }
 

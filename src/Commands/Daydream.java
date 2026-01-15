@@ -8,7 +8,7 @@ public class Daydream implements Command {
     }
 
     @Override
-    public boolean odejt() {
+    public boolean odejit() {
         return false;
     }
 

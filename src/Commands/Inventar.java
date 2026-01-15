@@ -7,7 +7,7 @@ public class Inventar implements Command {
         return "";
     }
 
-    public boolean odejt() {
+    public boolean odejit() {
         return false;
     }
 }
