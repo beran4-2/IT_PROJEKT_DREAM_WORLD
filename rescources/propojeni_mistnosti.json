@@ -1,0 +1,41 @@
+{
+  "world": {
+    "rooms": [
+      {
+        "nazev": "civitas_sidlo",
+        "dalsi": "civitas_domov",
+        "predchozi": null
+      },
+      {
+        "nazev": "Civitas-domov",
+        "dalsi": "jezero",
+        "predchozi": "civitas_sidlo"
+      },
+      {
+        "nazev": "Jezero",
+        "dalsi": "hory",
+        "predchozi": "civitas_domov"
+      },
+      {
+        "nazev": "Hory",
+        "dalsi": "sopka",
+        "predchozi": "jezero"
+      },
+      {
+        "nazev": "Sopka",
+        "dalsi": "pekelne_mesto",
+        "predchozi": "hory"
+      },
+      {
+        "nazev": "Pekelné město",
+        "dalsi": "noirceuruv_chram",
+        "predchozi": "sopka"
+      },
+      {
+        "nazev": "Noirceurův chrám",
+        "dalsi": null,
+        "predchozi": "pekelne_mesto"
+      }
+    ]
+  }
+}

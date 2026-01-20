@@ -5,7 +5,7 @@ public class Pohyb implements Command {
 
         return "";
     }
-    public boolean odejit() {
+    public boolean odejit   () {
         return false;
     }
 }
