@@ -1,0 +1,53 @@
+{
+  "lokace": [
+    {
+      "nazev": "Civitas Sídlo",
+      "naslednik": "Civitas Domov",
+      "ukolHotovy": false,
+      "popis": "Centrální městské sídlo."
+    },
+    {
+      "nazev": "Civitas Domov",
+      "naslednik": "Jezero",
+      "ukolHotovy": false,
+      "popis": "Výchozí domovská lokace hráče."
+    },
+    {
+      "nazev": "Jezero",
+      "naslednik": "Oblast X",
+      "ukolHotovy": false,
+      "popis": "Poklidná vodní hladina."
+    },
+    {
+      "nazev": "Oblast X",
+      "naslednik": "Hory",
+      "ukolHotovy": false,
+      "popis": "Tajemná neznámá oblast."
+    },
+    {
+      "nazev": "Hory",
+      "naslednik": "Sopka",
+      "ukolHotovy": false,
+      "popis": "Nebezpečný hornatý terén."
+    },
+    {
+      "nazev": "Sopka",
+      "naslednik": "Pekelné Město",
+      "ukolHotovy": false,
+      "popis": "Aktivní vulkán."
+    },
+    {
+      "nazev": "Pekelné Město",
+      "naslednik": "Sidlo Noirceura",
+      "ukolHotovy": false,
+      "popis": "Město v plamenech."
+    },
+    {
+      "nazev": "Síldo Noirceura",
+      "naslednik": null,
+      "ukolHotovy": false,
+      "popis": "Temné sídlo království."
+    }
+
+  ]
+}
