@@ -1,49 +1,49 @@
 {
   "lokace": [
     {
-      "nazev": "Civitas Sídlo",
+      "nazev": "Civitas Sidlo",
       "naslednik": "Civitas Domov",
       "ukolHotovy": false,
-      "popis": "Centrální městské sídlo."
+      "popis": "Centralni mestské sidlo."
     },
     {
       "nazev": "Civitas Domov",
       "naslednik": "Jezero",
       "ukolHotovy": false,
-      "popis": "Výchozí domovská lokace hráče."
+      "popis": "Vychozi domovska lokace hrace."
     },
     {
       "nazev": "Jezero",
       "naslednik": "Oblast X",
       "ukolHotovy": false,
-      "popis": "Poklidná vodní hladina."
+      "popis": "Poklidna vodni hladina."
     },
     {
       "nazev": "Oblast X",
       "naslednik": "Hory",
       "ukolHotovy": false,
-      "popis": "Tajemná neznámá oblast."
+      "popis": "Tajemna neznama oblast."
     },
     {
       "nazev": "Hory",
       "naslednik": "Sopka",
       "ukolHotovy": false,
-      "popis": "Nebezpečný hornatý terén."
+      "popis": "Nebezpecny hornaty teren."
     },
     {
       "nazev": "Sopka",
-      "naslednik": "Pekelné Město",
+      "naslednik": "Pekelne Mesto",
       "ukolHotovy": false,
       "popis": "Aktivní vulkán."
     },
     {
-      "nazev": "Pekelné Město",
+      "nazev": "Pekelne Mesto",
       "naslednik": "Sidlo Noirceura",
       "ukolHotovy": false,
-      "popis": "Město v plamenech."
+      "popis": "Mesto v plamenech."
     },
     {
-      "nazev": "Síldo Noirceura",
+      "nazev": "Sildo Noirceura",
       "naslednik": null,
       "ukolHotovy": false,
       "popis": "Temné sídlo království."

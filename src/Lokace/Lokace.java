@@ -27,4 +27,20 @@ public class Lokace {
                 ", naslednik='" + naslednik + '\'' +
                 '}';
     }
+
+    public String getNazev() {
+        return nazev;
+    }
+
+    public boolean isUkolHotovy() {
+        return ukolHotovy;
+    }
+
+    public String getPopis() {
+        return popis;
+    }
+
+    public String getNaslednik() {
+        return naslednik;
+    }
 }
