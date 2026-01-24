@@ -4,7 +4,7 @@ import Konzole.Konzole;
 
 public class Inventar implements Command {
     @Override
-    public String vykonat(String string) {
+    public String vykonat(Konzole konzole,String string) {
 
         return "";
     }

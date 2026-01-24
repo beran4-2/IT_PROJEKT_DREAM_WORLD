@@ -1,8 +1,10 @@
 package Commands;
 
+import Konzole.Konzole;
+
 public class Daydream implements Command {
     @Override
-    public String vykonat() {
+    public String vykonat(Konzole konzole, String string) {
 
         return "";
     }

@@ -5,22 +5,26 @@ import Konzole.Konzole;
 import Lokace.Lokace;
 
 public class Pohyb implements Command {
-    private HerniNacitani herniNacitani;
-    private Konzole konzole;
+    private HerniNacitani data;
     private Lokace lokace;
 
-    public String vykonat(String prikaz2) {
+    public String vykonat(Konzole konzole, String prikaz2) {
+
     if (prikaz2.equals("dal")) {
+       if (konzole.getAktualniLokace().isUkolHotovy() == true) {
         if (konzole.getAktualniLokace().getNaslednik() != null) {
-            lokace = hledacDalsiLokace(konzole.getAktualniLokace());
-        }
-        if (konzole.getAktualniLokace().getNaslednik() == null) {
-            System.out.println("Dalsi mistnost neni, dale jit nemuzes");
-        }
+            lokace = hledacDalsiLokace(konzole.getAktualniLokace(), konzole);
+            konzole.setAktualniLokace(lokace);
+            System.out.println("Nachazis se v lokaci " + konzole.getAktualniLokace().getNazev());
+
+        }else {System.out.println("Dalsi mistnost neni, dale jit nemuzes");}
+       }else {System.out.println("Nesplnil si hlavni ukol");}
+
     }
     else if (prikaz2.equals("zpatky")) {
-
-
+        lokace = hledacPredchoziLokace(konzole.getAktualniLokace(), konzole);
+        konzole.setAktualniLokace(lokace);
+        System.out.println("Sel jsi zpet, momentalne se nachazis v lokaci " + konzole.getAktualniLokace().getNazev());
 
     }else {
         System.out.println("takovy prikaz neni");
@@ -35,25 +39,27 @@ public class Pohyb implements Command {
 
 
 
-    public Lokace hledacPredchoziLokace(String nazevHlednaneho){
-        for (int i = 0; i < herniNacitani.getLokace().size(); i++) {
-            if (nazevHlednaneho.equals(herniNacitani.getLokace().get(i).getNazev())) {
-                nazevHlednaneho = herniNacitani.getLokace().get(i).getNazev();
-                lokace = herniNacitani.getLokace().get(i);
-                return lokace;
+    public Lokace hledacPredchoziLokace(Lokace aktualniLokace, Konzole konzole) {
+        String nazevAktualniLokace = aktualniLokace.getNazev();
+        for (int i = 0; i < konzole.getData().getLokace().size(); i++) {
+            if (konzole.getData().getLokace().get(i).getNaslednik() != null) {
+                if (konzole.getData().getLokace().get(i).getNaslednik().equals(nazevAktualniLokace)) {
+                    lokace = konzole.getData().getLokace().get(i);
+                    return lokace;
+                }
             }
-        }
-        return null;
-    }
 
-    public Lokace hledacDalsiLokace(Lokace aktualniLokace){
-        //String nazevAktualniLokace = aktualniLokace.getNazev();
-        String nazevNasledujiciLokace = aktualniLokace.getNaslednik();
-        for (int i = 0; i < herniNacitani.getLokace().size(); i++) {
-            if (herniNacitani.getLokace().get(i).getNazev().equals(nazevNasledujiciLokace)) {
-                aktualniLokace = herniNacitani.getLokace().get(i);
-            }
         }
         return aktualniLokace;
+    }
+
+    public Lokace hledacDalsiLokace(Lokace aktualniLokace, Konzole konzole){
+        String nazevNasledujiciLokace = aktualniLokace.getNaslednik();
+        for (int i = 0; i < konzole.getData().getLokace().size(); i++) {
+            if (konzole.getData().getLokace().get(i).getNazev().equals(nazevNasledujiciLokace)) {
+                lokace = konzole.getData().getLokace().get(i);
+            }
+        }
+        return lokace;
     }
 }

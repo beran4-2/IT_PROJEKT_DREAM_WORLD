@@ -47,11 +47,9 @@ public class HerniNacitani {
         return lokace;
     }
 
-    public ArrayList<Postavy> getPostavy() {
-        return postavy;
-    }
-
-    public ArrayList<Predmet> getPredmety() {
-        return predmety;
+    public void vypisLokaci(){
+        for (int i = 0; i < lokace.size(); i++) {
+            System.out.println(lokace.get(i));
+        }
     }
 }
