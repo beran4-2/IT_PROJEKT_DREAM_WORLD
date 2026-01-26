@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class HodnaPostava extends Postavy {
     private ArrayList<Ukoly> zadavatelneUkoly;
 
-    public HodnaPostava(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny, ArrayList<String> textPostavy, ArrayList<Ukoly> zadavatelneUkoly) {
-        super(jmeno, zivoty, fyzickaSila, jeZabitelny, textPostavy);
+    public HodnaPostava(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny, ArrayList<Ukoly> zadavatelneUkoly) {
+        super(jmeno, zivoty, fyzickaSila, jeZabitelny);
         this.zadavatelneUkoly = zadavatelneUkoly;
     }
 

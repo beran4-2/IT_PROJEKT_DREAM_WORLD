@@ -8,17 +8,16 @@ public abstract class Postavy {
     protected int zivoty;
     protected int fyzickaSila;
     protected boolean jeZabitelny;
-    protected ArrayList<String> textPostavy;
 
     public abstract boolean jeNaZivu();
 
 
 
-    public Postavy(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny, ArrayList<String> textPostavy) {
+    public Postavy(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny) {
         this.jmeno = jmeno;
         this.zivoty = zivoty;
         this.fyzickaSila = fyzickaSila;
         this.jeZabitelny = jeZabitelny;
-        this.textPostavy = textPostavy;
+
     }
 }
