@@ -1,4 +1,5 @@
 package HerniNacitani;
+import Inventar_a_Ukoly.Ukoly;
 import Konzole.Konzole;
 import Lokace.Lokace;
 import Postavy.Postavy;
@@ -13,8 +14,10 @@ import java.util.ArrayList;
 
 public class HerniNacitani {
     private ArrayList<Lokace> lokace;
-    private ArrayList<Postavy> postavy;
+    private ArrayList<Postavy> HodnePostavy;
+    private ArrayList<Postavy> ZlePostavy;
     private ArrayList<Predmet> predmety;
+    private ArrayList<Ukoly> ukoly;
 
 
 
@@ -38,13 +41,31 @@ public class HerniNacitani {
     public String toString() {
         return "HerniNacitani{" +
                 "lokace=" + lokace +
-                ", postavy=" + postavy +
+                ", HodnePostavy=" + HodnePostavy +
+                ", ZlePostavy=" + ZlePostavy +
                 ", predmety=" + predmety +
+                ", ukoly=" + ukoly +
                 '}';
     }
 
     public ArrayList<Lokace> getLokace() {
         return lokace;
+    }
+
+    public ArrayList<Postavy> getHodnePostavy() {
+        return HodnePostavy;
+    }
+
+    public ArrayList<Postavy> getZlePostavy() {
+        return ZlePostavy;
+    }
+
+    public ArrayList<Predmet> getPredmety() {
+        return predmety;
+    }
+
+    public ArrayList<Ukoly> getUkoly() {
+        return ukoly;
     }
 
     public void vypisLokaci(){
