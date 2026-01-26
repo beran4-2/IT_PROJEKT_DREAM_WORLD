@@ -1,8 +1,11 @@
 package HerniNacitani;
 import Inventar_a_Ukoly.Ukoly;
+import Komunikace.Odpoved;
+import Komunikace.Otazka;
 import Konzole.Konzole;
 import Lokace.Lokace;
-import Postavy.Postavy;
+import Postavy.HodnaPostava;
+import Postavy.ZlaPostava;
 import Predmety.Predmet;
 import com.google.gson.Gson;
 
@@ -14,10 +17,13 @@ import java.util.ArrayList;
 
 public class HerniNacitani {
     private ArrayList<Lokace> lokace;
-    private ArrayList<Postavy> HodnePostavy;
-    private ArrayList<Postavy> ZlePostavy;
+    private ArrayList<HodnaPostava> HodnePostavy;
+    private ArrayList<ZlaPostava> ZlePostavy;
     private ArrayList<Predmet> predmety;
     private ArrayList<Ukoly> ukoly;
+    private ArrayList<Otazka> otazky;
+    private ArrayList<Odpoved> odpovedi;
+
 
 
 
@@ -52,11 +58,11 @@ public class HerniNacitani {
         return lokace;
     }
 
-    public ArrayList<Postavy> getHodnePostavy() {
+    public ArrayList<HodnaPostava> getHodnePostavy() {
         return HodnePostavy;
     }
 
-    public ArrayList<Postavy> getZlePostavy() {
+    public ArrayList<ZlaPostava> getZlePostavy() {
         return ZlePostavy;
     }
 
@@ -72,5 +78,14 @@ public class HerniNacitani {
         for (int i = 0; i < lokace.size(); i++) {
             System.out.println(lokace.get(i));
         }
+    }
+    public void nacetliSeSouborySpravne(){
+        System.out.println("Pocet lokaci je: " + lokace.size());
+        System.out.println("Pocet hodnych postav je: " + HodnePostavy.size());
+        System.out.println("Pocet zlych postav je: " + ZlePostavy.size());
+        System.out.println("Pocet predmetu je: " + predmety.size());
+        System.out.println("Pocet ukolu je: " + ukoly.size());
+        System.out.println("Pocet odpovedi je: " + odpovedi.size());
+        System.out.println("Pocet otazek je: " + otazky.size());
     }
 }
