@@ -4,50 +4,152 @@
       "nazev": "Civitas Sidlo",
       "naslednik": "Civitas Domov",
       "ukolHotovy": false,
-      "popis": "Centralni mestské sidlo."
+      "popis": "Centralni mestské sidlo.",
+      "postavyVLokaci": []
     },
     {
       "nazev": "Civitas Domov",
       "naslednik": "Jezero",
       "ukolHotovy": false,
-      "popis": "Vychozi domovska lokace hrace."
+      "popis": "Vychozi domovska lokace hrace.",
+      "postavyVLokaci": []
     },
     {
       "nazev": "Jezero",
       "naslednik": "Oblast X",
       "ukolHotovy": false,
-      "popis": "Poklidna vodni hladina."
+      "popis": "Poklidna vodni hladina.",
+      "postavyVLokaci": []
     },
     {
       "nazev": "Oblast X",
       "naslednik": "Hory",
       "ukolHotovy": false,
-      "popis": "Tajemna neznama oblast."
+      "popis": "Tajemna neznama oblast.",
+      "postavyVLokaci": []
     },
     {
       "nazev": "Hory",
       "naslednik": "Sopka",
       "ukolHotovy": false,
-      "popis": "Nebezpecny hornaty teren."
+      "popis": "Nebezpecny hornaty teren.",
+      "postavyVLokaci": []
     },
     {
       "nazev": "Sopka",
       "naslednik": "Pekelne Mesto",
       "ukolHotovy": false,
-      "popis": "Aktivní vulkán."
+      "popis": "Aktivní vulkán.",
+      "postavyVLokaci": []
     },
     {
       "nazev": "Pekelne Mesto",
       "naslednik": "Sidlo Noirceura",
       "ukolHotovy": false,
-      "popis": "Mesto v plamenech."
+      "popis": "Mesto v plamenech.",
+      "postavyVLokaci": []
     },
     {
       "nazev": "Sidlo Noirceura",
       "naslednik": null,
       "ukolHotovy": false,
-      "popis": "Temné sídlo království."
+      "popis": "Temné sídlo království.",
+      "postavyVLokaci": []
     }
 
+  ],
+  "HodnePostavy": [
+    {
+      "jmeno": "Doktor",
+      "kdeSeNachazi": "",
+      "zivoty": 100,
+      "fyzickaSila": 1,
+      "jeZabitelny": false,
+      "textPostavy": [],
+      "zadavatelneUkoly": []
+    },
+    {
+      "jmeno": "baba Maga",
+      "kdeSeNachazi": "",
+      "zivoty": 100,
+      "fyzickaSila": 1,
+      "jeZabitelny": false,
+      "textPostavy": [],
+      "zadavatelneUkoly": []
+    },
+    {
+      "jmeno": "Mulier",
+      "kdeSeNachazi": "",
+      "zivoty": 100,
+      "fyzickaSila": 1,
+      "jeZabitelny": false,
+      "textPostavy": [],
+      "zadavatelneUkoly": []
+    }
+
+  ],
+  "ZlePostavy": [
+    {
+      "jmeno": "Jester",
+      "kdeSeNachazi": "",
+      "zivoty": 100,
+      "fyzickaSila": 4,
+      "jeZabitelny": true,
+      "textPostavy": [],
+      "silaSnu": 1
+    },
+    {
+      "jmeno": "Negani",
+      "kdeSeNachazi": "",
+      "zivoty": 100,
+      "fyzickaSila": 4,
+      "jeZabitelny": true,
+      "textPostavy": [],
+      "silaSnu": 1
+    },
+    {
+      "jmeno": "Noirceur",
+      "kdeSeNachazi": "",
+      "zivoty": 150,
+      "fyzickaSila": 8,
+      "jeZabitelny": true,
+      "textPostavy": [],
+      "silaSnu": 10
+    }
+
+  ],
+
+  "predmety": [
+    {
+      "nazev": "prasky na spani",
+      "zvyseniLucidnihoSneni": 4,
+      "zvyseniDaydreamingu": 0
+
+    },
+    {
+      "nazev": "maska spanku",
+      "zvyseniLucidnihoSneni": 2,
+      "zvyseniDaydreamingu": 3
+    },
+    {
+      "nazev": "hudebni krabicka",
+      "zvyseniLucidnihoSneni": 3,
+      "zvyseniDaydreamingu": 2
+    }
+  ],
+
+  "ukoly": [
+    {
+      "nazevUkolu": "Zeptat se na stav otce",
+      "popisUkolu": "Musis se zpetat doktora na stav sveho otce",
+      "vJakeLokaciJe": "Civitas Sidlo",
+
+    },
+    {
+
+    }
   ]
+
+
+
 }
