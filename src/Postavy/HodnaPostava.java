@@ -1,9 +1,15 @@
 package Postavy;
+import Inventar_a_Ukoly.Ukoly;
+import java.util.ArrayList;
 
 public class HodnaPostava extends Postavy {
-    public HodnaPostava(String jmeno, int zivoty, int fyzickaSila) {
-        super(jmeno, zivoty, fyzickaSila);
+    private ArrayList<Ukoly> zadavatelneUkoly;
+
+    public HodnaPostava(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny, ArrayList<String> textPostavy, ArrayList<Ukoly> zadavatelneUkoly) {
+        super(jmeno, zivoty, fyzickaSila, jeZabitelny, textPostavy);
+        this.zadavatelneUkoly = zadavatelneUkoly;
     }
+
 
     @Override
     public boolean jeNaZivu() {

@@ -1,15 +1,24 @@
 package Postavy;
 
+import java.util.ArrayList;
+
 public abstract class Postavy {
     protected String jmeno;
+    protected String kdeSeNachazi;
     protected int zivoty;
     protected int fyzickaSila;
+    protected boolean jeZabitelny;
+    protected ArrayList<String> textPostavy;
 
     public abstract boolean jeNaZivu();
 
-    public Postavy(String jmeno, int zivoty, int fyzickaSila) {
+
+
+    public Postavy(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny, ArrayList<String> textPostavy) {
         this.jmeno = jmeno;
         this.zivoty = zivoty;
         this.fyzickaSila = fyzickaSila;
+        this.jeZabitelny = jeZabitelny;
+        this.textPostavy = textPostavy;
     }
 }
