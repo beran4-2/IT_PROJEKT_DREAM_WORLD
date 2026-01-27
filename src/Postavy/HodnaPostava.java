@@ -1,13 +1,13 @@
 package Postavy;
-import Inventar_a_Ukoly.Ukoly;
+import Inventar_a_Ukoly.Ukol;
 import java.util.ArrayList;
 
 public class HodnaPostava extends Postavy {
-    private ArrayList<Ukoly> zadavatelneUkoly;
+    private ArrayList<Ukol> zadavatelneUkol;
 
-    public HodnaPostava(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny, ArrayList<Ukoly> zadavatelneUkoly) {
+    public HodnaPostava(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny, ArrayList<Ukol> zadavatelneUkol) {
         super(jmeno, zivoty, fyzickaSila, jeZabitelny);
-        this.zadavatelneUkoly = zadavatelneUkoly;
+        this.zadavatelneUkol = zadavatelneUkol;
     }
 
 
