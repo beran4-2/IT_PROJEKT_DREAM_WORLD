@@ -1,9 +1,8 @@
 package Konzole;
 
-import Commands.Command;
-import Commands.Pomoc;
+import Commands.*;
 import HerniNacitani.HerniNacitani;
-import Commands.Pohyb;
+import Inventar_a_Ukoly.Ukol;
 import Lokace.Lokace;
 
 import java.util.HashMap;
@@ -16,14 +15,20 @@ public class Konzole {
     private HashMap<String, Command> mapaPrikazu = new HashMap<>();
     private HerniNacitani data;
     private Lokace aktualniLokace;
+    private Ukol ukol;
 
     public void hra(){
         konecHry = false;
         data = HerniNacitani.nactiDataZeSlozky("/herniSvet.json");
         aktualniLokace = data.getLokace().get(0);
+        ukol = new Ukol();
         inicializace();
         System.out.println("Prave jsi v lokaci " + aktualniLokace);
-        //data.vypisLokaci();
+        data.nacetliSeSouborySpravne();
+        ukol.sypacDoMomentalichHlavnichUkolu(this);
+        //System.out.println(ukol.vypisMomentalnichUkolu());
+
+
 
         do{
             provedPrikaz();
@@ -37,6 +42,9 @@ public class Konzole {
     private void inicializace() {
         mapaPrikazu.put("jdi", new Pohyb());
         mapaPrikazu.put("pomoc", new Pomoc());
+        mapaPrikazu.put("ukoly", new Ukoly());
+        mapaPrikazu.put("napoveda", new Napoveda());
+        mapaPrikazu.put("konec", new Konec());
     }
 
     private void provedPrikaz() {
@@ -50,7 +58,8 @@ public class Konzole {
             prikaz2 = rozdeleni[1].toLowerCase();
         }
         if (mapaPrikazu.containsKey(prikaz1)) {
-            mapaPrikazu.get(prikaz1).vykonat(this,prikaz2);
+            System.out.println(mapaPrikazu.get(prikaz1).vykonat(this,prikaz2));
+
         } else {
             System.out.println(">> Nedefinovany prikaz");
         }
@@ -76,14 +85,6 @@ public class Konzole {
         this.konecHry = konecHry;
     }
 
-    public Scanner getScanner() {
-        return scanner;
-    }
-
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
-    }
-
     public HashMap<String, Command> getMapaPrikazu() {
         return mapaPrikazu;
     }
@@ -96,8 +97,8 @@ public class Konzole {
         return data;
     }
 
-    public void setData(HerniNacitani data) {
-        this.data = data;
+    public Ukol getUkol() {
+        return ukol;
     }
 
     public void setAktualniLokace(Lokace aktualniLokace) {
