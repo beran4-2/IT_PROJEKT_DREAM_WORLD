@@ -49,4 +49,8 @@ public class Lokace {
     public String getNaslednik() {
         return naslednik;
     }
+
+    public String getNapovedaKMistnosti() {
+        return napovedaKMistnosti;
+    }
 }
