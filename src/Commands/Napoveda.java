@@ -5,8 +5,7 @@ import Konzole.Konzole;
 
 public class Napoveda implements Command {
     public String vykonat(Konzole konzole, String string) {
-
-        return "";
+        return "Napoveda k teto mistnosti zni: " + konzole.getAktualniLokace();
     }
     public boolean odejit() {
         return false;

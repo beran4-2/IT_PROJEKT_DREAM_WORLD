@@ -5,56 +5,56 @@
       "naslednik": "Civitas Domov",
       "ukolHotovy": false,
       "popis": "Centralni mestské sidlo.",
-      "postavyVLokaci": []
+      "napovedaKMistnosti": ""
     },
     {
       "nazev": "Civitas Domov",
       "naslednik": "Jezero",
       "ukolHotovy": false,
       "popis": "Vychozi domovska lokace hrace.",
-      "postavyVLokaci": []
+      "napovedaKMistnosti": ""
     },
     {
       "nazev": "Jezero",
       "naslednik": "Oblast X",
       "ukolHotovy": false,
       "popis": "Poklidna vodni hladina.",
-      "postavyVLokaci": []
+      "napovedaKMistnosti": ""
     },
     {
       "nazev": "Oblast X",
       "naslednik": "Hory",
       "ukolHotovy": false,
       "popis": "Tajemna neznama oblast.",
-      "postavyVLokaci": []
+      "napovedaKMistnosti": ""
     },
     {
       "nazev": "Hory",
       "naslednik": "Sopka",
       "ukolHotovy": false,
       "popis": "Nebezpecny hornaty teren.",
-      "postavyVLokaci": []
+      "napovedaKMistnosti": ""
     },
     {
       "nazev": "Sopka",
       "naslednik": "Pekelne Mesto",
       "ukolHotovy": false,
       "popis": "Aktivní vulkán.",
-      "postavyVLokaci": []
+      "napovedaKMistnosti": ""
     },
     {
       "nazev": "Pekelne Mesto",
       "naslednik": "Sidlo Noirceura",
       "ukolHotovy": false,
       "popis": "Mesto v plamenech.",
-      "postavyVLokaci": []
+      "napovedaKMistnosti": ""
     },
     {
       "nazev": "Sidlo Noirceura",
       "naslednik": null,
       "ukolHotovy": false,
       "popis": "Temné sídlo království.",
-      "postavyVLokaci": []
+      "napovedaKMistnosti": ""
     }
 
   ],
@@ -140,13 +140,18 @@
 
   "ukoly": [
     {
+      "typUkolu": "hlavni",
       "nazevUkolu": "Zeptat se na stav otce",
       "popisUkolu": "Musis se zpetat doktora na stav sveho otce",
-      "vJakeLokaciJe": "Civitas Sidlo"
-
+      "vJakeLokaciJe": "Civitas Sidlo",
+      "kdoZadava": "Hra"
     },
     {
-
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Zajit za Magou",
+      "popisUkolu": "Musis se zpetat doktora na stav sveho otce",
+      "vJakeLokaciJe": "Civitas Sidlo",
+      "kdoZadava": "Hra"
     }
   ]
 

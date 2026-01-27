@@ -9,19 +9,19 @@ public class Lokace {
     private boolean ukolHotovy;
     private String popis;
     private String naslednik;
-    private ArrayList<Postavy> postavyVLokaci;
+    private String napovedaKMistnosti;
+
 
 
     public void dejVMistonosti() {
 
     }
 
-    public Lokace(String nazev, boolean ukolHotovy, String popis, String naslednik, ArrayList<Postavy> postavyVLokaci) {
+    public Lokace(String nazev, boolean ukolHotovy, String popis, String naslednik) {
         this.nazev = nazev;
         this.ukolHotovy = ukolHotovy;
         this.popis = popis;
         this.naslednik = naslednik;
-        this.postavyVLokaci = postavyVLokaci;
     }
 
     @Override

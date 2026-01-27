@@ -20,6 +20,9 @@ public class Ukol {
         this.vJakeLokaciJe = vJakeLokaciJe;
     }
 
+    public Ukol() {
+    }
+
     /**
      * tato metoda hraci pomoci commandu vypise seznam momentalnich ukolu
      */

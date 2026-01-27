@@ -1,5 +1,5 @@
 package HerniNacitani;
-import Inventar_a_Ukoly.Ukoly;
+import Inventar_a_Ukoly.Ukol;
 import Komunikace.Odpoved;
 import Komunikace.Otazka;
 import Konzole.Konzole;
@@ -20,7 +20,7 @@ public class HerniNacitani {
     private ArrayList<HodnaPostava> HodnePostavy;
     private ArrayList<ZlaPostava> ZlePostavy;
     private ArrayList<Predmet> predmety;
-    private ArrayList<Ukoly> ukoly;
+    private ArrayList<Ukol> ukoly;
     private ArrayList<Otazka> otazky;
     private ArrayList<Odpoved> odpovedi;
 
@@ -70,7 +70,7 @@ public class HerniNacitani {
         return predmety;
     }
 
-    public ArrayList<Ukoly> getUkoly() {
+    public ArrayList<Ukol> getUkoly() {
         return ukoly;
     }
 
@@ -84,8 +84,8 @@ public class HerniNacitani {
         System.out.println("Pocet hodnych postav je: " + HodnePostavy.size());
         System.out.println("Pocet zlych postav je: " + ZlePostavy.size());
         System.out.println("Pocet predmetu je: " + predmety.size());
-        System.out.println("Pocet ukolu je: " + ukoly.size());
-        System.out.println("Pocet odpovedi je: " + odpovedi.size());
-        System.out.println("Pocet otazek je: " + otazky.size());
+        //System.out.println("Pocet ukolu je: " + ukol.size());
+        //System.out.println("Pocet odpovedi je: " + odpovedi.size());
+        //System.out.println("Pocet otazek je: " + otazky.size());
     }
 }
