@@ -1,7 +1,24 @@
 package Komunikace;
 
 public class Odpoved {
-    private int id;
-    private String odpoved;
-    private int IdOtazky;
+
+    /**
+     * promena text je text ktery se vypise jako odpoved
+     * promena IdNasledneOtazky je kam bude dialog smerovat dal
+     */
+    private String text;
+    private int IdNasledneOtazky;
+
+    public Odpoved(String replika, int IdNasledneOtazky) {
+        this.text = replika;
+        this.IdNasledneOtazky = IdNasledneOtazky;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public int getIdNasledneOtazky() {
+        return IdNasledneOtazky;
+    }
 }
