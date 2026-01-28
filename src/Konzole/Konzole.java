@@ -5,7 +5,7 @@ import HerniNacitani.HerniNacitani;
 import Inventar_a_Ukoly.Inventar;
 import Inventar_a_Ukoly.Ukol;
 import Lokace.Lokace;
-import Postavy.Postavy;
+
 
 import java.util.HashMap;
 import java.util.Scanner;

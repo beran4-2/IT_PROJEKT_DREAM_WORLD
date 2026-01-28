@@ -9,7 +9,8 @@ public class InventarCommand implements Command {
     public String vykonat(Konzole konzole,String string) {
         if (string.equals("zobrazit")) {
             return konzole.getInventar().zobrazitInventar();
-        }else return "nespravna 2. cast prikazu";
+        }
+        else return "nespravna 2. cast prikazu";
     }
 
     public boolean odejit() {
