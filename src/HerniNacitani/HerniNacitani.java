@@ -22,7 +22,6 @@ public class HerniNacitani {
     private ArrayList<Predmet> predmety;
     private ArrayList<Ukol> ukoly;
     private ArrayList<Otazka> otazky;
-    private ArrayList<Odpoved> odpovedi;
 
 
 
@@ -84,8 +83,7 @@ public class HerniNacitani {
         System.out.println("Pocet hodnych postav je: " + HodnePostavy.size());
         System.out.println("Pocet zlych postav je: " + ZlePostavy.size());
         System.out.println("Pocet predmetu je: " + predmety.size());
-        //System.out.println("Pocet ukolu je: " + ukol.size());
-        //System.out.println("Pocet odpovedi je: " + odpovedi.size());
-        //System.out.println("Pocet otazek je: " + otazky.size());
+        System.out.println("Pocet ukolu je: " + ukoly.size());
+        System.out.println("Pocet otazek je: " + otazky.size());
     }
 }

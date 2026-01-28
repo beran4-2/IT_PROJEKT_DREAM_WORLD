@@ -1,5 +1,7 @@
 package Inventar_a_Ukoly;
 
+import Konzole.Konzole;
+
 import java.util.ArrayList;
 
 public class Ukol {
@@ -26,30 +28,30 @@ public class Ukol {
     /**
      * tato metoda hraci pomoci commandu vypise seznam momentalnich ukolu
      */
-    public void vypisMomentalnichUkolu(){
-        System.out.println("HLAVNI UKOLY:");
+    public String vypisMomentalnichUkolu(){
+        String vypis = "\n";
         if (seznamMomentalnichHlavnichUkolu.size() != 0) {
+            vypis = vypis + "HLAVNI UKOLY:\n" + "////////////\n";
             for (int i = 0; i < seznamMomentalnichHlavnichUkolu.size(); i++) {
-
-                System.out.println("Toto je tvuj momentalni ukol: " + seznamMomentalnichHlavnichUkolu.get(i).nazevUkolu);
-                System.out.println(seznamMomentalnichHlavnichUkolu.get(i).getPopisUkolu());
+                vypis = vypis + "ukol: " + seznamMomentalnichHlavnichUkolu.get(i).nazevUkolu + ", popis: " + seznamMomentalnichHlavnichUkolu.get(i).getPopisUkolu() + "\n";
             }
-        }else System.out.println("nemas hlavni ukoly");
+        }else vypis = vypis + "NEMAS HLAVNI UKOLY\n" + "XXXXXXXXXXXXXXXXXX\n";
+        vypis = vypis + "\n";
         if (seznamMomentalnichVedljesichUkolu.size() != 0) {
-            System.out.println("VEDLEJSI UKOLY:");
+            vypis = vypis + "VEDLEJSI UKOLY:\n" + "///////////////\n";
             for (int i = 0; i < seznamMomentalnichVedljesichUkolu.size(); i++) {
-                System.out.println("Toto je tvuj momentalni ukol: " + seznamMomentalnichVedljesichUkolu.get(i).nazevUkolu);
-                System.out.println(seznamMomentalnichVedljesichUkolu.get(i).getPopisUkolu());
+                vypis = vypis + "Toto jsou tvoje momentalni ukol: " + seznamMomentalnichVedljesichUkolu.get(i).nazevUkolu + ", popis: " + seznamMomentalnichVedljesichUkolu.get(i).getPopisUkolu() + "\n";
             }
-        }else System.out.println("nemas vedlejsi ukoly");
+        }else vypis = vypis + "NEMAS VEDLEJSI UKOLY\n" + "XXXXXXXXXXXXXXXXXXXX\n";
+        return  vypis;
     }
 
-    //TODO dodelat metodu pomoci konzole.getData.getUkoly
-    public void sypacDoMomentalichHlavnichUkolu(Ukol ukol){
-        seznamMomentalnichHlavnichUkolu.add(ukol);
+
+    public void sypacDoMomentalichHlavnichUkolu(){
+
     }
-    public void sypacDoMomentalichVedlejsichUkolu(Ukol ukol){
-        seznamMomentalnichVedljesichUkolu.add(ukol);
+    public void sypacDoMomentalichVedlejsichUkolu(){
+
     }
 
     public String getNazevUkolu() {
