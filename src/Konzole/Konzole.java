@@ -2,12 +2,15 @@ package Konzole;
 
 import Commands.*;
 import HerniNacitani.HerniNacitani;
+import Inventar_a_Ukoly.Inventar;
 import Inventar_a_Ukoly.Ukol;
 import Lokace.Lokace;
+import Postavy.Postavy;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
+//TODO DODELAT V CELEM PROJEKTU JAVA DOCS
 
 public class Konzole {
     private boolean konecHry;
@@ -16,16 +19,17 @@ public class Konzole {
     private HerniNacitani data;
     private Lokace aktualniLokace;
     private Ukol ukol;
+    private Inventar inventar;
 
     public void hra(){
         konecHry = false;
         data = HerniNacitani.nactiDataZeSlozky("/herniSvet.json");
         aktualniLokace = data.getLokace().get(0);
         ukol = new Ukol();
+        inventar = new Inventar();
         inicializace();
         System.out.println("Prave jsi v lokaci " + aktualniLokace);
         data.nacetliSeSouborySpravne();
-        ukol.sypacDoMomentalichHlavnichUkolu(this);
         //System.out.println(ukol.vypisMomentalnichUkolu());
 
 
@@ -45,6 +49,7 @@ public class Konzole {
         mapaPrikazu.put("ukoly", new Ukoly());
         mapaPrikazu.put("napoveda", new Napoveda());
         mapaPrikazu.put("konec", new Konec());
+        mapaPrikazu.put("inventar", new InventarCommand());
     }
 
     private void provedPrikaz() {
@@ -99,6 +104,10 @@ public class Konzole {
 
     public Ukol getUkol() {
         return ukol;
+    }
+
+    public Inventar getInventar() {
+        return inventar;
     }
 
     public void setAktualniLokace(Lokace aktualniLokace) {

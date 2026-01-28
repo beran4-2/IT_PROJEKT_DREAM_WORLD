@@ -15,4 +15,16 @@ public class HodnaPostava extends Postavy {
     public boolean jeNaZivu() {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "HodnaPostava{" +
+                "zadavatelneUkol=" + zadavatelneUkol +
+                ", jmeno='" + jmeno + '\'' +
+                ", kdeSeNachazi='" + kdeSeNachazi + '\'' +
+                ", zivoty=" + zivoty +
+                ", fyzickaSila=" + fyzickaSila +
+                ", jeZabitelny=" + jeZabitelny +
+                '}';
+    }
 }

@@ -16,4 +16,16 @@ public class ZlaPostava extends Postavy {
     public boolean jeNaZivu() {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "ZlaPostava{" +
+                "silaSnu=" + silaSnu +
+                ", jmeno='" + jmeno + '\'' +
+                ", kdeSeNachazi='" + kdeSeNachazi + '\'' +
+                ", zivoty=" + zivoty +
+                ", fyzickaSila=" + fyzickaSila +
+                ", jeZabitelny=" + jeZabitelny +
+                '}';
+    }
 }

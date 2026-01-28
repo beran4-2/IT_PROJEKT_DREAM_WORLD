@@ -10,6 +10,7 @@ public class Lokace {
     private String popis;
     private String naslednik;
     private String napovedaKMistnosti;
+     private int idDostupnehoDialogu;
 
 
 
@@ -17,11 +18,13 @@ public class Lokace {
 
     }
 
-    public Lokace(String nazev, boolean ukolHotovy, String popis, String naslednik) {
+    public Lokace(String nazev, boolean ukolHotovy, String popis, String naslednik, String napovedaKMistnosti, int idDostupnehoDialogu) {
         this.nazev = nazev;
         this.ukolHotovy = ukolHotovy;
         this.popis = popis;
         this.naslednik = naslednik;
+        this.napovedaKMistnosti = napovedaKMistnosti;
+        this.idDostupnehoDialogu = idDostupnehoDialogu;
     }
 
     @Override
@@ -48,6 +51,10 @@ public class Lokace {
 
     public String getNaslednik() {
         return naslednik;
+    }
+
+    public int getIdDostupnehoDialogu() {
+        return idDostupnehoDialogu;
     }
 
     public String getNapovedaKMistnosti() {
