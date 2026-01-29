@@ -3,7 +3,6 @@ package Commands;
 import Konzole.Konzole;
 
 public class InventarCommand implements Command {
-    //TODO kdyz to opravim ve tride Inventar tak to bude fungovat
 
     @Override
     public String vykonat(Konzole konzole,String string) {

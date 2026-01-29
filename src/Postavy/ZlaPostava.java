@@ -10,7 +10,9 @@ public class ZlaPostava extends Postavy {
         this.silaSnu = silaSnu;
     }
 
+    public ZlaPostava() {
 
+    }
 
     @Override
     public boolean jeNaZivu() {

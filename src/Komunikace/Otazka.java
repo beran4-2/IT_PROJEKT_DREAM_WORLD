@@ -1,5 +1,6 @@
 package Komunikace;
 
+import Konzole.Konzole;
 import Postavy.Postavy;
 
 import java.util.ArrayList;
@@ -15,7 +16,9 @@ public class Otazka {
         this.replika = replika;
         this.odpovediNaOtazky = odpovediNaOtazky;
     }
+    public Otazka(){
 
+    }
 
     public int getId() {
         return id;
@@ -27,5 +30,9 @@ public class Otazka {
 
     public ArrayList<Odpoved> getOdpovediNaOtazky() {
         return odpovediNaOtazky;
+    }
+
+    public String getKdoMluvi() {
+        return kdoMluvi;
     }
 }

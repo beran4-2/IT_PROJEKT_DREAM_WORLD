@@ -21,4 +21,12 @@ public class Odpoved {
     public int getIdNasledneOtazky() {
         return IdNasledneOtazky;
     }
+
+    @Override
+    public String toString() {
+        return "Odpoved{" +
+                "text='" + text + '\'' +
+                ", IdNasledneOtazky=" + IdNasledneOtazky +
+                '}';
+    }
 }

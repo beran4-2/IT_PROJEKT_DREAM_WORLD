@@ -7,8 +7,7 @@ public class Inventar {
 
     ArrayList<Predmet> inventar = new ArrayList<>();
 
-
-    //TODO dodelat pridani, ODEBRANI ASI NEBUDE POTREBA
+    //TODO tato metoda bude vyuzita v command komunikace
     public String pridatPredmet(Konzole konzole, String string) {
         String pridanyPredmet = "";
         for (int i = 0; i < konzole.getData().getPredmety().size(); i++) {

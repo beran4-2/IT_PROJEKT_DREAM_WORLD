@@ -10,6 +10,8 @@ public class HodnaPostava extends Postavy {
         this.zadavatelneUkol = zadavatelneUkol;
     }
 
+    public HodnaPostava() {
+    }
 
     @Override
     public boolean jeNaZivu() {

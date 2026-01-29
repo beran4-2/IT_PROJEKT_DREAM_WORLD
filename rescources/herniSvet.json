@@ -193,21 +193,40 @@
   ],
   "otazky": [
     {
-      "kdoMluvi": "Mulier",
-      "id": 0,
-      "replika": "Rikala jsem ti aby si se na to vykaslal ale ty jsi me neposlechl",
+      "kdoMluvi": "Doktor",
+      "id": 101,
+      "replika": "Rikal jsem ti aby si se na to vykaslal ale ty jsi me neposlechl",
       "odpovediNaOtazky": [
         {
           "text": "Ja vim, omlouvam se",
-          "IdNasledneOtazky": 1
+          "IdNasledneOtazky": 102
         },
         {
           "text": "Nech me byt, je to muj zivot",
-          "IdNasledneOtazky": 2
+          "IdNasledneOtazky": 103
         },
         {
           "text": "Timto to pro me konci",
-          "IdNasledneOtazky": -1
+          "IdNasledneOtazky": -101
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "Doktor",
+      "id": 102,
+      "replika": "Tohle je druha otazka",
+      "odpovediNaOtazky": [
+        {
+          "text": "Ja vim, ze je to druha otazka  ale chci pokracovat",
+          "IdNasledneOtazky": 104
+        },
+        {
+          "text": "Nech me byt, ale zajima me co bude dal",
+          "IdNasledneOtazky": 105
+        },
+        {
+          "text": "ted uz fakt skoncim",
+          "IdNasledneOtazky": -102
         }
       ]
     }

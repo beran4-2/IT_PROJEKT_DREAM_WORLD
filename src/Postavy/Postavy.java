@@ -11,7 +11,8 @@ public abstract class Postavy {
 
     public abstract boolean jeNaZivu();
 
-
+    public Postavy() {
+    }
 
     public Postavy(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny) {
         this.jmeno = jmeno;
@@ -19,5 +20,13 @@ public abstract class Postavy {
         this.fyzickaSila = fyzickaSila;
         this.jeZabitelny = jeZabitelny;
 
+    }
+
+    public String getKdeSeNachazi() {
+        return kdeSeNachazi;
+    }
+
+    public String getJmeno() {
+        return jmeno;
     }
 }

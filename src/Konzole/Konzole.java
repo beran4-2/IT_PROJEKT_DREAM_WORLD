@@ -5,6 +5,9 @@ import HerniNacitani.HerniNacitani;
 import Inventar_a_Ukoly.Inventar;
 import Inventar_a_Ukoly.Ukol;
 import Lokace.Lokace;
+import Postavy.HodnaPostava;
+import Postavy.ZlaPostava;
+import Komunikace.Otazka;
 
 
 import java.util.HashMap;
@@ -20,6 +23,9 @@ public class Konzole {
     private Lokace aktualniLokace;
     private Ukol ukol;
     private Inventar inventar;
+    private HodnaPostava hodnaPostava;
+    private ZlaPostava zlaPostava;
+    private Otazka otazka;
 
     public void hra(){
         konecHry = false;
@@ -27,6 +33,9 @@ public class Konzole {
         aktualniLokace = data.getLokace().get(0);
         ukol = new Ukol();
         inventar = new Inventar();
+        hodnaPostava = new HodnaPostava();
+        zlaPostava = new ZlaPostava();
+        otazka = new Otazka();
         inicializace();
         System.out.println("Prave jsi v lokaci " + aktualniLokace);
         data.nacetliSeSouborySpravne();
@@ -50,6 +59,7 @@ public class Konzole {
         mapaPrikazu.put("napoveda", new Napoveda());
         mapaPrikazu.put("konec", new Konec());
         mapaPrikazu.put("inventar", new InventarCommand());
+        mapaPrikazu.put("mluv", new Komunikace());
     }
 
     private void provedPrikaz() {
@@ -108,6 +118,18 @@ public class Konzole {
 
     public Inventar getInventar() {
         return inventar;
+    }
+
+    public ZlaPostava getZlaPostava() {
+        return zlaPostava;
+    }
+
+    public HodnaPostava getHodnaPostava() {
+        return hodnaPostava;
+    }
+
+    public Otazka getOtazka() {
+        return otazka;
     }
 
     public void setAktualniLokace(Lokace aktualniLokace) {
