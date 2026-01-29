@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Komunikace implements Command {
 
-    //TODO metodaDialogSPostavou sem posle cislo ktere pomoci case urci konec jestli to hraci neco prida nebo ne
+    //TODO zde bude dodelana herni logika
     public String vykonat(Konzole konzole, String string) {
         dialogSPostavou(konzole);
 

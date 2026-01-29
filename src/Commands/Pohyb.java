@@ -7,7 +7,6 @@ public class Pohyb implements Command {
     private Lokace lokace;
 
 
-    //TODO opravit vystup u "zpatky" aby v 1. mistnosti to psalo ze zpatky uz jit nemuzes
     public String vykonat(Konzole konzole, String prikaz2) {
     if (prikaz2.equals("dal")) {
        if (konzole.getAktualniLokace().isUkolHotovy() == true) {
