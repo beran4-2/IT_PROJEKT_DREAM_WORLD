@@ -60,6 +60,7 @@ public class Konzole {
         mapaPrikazu.put("konec", new Konec());
         mapaPrikazu.put("inventar", new InventarCommand());
         mapaPrikazu.put("mluv", new Komunikace());
+        mapaPrikazu.put("prozkoumej", new PohybPoLokaci());
     }
 
     private void provedPrikaz() {

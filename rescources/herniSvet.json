@@ -76,7 +76,7 @@
   "HodnePostavy": [
     {
       "jmeno": "Doktor",
-      "kdeSeNachazi": "",
+      "kdeSeNachazi": "Civitas Sidlo",
       "zivoty": 100,
       "fyzickaSila": 1,
       "jeZabitelny": false,
@@ -84,7 +84,7 @@
     },
     {
       "jmeno": "baba Maga",
-      "kdeSeNachazi": "",
+      "kdeSeNachazi": "Jezero",
       "zivoty": 100,
       "fyzickaSila": 1,
       "jeZabitelny": false,
@@ -92,7 +92,7 @@
     },
     {
       "jmeno": "Mulier",
-      "kdeSeNachazi": "",
+      "kdeSeNachazi": "Civitas Domov",
       "zivoty": 100,
       "fyzickaSila": 1,
       "jeZabitelny": false,
@@ -103,7 +103,7 @@
   "ZlePostavy": [
     {
       "jmeno": "Jester",
-      "kdeSeNachazi": "",
+      "kdeSeNachazi": "Sopka",
       "zivoty": 100,
       "fyzickaSila": 4,
       "jeZabitelny": true,
@@ -111,7 +111,7 @@
     },
     {
       "jmeno": "Negani",
-      "kdeSeNachazi": "",
+      "kdeSeNachazi": "Pekelne Mesto",
       "zivoty": 100,
       "fyzickaSila": 4,
       "jeZabitelny": true,
@@ -119,7 +119,7 @@
     },
     {
       "jmeno": "Noirceur",
-      "kdeSeNachazi": "",
+      "kdeSeNachazi": "Sidlo Noirceura",
       "zivoty": 150,
       "fyzickaSila": 8,
       "jeZabitelny": true,
