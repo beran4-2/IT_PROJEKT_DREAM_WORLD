@@ -6,7 +6,4 @@ public class Pomoc implements Command {
     public String vykonat(Konzole konzole, String string) {
         return "pomoc, napoveda, konec, mluvit, jdi dal/zpatky, daydream souboj/ukryt, pruzkum, ukoly, inventar zobrazi, pouzit pridat/odebrat (predmet)";
     }
-    public boolean odejit() {
-        return false;
-    }
 }

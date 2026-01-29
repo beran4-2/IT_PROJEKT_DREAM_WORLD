@@ -6,6 +6,7 @@ import Inventar_a_Ukoly.Inventar;
 import Inventar_a_Ukoly.Ukol;
 import Lokace.Lokace;
 import Postavy.HodnaPostava;
+import Postavy.Samir;
 import Postavy.ZlaPostava;
 import Komunikace.Otazka;
 
@@ -16,6 +17,7 @@ import java.util.Scanner;
 //TODO DODELAT V CELEM PROJEKTU JAVA DOCS
 
 public class Konzole {
+    private Samir samir;
     private boolean konecHry;
     private Scanner scanner = new Scanner(System.in);
     private HashMap<String, Command> mapaPrikazu = new HashMap<>();
@@ -28,6 +30,7 @@ public class Konzole {
     private Otazka otazka;
 
     public void hra(){
+        samir = new Samir();
         konecHry = false;
         data = HerniNacitani.nactiDataZeSlozky("/herniSvet.json");
         aktualniLokace = data.getLokace().get(0);
@@ -39,9 +42,6 @@ public class Konzole {
         inicializace();
         System.out.println("Prave jsi v lokaci " + aktualniLokace);
         data.nacetliSeSouborySpravne();
-        inventar.pridatPredmet(this, "prasky na spani");
-        inventar.pridatPredmet(this, "maska spanku");
-        inventar.pridatPredmet(this, "hudebni krabicka");
         //System.out.println(ukol.vypisMomentalnichUkolu());
 
 
@@ -135,6 +135,10 @@ public class Konzole {
 
     public Otazka getOtazka() {
         return otazka;
+    }
+
+    public Samir getSamir() {
+        return samir;
     }
 
     public void setAktualniLokace(Lokace aktualniLokace) {

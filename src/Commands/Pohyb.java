@@ -30,11 +30,6 @@ public class Pohyb implements Command {
     }
 
 
-    public boolean odejit   () {
-        return false;
-    }
-
-
     /**
      * Tato metoda hleda predchozi lokaci, tim ze projde ArrayList lokaci, jestli se nazev aktualni lokace shoduje s naslednikem u jine lokace, pokud ano tak tato metoda vrati lokaci
      * @param aktualniLokace

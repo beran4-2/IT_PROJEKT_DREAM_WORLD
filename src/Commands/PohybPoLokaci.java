@@ -37,8 +37,4 @@ public class PohybPoLokaci implements Command {
     }
 
 
-
-    public boolean odejit() {
-        return false;
-    }
 }

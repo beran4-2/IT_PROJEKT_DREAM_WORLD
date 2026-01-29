@@ -12,7 +12,5 @@ public class InventarCommand implements Command {
         else return "nespravna 2. cast prikazu";
     }
 
-    public boolean odejit() {
-        return false;
-    }
+
 }

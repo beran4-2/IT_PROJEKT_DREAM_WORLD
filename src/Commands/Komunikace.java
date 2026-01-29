@@ -14,10 +14,7 @@ public class Komunikace implements Command {
         dialogSPostavou(konzole);
 
 
-
         return "";
-    } public boolean odejit() {
-        return false;
     }
 
 

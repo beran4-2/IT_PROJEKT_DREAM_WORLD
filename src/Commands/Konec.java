@@ -7,7 +7,4 @@ public class Konec implements Command {
         konzole.setKonecHry(true);
         return "Hra je ukoncena";
     }
-    public boolean odejit() {
-        return false;
-    }
 }

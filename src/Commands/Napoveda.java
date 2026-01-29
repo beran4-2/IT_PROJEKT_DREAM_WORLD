@@ -7,7 +7,4 @@ public class Napoveda implements Command {
     public String vykonat(Konzole konzole, String string) {
         return "Napoveda k teto mistnosti zni: " + konzole.getAktualniLokace().getNapovedaKMistnosti();
     }
-    public boolean odejit() {
-        return false;
-    }
 }
