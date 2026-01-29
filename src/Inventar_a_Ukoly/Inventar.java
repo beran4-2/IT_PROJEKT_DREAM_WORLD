@@ -7,7 +7,7 @@ public class Inventar {
 
     ArrayList<Predmet> inventar = new ArrayList<>();
 
-    //TODO tato metoda bude vyuzita v command komunikace
+    //TODO tato metoda bude vyuzita v command komunikace po dodelani herni logiky
     public String pridatPredmet(Konzole konzole, String string) {
         String pridanyPredmet = "";
         for (int i = 0; i < konzole.getData().getPredmety().size(); i++) {
@@ -31,5 +31,9 @@ public class Inventar {
             }
         }else vypisInventare = "Inventar je prazdny\n";
         return vypisInventare;
+    }
+
+    public ArrayList<Predmet> getInventar() {
+        return inventar;
     }
 }

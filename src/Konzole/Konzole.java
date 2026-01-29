@@ -39,6 +39,9 @@ public class Konzole {
         inicializace();
         System.out.println("Prave jsi v lokaci " + aktualniLokace);
         data.nacetliSeSouborySpravne();
+        inventar.pridatPredmet(this, "prasky na spani");
+        inventar.pridatPredmet(this, "maska spanku");
+        inventar.pridatPredmet(this, "hudebni krabicka");
         //System.out.println(ukol.vypisMomentalnichUkolu());
 
 
@@ -61,13 +64,14 @@ public class Konzole {
         mapaPrikazu.put("inventar", new InventarCommand());
         mapaPrikazu.put("mluv", new Komunikace());
         mapaPrikazu.put("prozkoumej", new PohybPoLokaci());
+        mapaPrikazu.put("pouzij", new PouzitiPredmetu());
     }
 
     private void provedPrikaz() {
         System.out.print(">>");
         String prikaz = scanner.nextLine();
         prikaz = prikaz.trim();
-        String[] rozdeleni = prikaz.split(" ");
+        String[] rozdeleni = prikaz.split(" ", 2);
         String prikaz1 = rozdeleni[0].toLowerCase();
         String prikaz2 = "";
         if (rozdeleni.length  == 2) {

@@ -6,7 +6,6 @@ import Postavy.HodnaPostava;
 
 import java.util.ArrayList;
 
-//TODO Tady dodelat vse
 
 public class PohybPoLokaci implements Command {
     public String vykonat(Konzole konzole, String string) {

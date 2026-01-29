@@ -132,18 +132,24 @@
     {
       "nazev": "prasky na spani",
       "zvyseniLucidnihoSneni": 4,
-      "zvyseniDaydreamingu": 0
+      "zvyseniDaydreamingu": 0,
+      "jePouzivany": false
 
     },
     {
       "nazev": "maska spanku",
       "zvyseniLucidnihoSneni": 2,
-      "zvyseniDaydreamingu": 3
+      "zvyseniDaydreamingu": 3,
+      "jePouzivany": false
+
+
     },
     {
       "nazev": "hudebni krabicka",
       "zvyseniLucidnihoSneni": 3,
-      "zvyseniDaydreamingu": 2
+      "zvyseniDaydreamingu": 2,
+      "jePouzivany": false
+
     }
   ],
 
