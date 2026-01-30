@@ -10,8 +10,8 @@ public class Lokace {
     private String popis;
     private String naslednik;
     private String napovedaKMistnosti;
-     private int idDostupnehoDialogu;
-
+    private int idDostupnehoDialogu;
+    private boolean mistnostProzkoumana;
 
 
     public void dejVMistonosti() {
@@ -59,5 +59,21 @@ public class Lokace {
 
     public String getNapovedaKMistnosti() {
         return napovedaKMistnosti;
+    }
+
+    public boolean isMistnostProzkoumana() {
+        return mistnostProzkoumana;
+    }
+
+    public void setMistnostProzkoumana(boolean mistnostProzkoumana) {
+        this.mistnostProzkoumana = mistnostProzkoumana;
+    }
+
+    public void setUkolHotovy(boolean ukolHotovy) {
+        this.ukolHotovy = ukolHotovy;
+    }
+
+    public void setIdDostupnehoDialogu(int idDostupnehoDialogu) {
+        this.idDostupnehoDialogu = idDostupnehoDialogu;
     }
 }

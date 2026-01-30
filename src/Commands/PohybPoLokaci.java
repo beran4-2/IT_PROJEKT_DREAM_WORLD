@@ -12,8 +12,10 @@ public class PohybPoLokaci implements Command {
         String celyPopis = "Jsi v lokaci s nazvem " + konzole.getAktualniLokace().getNazev() + "\n";
         celyPopis = celyPopis + "Popis lokace: " + konzole.getAktualniLokace().getPopis() + "\n";
         celyPopis = celyPopis + postavyVLokaci(konzole) + "";
-
-        return celyPopis + "\n";
+        if (!konzole.getAktualniLokace().isMistnostProzkoumana()) {
+            konzole.getAktualniLokace().setMistnostProzkoumana(true);
+        }
+        return celyPopis;
     }
 
 

@@ -56,20 +56,26 @@ public class Konzole {
 
 
     private void inicializace() {
-        mapaPrikazu.put("jdi", new Pohyb());
+        mapaPrikazu.put("jit", new Pohyb());
         mapaPrikazu.put("pomoc", new Pomoc());
         mapaPrikazu.put("ukoly", new Ukoly());
         mapaPrikazu.put("napoveda", new Napoveda());
         mapaPrikazu.put("konec", new Konec());
         mapaPrikazu.put("inventar", new InventarCommand());
-        mapaPrikazu.put("mluv", new Komunikace());
-        mapaPrikazu.put("prozkoumej", new PohybPoLokaci());
-        mapaPrikazu.put("pouzij", new PouzitiPredmetu());
+        mapaPrikazu.put("mluvit", new Komunikace());
+        mapaPrikazu.put("prozkoumat", new PohybPoLokaci());
+        mapaPrikazu.put("pouzit", new PouzitiPredmetu());
     }
 
     private void provedPrikaz() {
+        System.out.println("\n--------------------------------");
+        System.out.print("Momentalni lokace: ");
+        if (aktualniLokace.isMistnostProzkoumana()){System.out.println(aktualniLokace.getNazev());}
+        else System.out.println("neznama");
+        System.out.println("Jestli nevis co zadat, pomoc");
         System.out.print(">>");
         String prikaz = scanner.nextLine();
+        System.out.print("\n");
         prikaz = prikaz.trim();
         String[] rozdeleni = prikaz.split(" ", 2);
         String prikaz1 = rozdeleni[0].toLowerCase();

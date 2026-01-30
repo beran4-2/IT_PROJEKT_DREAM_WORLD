@@ -8,8 +8,10 @@ public class Ukol {
     private String typUkolu;
     private String nazevUkolu;
     private String popisUkolu;
+    private String kdeSePrida;
     private String vJakeLokaciJe;
     private String kdoZadava;
+    private boolean otevreDalsiLokaci;
     private ArrayList<Ukol> seznamMomentalnichHlavnichUkolu = new ArrayList<>();
     private ArrayList<Ukol> seznamMomentalnichVedljesichUkolu = new ArrayList<>();
 
@@ -60,5 +62,33 @@ public class Ukol {
 
     public String getPopisUkolu() {
         return popisUkolu;
+    }
+
+    public String getTypUkolu() {
+        return typUkolu;
+    }
+
+    public String getKdeSePrida() {
+        return kdeSePrida;
+    }
+
+    public String getvJakeLokaciJe() {
+        return vJakeLokaciJe;
+    }
+
+    public String getKdoZadava() {
+        return kdoZadava;
+    }
+
+    public boolean isOtevreDalsiLokaci() {
+        return otevreDalsiLokaci;
+    }
+
+    public ArrayList<Ukol> getSeznamMomentalnichHlavnichUkolu() {
+        return seznamMomentalnichHlavnichUkolu;
+    }
+
+    public ArrayList<Ukol> getSeznamMomentalnichVedljesichUkolu() {
+        return seznamMomentalnichVedljesichUkolu;
     }
 }

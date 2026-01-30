@@ -11,10 +11,51 @@ public class Komunikace implements Command {
 
     //TODO zde bude dodelana herni logika
     public String vykonat(Konzole konzole, String string) {
-        dialogSPostavou(konzole);
+        if (konzole.getAktualniLokace().isMistnostProzkoumana()) {
+           if (konzole.getAktualniLokace().getIdDostupnehoDialogu() > 0) {
+               switch (dialogSPostavou(konzole)) {
+                   case -101:
+                       konzole.getAktualniLokace().setUkolHotovy(true);
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       konzole.getInventar().pridatPredmet(konzole, "maska spanku");
+                       return "Byla odemcena cesta do dalsi mistnosti";
+                   case -102:
+                       konzole.getAktualniLokace().setUkolHotovy(true);
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       return "byla odemcena cesta do dalsi mistnosti";
+                   case -103:
+                       return "KONEC3";
+                   case -104:
+                       return "KONEC4";
+                   case -105:
+                       return "KONEC";
+                   case -106:
+                       return "KONEC2";
+                   case -107:
+                       return "KONEC3";
+                   case -108:
+                       return "KONEC4";
+                   case -110:
+                       return "KONEC";
+                   case -111:
+                       return "KONEC2";
+                   case -112:
+                       return "KONEC3";
+                   case -113:
+                       return "KONEC4";
+                   case -114:
+                       return "KONEC";
+                   case -115:
+                       return "KONEC2";
+                   case -116:
+                       return "KONEC3";
+                   case -117:
+                       return "KONEC4";
 
-
-        return "";
+               }
+               return "KONEC DIALOGU\n";
+           }else return "Nemas dostupny dialog s postavou";
+        }else return "Mistnost neni prozkoumana";
     }
 
 
@@ -39,11 +80,11 @@ public class Komunikace implements Command {
         int idDalsiOtazky;
         if (otazkaInicializovana){
             do {
-                System.out.println(kdoMluvi + ":");
+                System.out.println(kdoMluvi + " odpoved:");
                 System.out.println(otazka.getReplika() + "\n");
                 System.out.println("Samir:");
                 System.out.println("Odpovedi: stiskni 1-" + otazka.getOdpovediNaOtazky().size() + ".");
-                System.out.println(vypisOdpovedi(otazka));
+                System.out.print(vypisOdpovedi(otazka));
                 idDalsiOtazky = zpracovaniOdpovedi(otazka);
                 otazka = nalezeniDalsiOtazky(konzole, otazka, idDalsiOtazky);
             }while (idDalsiOtazky>0);
@@ -88,7 +129,7 @@ public class Komunikace implements Command {
                     spravnyVstup = false;
                 }
         }while(!spravnyVstup);
-        System.out.println("Odpovedel si: " + otazka.getOdpovediNaOtazky().get(vyberZOdpvedi-1).getText() + "\n" );
+        System.out.println("\nOdpovedel si: " + otazka.getOdpovediNaOtazky().get(vyberZOdpvedi-1).getText() + "\n" );
 
         return otazka.getOdpovediNaOtazky().get(vyberZOdpvedi-1).getIdNasledneOtazky();
     }

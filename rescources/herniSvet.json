@@ -6,7 +6,8 @@
       "ukolHotovy": false,
       "popis": "Centralni mestské sidlo.",
       "napovedaKMistnosti": "doktor ti rekne vic",
-      "idDostupnehoDialogu": 101
+      "idDostupnehoDialogu": 101,
+      "mistnostProzkoumana": false
     },
     {
       "nazev": "Civitas Domov",
@@ -14,8 +15,8 @@
       "ukolHotovy": false,
       "popis": "Vychozi domovska lokace hrace.",
       "napovedaKMistnosti": "vyspi se",
-      "idDostupnehoDialogu": 201
-
+      "idDostupnehoDialogu": 201,
+      "mistnostProzkoumana": false
     },
     {
       "nazev": "Jezero",
@@ -23,8 +24,8 @@
       "ukolHotovy": false,
       "popis": "Poklidna vodni hladina.",
       "napovedaKMistnosti": "",
-      "idDostupnehoDialogu": 301
-
+      "idDostupnehoDialogu": 301,
+      "mistnostProzkoumana": false
     },
     {
       "nazev": "Oblast X",
@@ -32,8 +33,8 @@
       "ukolHotovy": false,
       "popis": "Tajemna neznama oblast.",
       "napovedaKMistnosti": "",
-      "idDostupnehoDialogu": 0
-
+      "idDostupnehoDialogu": 0,
+      "mistnostProzkoumana": false
     },
     {
       "nazev": "Hory",
@@ -41,8 +42,8 @@
       "ukolHotovy": false,
       "popis": "Nebezpecny hornaty teren.",
       "napovedaKMistnosti": "",
-      "idDostupnehoDialogu": 501
-
+      "idDostupnehoDialogu": 501,
+      "mistnostProzkoumana": false
     },
     {
       "nazev": "Sopka",
@@ -50,8 +51,8 @@
       "ukolHotovy": false,
       "popis": "Aktivní vulkán.",
       "napovedaKMistnosti": "",
-      "idDostupnehoDialogu": 601
-
+      "idDostupnehoDialogu": 601,
+      "mistnostProzkoumana": false
     },
     {
       "nazev": "Pekelne Mesto",
@@ -59,8 +60,8 @@
       "ukolHotovy": false,
       "popis": "Mesto v plamenech.",
       "napovedaKMistnosti": "",
-      "idDostupnehoDialogu": 701
-
+      "idDostupnehoDialogu": 701,
+      "mistnostProzkoumana": false
     },
     {
       "nazev": "Sidlo Noirceura",
@@ -68,8 +69,8 @@
       "ukolHotovy": false,
       "popis": "Temné sídlo království.",
       "napovedaKMistnosti": "",
-      "idDostupnehoDialogu": 801
-
+      "idDostupnehoDialogu": 801,
+      "mistnostProzkoumana": false
     }
 
   ],
@@ -158,80 +159,139 @@
       "typUkolu": "hlavni",
       "nazevUkolu": "Zeptat se na stav otce",
       "popisUkolu": "Musis se zpetat doktora na stav sveho otce",
+      "kdeSePrida": "Civitas Sidlo",
       "vJakeLokaciJe": "Civitas Sidlo",
-      "kdoZadava": "Hra"
+      "kdoZadava": "Hra",
+      "otevreDalsiLokaci": true
     },
+
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Jdi se domu vyspat",
+      "popisUkolu": "jdi se domu vyspat pomoci commadndu spat",
+      "kdeSePrida": "Civitas Sidlo",
+      "vJakeLokaciJe": "Civitas Domov",
+      "kdoZadava": "Hra",
+      "otevreDalsiLokaci": false
+    },
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Promluv si s Mulier",
+      "popisUkolu": "Oznam to o cem se ti zdalo sve zene",
+      "kdeSePrida": "Civitas Domov",
+      "vJakeLokaciJe": "Civitas Domov",
+      "kdoZadava": "Hra",
+      "otevreDalsiLokaci": true
+    },
+
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Zajit za Magou",
       "popisUkolu": "Jit za magou a informovat ji o snu",
-      "vJakeLokaciJe": "Civitas Domov",
-      "kdoZadava": "Mulier"
+      "kdeSePrida": "Civitas Domov",
+      "vJakeLokaciJe": "Jezero",
+      "kdoZadava": "Mulier",
+      "otevreDalsiLokaci": false
     },
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Zformování mostu",
-      "popisUkolu": "jdi udělat most",
+      "popisUkolu": "jdi zformovat most, ktery ti otevre moznost jit dal",
+      "kdeSePrida": "Jezero",
       "vJakeLokaciJe": "Jezero",
-      "kdoZadava": "Maga"
+      "kdoZadava": "baba Maga",
+      "otevreDalsiLokaci": true
     },
+
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Vyřeš hádanku v Oblasti X",
       "popisUkolu": "XXXXX - lehka napoveda",
+      "kdeSePrida": "Jezero",
       "vJakeLokaciJe": "Oblast X",
-      "kdoZadava": "Maga"
+      "kdoZadava": "baba Maga",
+      "otevreDalsiLokaci": true
     },
+
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Vyhasnout sopku",
       "popisUkolu": "XXXXX",
+      "kdeSePrida": "Jezero",
       "vJakeLokaciJe": "Sopka",
-      "kdoZadava": "Maga"
+      "kdoZadava": "baba Maga",
+      "otevreDalsiLokaci": true
     },
+
     {
       "typUkolu": "hlavni",
-      "nazevUkolu": "XXX",
+      "nazevUkolu": "Prozkoumej pekelne mesto",
       "popisUkolu": "XXXXX",
+      "kdeSePrida": "Jezero",
       "vJakeLokaciJe": "Pekelne Mesto",
-      "kdoZadava": "Maga"
+      "kdoZadava": "baba Maga",
+      "otevreDalsiLokaci": true
+    },
+
+    {
+      "typUkolu": "hlavniHlavni",
+      "nazevUkolu": "Zabij Noirceura",
+      "popisUkolu": "vyber si jestli s nim pujdes bojovat naprimo nebo z domova",
+      "kdeSePrida": "Jezero",
+      "vJakeLokaciJe": "Sidlo Noirceura",
+      "kdoZadava": "baba Maga",
+      "otevreDalsiLokaci": true
     }
+
+
   ],
+
+
+
+
+
+
+
+
+
   "otazky": [
     {
       "kdoMluvi": "Doktor",
       "id": 101,
-      "replika": "Rikal jsem ti aby si se na to vykaslal ale ty jsi me neposlechl",
+      "replika": "Tvuj otec to nezvladl, zemrel z vycerpani, je mi to moc lito",
       "odpovediNaOtazky": [
         {
-          "text": "Ja vim, omlouvam se",
+          "text": "Dekuji, je to pro me velmi tezke v poselednich dnech",
           "IdNasledneOtazky": 102
         },
         {
-          "text": "Nech me byt, je to muj zivot",
+          "text": "jeste ty me tim zatezu, spis bys me mel nechat byt.",
           "IdNasledneOtazky": 103
-        },
-        {
-          "text": "Timto to pro me konci",
-          "IdNasledneOtazky": -101
         }
       ]
     },
     {
       "kdoMluvi": "Doktor",
       "id": 102,
-      "replika": "Tohle je druha otazka",
+      "replika": "Nasli jsme nejake veci tveho otce rikal jsem si ze by se ti mohli hodit ",
       "odpovediNaOtazky": [
         {
-          "text": "Ja vim, ze je to druha otazka  ale chci pokracovat",
-          "IdNasledneOtazky": 104
+          "text": "Dekuji za nabidku, asi je nechci necham je otci.",
+          "IdNasledneOtazky": -102
         },
         {
-          "text": "Nech me byt, ale zajima me co bude dal",
-          "IdNasledneOtazky": 105
-        },
+          "text": "Dekuji vezmu si je, mozna se mi nekdy budou hodit.",
+          "IdNasledneOtazky": -101
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "Doktor",
+      "id": 103,
+      "replika": "Dobre jak si prejes dam ti prostor",
+      "odpovediNaOtazky": [
         {
-          "text": "ted uz fakt skoncim",
+          "text": "Dekuji",
           "IdNasledneOtazky": -102
         }
       ]

@@ -88,6 +88,6 @@ public class HerniNacitani {
         System.out.println("Pocet zlych postav je: " + ZlePostavy.size());
         System.out.println("Pocet predmetu je: " + predmety.size());
         System.out.println("Pocet ukolu je: " + ukoly.size());
-        System.out.println("Pocet otazek je: " + otazky.size());
+        System.out.print("Pocet otazek je: " + otazky.size());
     }
 }
