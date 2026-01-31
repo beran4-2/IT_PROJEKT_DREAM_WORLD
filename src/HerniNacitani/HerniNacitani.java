@@ -10,8 +10,7 @@ import Predmety.Predmet;
 import com.google.gson.Gson;
 
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
@@ -40,6 +39,25 @@ public class HerniNacitani {
         } catch (Exception e) {
             throw new RuntimeException("Chyba při načítání JSON: " + e.getMessage());
         }
+    }
+
+    public String nactiDataZeSouboru(String cestaKSouboru){
+        String vypis = "";
+        try {
+            BufferedReader br = new BufferedReader((new FileReader("rescources/" + cestaKSouboru+ ".txt")));
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                String radek = line.trim();
+                vypis = vypis + radek + "\n";
+            }
+            br.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return vypis;
     }
 
     @Override
