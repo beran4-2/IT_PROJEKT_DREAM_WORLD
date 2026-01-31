@@ -28,6 +28,7 @@ public class Inventar {
             vypisInventare = vypisInventare + "V INVENTARI MAS:\n";
             for (int i = 0; i <inventar.size(); i++) {
                 vypisInventare = vypisInventare + (i+1) + ". " + inventar.get(i).getNazev() + ", popis: daydreaming zlepsuje o " + inventar.get(i).getZvyseniDaydreamingu()+" a lucidni sneni zlepsuje o "+ inventar.get(i).getZvyseniLucidnihoSneni() + "\n";
+                vypisInventare = vypisInventare + "     co dela: " + inventar.get(i).getPopisPredmetu() + "\n";
             }
         }else vypisInventare = "Inventar je prazdny\n";
         return vypisInventare;

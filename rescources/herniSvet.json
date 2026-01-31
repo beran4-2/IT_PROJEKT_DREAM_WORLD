@@ -132,16 +132,19 @@
   "predmety": [
     {
       "nazev": "prasky na spani",
-      "zvyseniLucidnihoSneni": 4,
-      "zvyseniDaydreamingu": 0,
-      "jePouzivany": false
+      "zvyseniLucidnihoSneni": 0,
+      "zvyseniDaydreamingu": 4,
+      "jePouzivany": false,
+      "popisPredmetu": "zesiluje tvoje daydreaming schopnosti"
 
     },
     {
       "nazev": "maska spanku",
       "zvyseniLucidnihoSneni": 2,
-      "zvyseniDaydreamingu": 3,
-      "jePouzivany": false
+      "zvyseniDaydreamingu": 0,
+      "jePouzivany": false,
+      "popisPredmetu": "diky tomuto predmetu muzes spat kdekoliv"
+
 
 
     },
@@ -149,7 +152,9 @@
       "nazev": "hudebni krabicka",
       "zvyseniLucidnihoSneni": 3,
       "zvyseniDaydreamingu": 2,
-      "jePouzivany": false
+      "jePouzivany": false,
+      "popisPredmetu": "tato krabicka zesiluje tvoje schopnosti + souperi budou mit 2/3 sve sily"
+
 
     }
   ],
