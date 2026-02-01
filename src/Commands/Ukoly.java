@@ -5,6 +5,9 @@ import Konzole.Konzole;
 public class Ukoly implements Command {
 
     public String vykonat(Konzole konzole, String string) {
-        return "Tvoje ukoly: " + konzole.getUkol().vypisMomentalnichUkolu();
+        String vypisUkolu;
+        vypisUkolu = "Tvoje ukoly: " + konzole.getUkol().vypisMomentalnichUkolu();
+        vypisUkolu = vypisUkolu + konzole.getSouboj().trestZaSpatnyCommand(konzole);
+        return vypisUkolu;
     }
 }

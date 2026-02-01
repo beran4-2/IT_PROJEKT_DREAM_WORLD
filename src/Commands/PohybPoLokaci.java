@@ -15,6 +15,7 @@ public class PohybPoLokaci implements Command {
         if (!konzole.getAktualniLokace().isMistnostProzkoumana()) {
             konzole.getAktualniLokace().setMistnostProzkoumana(true);
         }
+        celyPopis = celyPopis + konzole.getSouboj().trestZaSpatnyCommand(konzole);
         return celyPopis;
     }
 
