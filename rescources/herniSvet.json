@@ -7,7 +7,8 @@
       "popis": "Centralni mestské sidlo.",
       "napovedaKMistnosti": "doktor ti rekne vic",
       "idDostupnehoDialogu": 101,
-      "mistnostProzkoumana": false
+      "mistnostProzkoumana": false,
+      "JeVMistnostiSouboj": false
     },
     {
       "nazev": "Civitas Domov",
@@ -16,7 +17,8 @@
       "popis": "Vychozi domovska lokace hrace.",
       "napovedaKMistnosti": "vyspi se",
       "idDostupnehoDialogu": 201,
-      "mistnostProzkoumana": false
+      "mistnostProzkoumana": false,
+      "JeVMistnostiSouboj": false
     },
     {
       "nazev": "Jezero",
@@ -25,7 +27,8 @@
       "popis": "Poklidna vodni hladina.",
       "napovedaKMistnosti": "",
       "idDostupnehoDialogu": 301,
-      "mistnostProzkoumana": false
+      "mistnostProzkoumana": false,
+      "JeVMistnostiSouboj": false
     },
     {
       "nazev": "Oblast X",
@@ -34,7 +37,8 @@
       "popis": "Tajemna neznama oblast.",
       "napovedaKMistnosti": "",
       "idDostupnehoDialogu": 0,
-      "mistnostProzkoumana": false
+      "mistnostProzkoumana": false,
+      "JeVMistnostiSouboj": false
     },
     {
       "nazev": "Hory",
@@ -43,7 +47,8 @@
       "popis": "Nebezpecny hornaty teren.",
       "napovedaKMistnosti": "",
       "idDostupnehoDialogu": 501,
-      "mistnostProzkoumana": false
+      "mistnostProzkoumana": false,
+      "JeVMistnostiSouboj": false
     },
     {
       "nazev": "Sopka",
@@ -52,7 +57,8 @@
       "popis": "Aktivní vulkán.",
       "napovedaKMistnosti": "",
       "idDostupnehoDialogu": 601,
-      "mistnostProzkoumana": false
+      "mistnostProzkoumana": false,
+      "JeVMistnostiSouboj": false
     },
     {
       "nazev": "Pekelne Mesto",
@@ -61,7 +67,8 @@
       "popis": "Mesto v plamenech.",
       "napovedaKMistnosti": "",
       "idDostupnehoDialogu": 701,
-      "mistnostProzkoumana": false
+      "mistnostProzkoumana": false,
+      "JeVMistnostiSouboj": false
     },
     {
       "nazev": "Sidlo Noirceura",
@@ -70,7 +77,8 @@
       "popis": "Temné sídlo království.",
       "napovedaKMistnosti": "",
       "idDostupnehoDialogu": 801,
-      "mistnostProzkoumana": false
+      "mistnostProzkoumana": false,
+      "JeVMistnostiSouboj": false
     }
 
   ],
@@ -80,24 +88,21 @@
       "kdeSeNachazi": "Civitas Sidlo",
       "zivoty": 100,
       "fyzickaSila": 1,
-      "jeZabitelny": false,
-      "zadavatelneUkoly": []
+      "jeZabitelny": false
     },
     {
       "jmeno": "baba Maga",
       "kdeSeNachazi": "Jezero",
       "zivoty": 100,
       "fyzickaSila": 1,
-      "jeZabitelny": false,
-      "zadavatelneUkoly": []
+      "jeZabitelny": false
     },
     {
       "jmeno": "Mulier",
       "kdeSeNachazi": "Civitas Domov",
       "zivoty": 100,
       "fyzickaSila": 1,
-      "jeZabitelny": false,
-      "zadavatelneUkoly": []
+      "jeZabitelny": false
     }
 
   ],
@@ -135,7 +140,8 @@
       "zvyseniLucidnihoSneni": 0,
       "zvyseniDaydreamingu": 4,
       "jePouzivany": false,
-      "popisPredmetu": "zesiluje tvoje daydreaming schopnosti"
+      "popisPredmetu": "zesiluje tvoje daydreaming schopnosti",
+      "typPredmetu": "bojovy"
 
     },
     {
@@ -143,19 +149,16 @@
       "zvyseniLucidnihoSneni": 2,
       "zvyseniDaydreamingu": 0,
       "jePouzivany": false,
-      "popisPredmetu": "diky tomuto predmetu muzes spat kdekoliv"
-
-
-
+      "popisPredmetu": "diky tomuto predmetu muzes spat kdekoliv",
+      "typPredmetu": "bojovy"
     },
     {
       "nazev": "hudebni krabicka",
       "zvyseniLucidnihoSneni": 3,
       "zvyseniDaydreamingu": 2,
       "jePouzivany": false,
-      "popisPredmetu": "tato krabicka zesiluje tvoje schopnosti + souperi budou mit 2/3 sve sily"
-
-
+      "popisPredmetu": "tato krabicka zesiluje tvoje schopnosti + souperi budou mit 2/3 sve sily",
+      "typPredmetu": "bojovy"
     }
   ],
 

@@ -29,4 +29,28 @@ public abstract class Postavy {
     public String getJmeno() {
         return jmeno;
     }
+
+    public void setZivoty(int zivoty) {
+        this.zivoty = zivoty;
+    }
+
+    public boolean isJeZabitelny() {
+        return jeZabitelny;
+    }
+
+    public void setJeZabitelny(boolean jeZabitelny) {
+        this.jeZabitelny = jeZabitelny;
+    }
+
+    public int getZivoty() {
+        return zivoty;
+    }
+
+    public int getFyzickaSila() {
+        return fyzickaSila;
+    }
+
+    public void setFyzickaSila(int fyzickaSila) {
+        this.fyzickaSila = fyzickaSila;
+    }
 }

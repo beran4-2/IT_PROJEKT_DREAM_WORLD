@@ -30,4 +30,8 @@ public class ZlaPostava extends Postavy {
                 ", jeZabitelny=" + jeZabitelny +
                 '}';
     }
+
+    public int getSilaSnu() {
+        return silaSnu;
+    }
 }

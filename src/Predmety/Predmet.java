@@ -6,13 +6,19 @@ public class Predmet {
     private int zvyseniDaydreamingu;
     private boolean jePouzivany;
     private String popisPredmetu;
+    private String typPredmetu;
+    private int aktivniPredmety;
 
-    public Predmet(String nazev, int zvyseniLucidnihoSneni, int zvyseniDaydreamingu, boolean jePouzivany, String popisPredmetu) {
+    public Predmet(String nazev, int zvyseniLucidnihoSneni, int zvyseniDaydreamingu, boolean jePouzivany, String popisPredmetu, String typPredmetu) {
         this.nazev = nazev;
         this.zvyseniLucidnihoSneni = zvyseniLucidnihoSneni;
         this.zvyseniDaydreamingu = zvyseniDaydreamingu;
         this.jePouzivany = jePouzivany;
         this.popisPredmetu = popisPredmetu;
+        this.typPredmetu = typPredmetu;
+    }
+
+    public Predmet() {
     }
 
     public String getNazev() {
@@ -37,5 +43,17 @@ public class Predmet {
 
     public String getPopisPredmetu() {
         return popisPredmetu;
+    }
+
+    public String getTypPredmetu() {
+        return typPredmetu;
+    }
+
+    public int getAktivniPredmety() {
+        return aktivniPredmety;
+    }
+
+    public void setAktivniPredmety(int aktivniPredmety) {
+        this.aktivniPredmety = aktivniPredmety;
     }
 }

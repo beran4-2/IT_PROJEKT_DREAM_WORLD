@@ -12,19 +12,21 @@ public class Lokace {
     private String napovedaKMistnosti;
     private int idDostupnehoDialogu;
     private boolean mistnostProzkoumana;
+    private boolean jeVMistnostiSouboj;
 
 
     public void dejVMistonosti() {
 
     }
 
-    public Lokace(String nazev, boolean ukolHotovy, String popis, String naslednik, String napovedaKMistnosti, int idDostupnehoDialogu) {
+    public Lokace(String nazev, boolean ukolHotovy, String popis, String naslednik, String napovedaKMistnosti, int idDostupnehoDialogu, boolean jeVMistnostiSouboj) {
         this.nazev = nazev;
         this.ukolHotovy = ukolHotovy;
         this.popis = popis;
         this.naslednik = naslednik;
         this.napovedaKMistnosti = napovedaKMistnosti;
         this.idDostupnehoDialogu = idDostupnehoDialogu;
+        this.jeVMistnostiSouboj = jeVMistnostiSouboj;
     }
 
     @Override
@@ -75,5 +77,13 @@ public class Lokace {
 
     public void setIdDostupnehoDialogu(int idDostupnehoDialogu) {
         this.idDostupnehoDialogu = idDostupnehoDialogu;
+    }
+
+    public boolean isJeVMistnostiSouboj() {
+        return jeVMistnostiSouboj;
+    }
+
+    public void setJeVMistnostiSouboj(boolean jeVMistnostiSouboj) {
+        this.jeVMistnostiSouboj = jeVMistnostiSouboj;
     }
 }

@@ -5,9 +5,13 @@ import java.util.ArrayList;
 public class Samir extends Postavy {
     private int urovenDaydreamingu;
     private int urovenLucidnihoSneni;
+    private int pocetSpankuDoma;
     private boolean jeUkryty;
+
+    //TODO popremyslet o tom jestli je vubec potreba mit atribut spi
     private boolean spi;
     private boolean jeVBoji;
+    private boolean zpusobilyKeSpani;
 
     public Samir(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny, int urovenDaydreamingu, int urovenLucidnihoSneni) {
         super(jmeno, zivoty, fyzickaSila, jeZabitelny);
@@ -53,5 +57,21 @@ public class Samir extends Postavy {
 
     public void setJeUkryty(boolean jeUkryty) {
         this.jeUkryty = jeUkryty;
+    }
+
+    public boolean isZpusobilyKeSpani() {
+        return zpusobilyKeSpani;
+    }
+
+    public void setZpusobilyKeSpani(boolean zpusobilyKeSpani) {
+        this.zpusobilyKeSpani = zpusobilyKeSpani;
+    }
+
+    public int getPocetSpankuDoma() {
+        return pocetSpankuDoma;
+    }
+
+    public void setPocetSpankuDoma(int pocetSpankuDoma) {
+        this.pocetSpankuDoma = pocetSpankuDoma;
     }
 }
