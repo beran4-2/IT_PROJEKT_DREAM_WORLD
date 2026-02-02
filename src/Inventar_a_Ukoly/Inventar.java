@@ -18,6 +18,15 @@ public class Inventar {
         return "byl pridany predmet "+pridanyPredmet;
     }
 
+    public String aktivniPredmet(){
+        for (int i = 0; i < inventar.size(); i++) {
+            if (inventar.get(i).isJePouzivany()){
+                return inventar.get(i).getNazev();
+            }
+        }
+        return "nic neni aktivovano";
+    }
+
     public String odebratPredmet(Konzole konzole, String string) {
         return "";
     }
