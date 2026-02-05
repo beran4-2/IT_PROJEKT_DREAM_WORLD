@@ -8,6 +8,7 @@ import Postavy.HodnaPostava;
 import Postavy.ZlaPostava;
 import Predmety.Predmet;
 import com.google.gson.Gson;
+import souboj.Souboj;
 
 
 import java.io.*;
@@ -21,6 +22,8 @@ public class HerniNacitani {
     private ArrayList<Predmet> predmety;
     private ArrayList<Ukol> ukoly;
     private ArrayList<Otazka> otazky;
+    private ArrayList<Souboj> typyUtokuDayDream;
+    private ArrayList<Souboj>typyUtokuLucidni;
 
 
 
@@ -93,6 +96,14 @@ public class HerniNacitani {
 
     public ArrayList<Otazka> getOtazky() {
         return otazky;
+    }
+
+    public ArrayList<Souboj> getTypyUtokuDaydreaming() {
+        return typyUtokuDayDream;
+    }
+
+    public ArrayList<Souboj> getTypyUtokuLucidni() {
+        return typyUtokuLucidni;
     }
 
     public void vypisLokaci(){

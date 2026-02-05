@@ -7,15 +7,15 @@ public class Inventar {
 
     ArrayList<Predmet> inventar = new ArrayList<>();
 
-    //TODO tato metoda bude vyuzita v command komunikace po dodelani herni logiky
     public String pridatPredmet(Konzole konzole, String string) {
         String pridanyPredmet = "";
         for (int i = 0; i < konzole.getData().getPredmety().size(); i++) {
-            if (konzole.getData().getPredmety().get(i).getNazev().equals(string))
+            if (konzole.getData().getPredmety().get(i).getNazev().equals(string)) {
                 inventar.add(konzole.getData().getPredmety().get(i));
                 pridanyPredmet = konzole.getData().getPredmety().get(i).getNazev();
+            }
         }
-        return "byl pridany predmet "+pridanyPredmet;
+        return "byl pridany predmet " + pridanyPredmet;
     }
 
     public String aktivniPredmet(){
@@ -39,7 +39,7 @@ public class Inventar {
                 vypisInventare = vypisInventare + (i+1) + ". " + inventar.get(i).getNazev() + ", popis: daydreaming zlepsuje o " + inventar.get(i).getZvyseniDaydreamingu()+" a lucidni sneni zlepsuje o "+ inventar.get(i).getZvyseniLucidnihoSneni() + "\n";
                 vypisInventare = vypisInventare + "     co dela: " + inventar.get(i).getPopisPredmetu() + "\n";
             }
-        }else vypisInventare = "Inventar je prazdny\n";
+        }else vypisInventare = "Inventar je prazdny";
         return vypisInventare;
     }
 

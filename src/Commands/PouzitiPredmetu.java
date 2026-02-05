@@ -24,18 +24,23 @@ public class PouzitiPredmetu implements Command {
                     if (konzole.getInventar().getInventar().get(i).getNazev().equals(predmet)) {
                         vyuzivanyPredmet =  konzole.getInventar().getInventar().get(i);
                         vyuzivanyPredmet.setJePouzivany(true);
-                        return "byl aktivovan predmet " + vyuzivanyPredmet.getNazev();
+                        konzole.getPredmet().setAktivniPredmety(1);
+                        konzole.getSamir().aktivaceSchopnosti(konzole, vyuzivanyPredmet);
+                        if (vyuzivanyPredmet.getNazev().equals("maska spanku")){konzole.getSamir().setZpusobilyKeSpani(true);}
+                        return "\nbyl aktivovan predmet " + vyuzivanyPredmet.getNazev();
                     }
                 }
                 return "nemas takovy predmet";
             }
 
         }
-        else {
+        else if (vyuzivanyPredmet != null){
             if (prikaz2.equals("odebrat")) {
                 for (int i = 0; i < konzole.getInventar().getInventar().size(); i++) {
                     if (vyuzivanyPredmet.getNazev().equals(predmet)) {
                         vyuzivanyPredmet.setJePouzivany(false);
+                        konzole.getPredmet().setAktivniPredmety(0);
+                        konzole.getSamir().deaktivaceSchopnosti(konzole.getSamir(), vyuzivanyPredmet);
                         return "odebral si predmet: " + vyuzivanyPredmet.getNazev();
                     }
                 }
@@ -44,8 +49,6 @@ public class PouzitiPredmetu implements Command {
             if (prikaz2.equals("pridat")) {
                 return "Uz vyuzivas predmet: " + vyuzivanyPredmet.getNazev();
             }
-
-
         }
         return "";
 
