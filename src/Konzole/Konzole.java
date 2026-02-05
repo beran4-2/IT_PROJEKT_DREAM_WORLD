@@ -9,40 +9,74 @@ import Postavy.HodnaPostava;
 import Postavy.Samir;
 import Postavy.ZlaPostava;
 import Komunikace.Otazka;
-
+import Predmety.Predmet;
+import souboj.Souboj;
 
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//TODO DODELAT V CELEM PROJEKTU JAVA DOCS
 
 public class Konzole {
-    private Samir samir;
-    private boolean konecHry;
-    private Scanner scanner = new Scanner(System.in);
     private HashMap<String, Command> mapaPrikazu = new HashMap<>();
+    private boolean konecHry;
     private HerniNacitani data;
+    private Samir samir;
     private Lokace aktualniLokace;
     private Ukol ukol;
     private Inventar inventar;
     private HodnaPostava hodnaPostava;
     private ZlaPostava zlaPostava;
     private Otazka otazka;
+    private Predmet predmet;
+    private MenuHry menu;
+    private Souboj souboj;
+    private Lokace lokace;
+
+    /*public static int zpracovaniOdpovedi(Otazka otazka){
+        boolean spravnyVstup = false;
+        int vyberZOdpvedi = 0;
+        do {
+            System.out.print(">>");
+            try{
+                vyberZOdpvedi =Konzole.scanner.nextInt();
+                Konzole.scanner.nextLine();
+                if (vyberZOdpvedi >= 1 && vyberZOdpvedi <= otazka.getOdpovediNaOtazky().size()){
+                    spravnyVstup = true;
+                }else {
+                    System.out.println("Neplatny vstup, zadej od 1 do " + otazka.getOdpovediNaOtazky().size());
+                }
+            }catch (InputMismatchException e){
+                System.out.println("Zadali jste spatny vstup");
+                Konzole.scanner.nextLine();
+            }
+        }while(!spravnyVstup);
+        System.out.println("\nOdpovedel si: " + otazka.getOdpovediNaOtazky().get(vyberZOdpvedi-1).getText() + "\n" );
+
+        return otazka.getOdpovediNaOtazky().get(vyberZOdpvedi-1).getIdNasledneOtazky();
+    }*/
+
+    public static Scanner scanner = new Scanner(System.in);
+
 
     public void hra(){
-        samir = new Samir();
-        konecHry = false;
         data = HerniNacitani.nactiDataZeSlozky("/herniSvet.json");
-        aktualniLokace = data.getLokace().get(0);
+        inicializace();
         ukol = new Ukol();
         inventar = new Inventar();
         hodnaPostava = new HodnaPostava();
         zlaPostava = new ZlaPostava();
         otazka = new Otazka();
-        inicializace();
-        System.out.println("Prave jsi v lokaci " + aktualniLokace);
-        data.nacetliSeSouborySpravne();
-        //System.out.println(ukol.vypisMomentalnichUkolu());
+        predmet = new Predmet();
+        menu = new MenuHry();
+        souboj = new Souboj();
+        lokace = new Lokace();
+        konecHry = false;
+        aktualniLokace = data.getLokace().get(0);
+        ukol.setIdAktualnihoUkolu(1);
+        samir = new Samir("Samir",100,1,true,0,1,0,false,false,false,false);
+        ukol.getSeznamMomentalnichHlavnichUkolu().add(ukol.pridaniNovehoUkolu(this, ukol.getIdAktualnihoUkolu()));
+       // data.nacetliSeSouborySpravne();
 
 
 
@@ -65,16 +99,16 @@ public class Konzole {
         mapaPrikazu.put("mluvit", new Komunikace());
         mapaPrikazu.put("prozkoumat", new PohybPoLokaci());
         mapaPrikazu.put("pouzit", new PouzitiPredmetu());
+        mapaPrikazu.put("spat", new Spanek());
+        mapaPrikazu.put("daydream", new Daydream());
+        mapaPrikazu.put("vlastnosti", new Vlastnosti());
     }
 
     private void provedPrikaz() {
-        System.out.println("\n--------------------------------");
-        System.out.print("Momentalni lokace: ");
-        if (aktualniLokace.isMistnostProzkoumana()){System.out.println(aktualniLokace.getNazev());}
-        else System.out.println("neznama");
-        System.out.println("Jestli nevis co zadat, pomoc");
+        String prikaz;
+        System.out.println(menu.menuHry(this));
         System.out.print(">>");
-        String prikaz = scanner.nextLine();
+        prikaz = scanner.nextLine();
         System.out.print("\n");
         prikaz = prikaz.trim();
         String[] rozdeleni = prikaz.split(" ", 2);
@@ -89,19 +123,15 @@ public class Konzole {
         } else {
             System.out.println(">> Nedefinovany prikaz");
         }
+        if (samir.isJeVBoji()){
+            if (prikaz2.equals("obrana")) {
+            }else System.out.println( souboj.protihracuvTah(this));
+        }
     }
 
     public Lokace getAktualniLokace() {
         return aktualniLokace;
     }
-
-
-
-
-
-
-
-
 
     public boolean isKonecHry() {
         return konecHry;
@@ -111,13 +141,6 @@ public class Konzole {
         this.konecHry = konecHry;
     }
 
-    public HashMap<String, Command> getMapaPrikazu() {
-        return mapaPrikazu;
-    }
-
-    public void setMapaPrikazu(HashMap<String, Command> mapaPrikazu) {
-        this.mapaPrikazu = mapaPrikazu;
-    }
 
     public HerniNacitani getData() {
         return data;
@@ -150,4 +173,17 @@ public class Konzole {
     public void setAktualniLokace(Lokace aktualniLokace) {
         this.aktualniLokace = aktualniLokace;
     }
+
+    public Predmet getPredmet() {
+        return predmet;
+    }
+
+    public Souboj getSouboj() {
+        return souboj;
+    }
+
+    public Lokace getLokace(){
+        return lokace;
+    }
+
 }

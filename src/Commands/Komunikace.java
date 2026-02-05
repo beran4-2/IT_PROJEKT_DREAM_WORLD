@@ -9,51 +9,77 @@ import java.util.Scanner;
 
 public class Komunikace implements Command {
 
-    //TODO zde bude dodelana herni logika
+
     public String vykonat(Konzole konzole, String string) {
+        String vypis = "";
         if (konzole.getAktualniLokace().isMistnostProzkoumana()) {
            if (konzole.getAktualniLokace().getIdDostupnehoDialogu() > 0) {
                switch (dialogSPostavou(konzole)) {
                    case -101:
-                       konzole.getAktualniLokace().setUkolHotovy(true);
-                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
-                       konzole.getInventar().pridatPredmet(konzole, "maska spanku");
-                       return "Byla odemcena cesta do dalsi mistnosti";
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(110);
+                       vypis = vypis + konzole.getInventar().pridatPredmet(konzole, "maska spanku") + "\n";
+                       vypis = vypis + konzole.getUkol().splneniUkolu(konzole,konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       break;
                    case -102:
-                       konzole.getAktualniLokace().setUkolHotovy(true);
-                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
-                       return "byla odemcena cesta do dalsi mistnosti";
+                       vypis = vypis + konzole.getUkol().splneniUkolu(konzole,konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(110);
+                       break;
                    case -103:
-                       return "KONEC3";
-                   case -104:
-                       return "KONEC4";
-                   case -105:
-                       return "KONEC";
-                   case -106:
-                       return "KONEC2";
-                   case -107:
-                       return "KONEC3";
-                   case -108:
-                       return "KONEC4";
-                   case -110:
-                       return "KONEC";
-                   case -111:
-                       return "KONEC2";
-                   case -112:
-                       return "KONEC3";
-                   case -113:
-                       return "KONEC4";
-                   case -114:
-                       return "KONEC";
-                   case -115:
-                       return "KONEC2";
-                   case -116:
-                       return "KONEC3";
-                   case -117:
-                       return "KONEC4";
+                       konzole.getSamir().setZivoty(konzole,100);
+                       vypis = vypis + "KONEC";
+                       break;
+                   case -201:
+                       vypis = vypis + konzole.getSamir().setUrovenLucidnihoSneni(konzole.getSamir().getUrovenLucidnihoSneni() + 1);
+                       vypis = "\n" + vypis + konzole.getUkol().splneniUkolu(konzole,konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       break;
+                   case -202:
+                       vypis = vypis + konzole.getSamir().setUrovenDaydreamingu(konzole.getSamir().getUrovenDaydreamingu() + 1);
+                       vypis = "\n" + vypis + konzole.getUkol().splneniUkolu(konzole,konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       break;
+                   case -203:
+                       konzole.getUkol().splneniUkolu(konzole, 4, "hlavni");
+                       vypis = vypis + "KONEC";
+                       break;
+                   case -204:
+                       return "Byl si vylecen";
+                   case -205:
+                       vypis = vypis + "KONEC";
+                       break;
+                   case -206:
+                       vypis = vypis + "KONEC";
+                       break;
+                   case -301:
+                       vypis = vypis + konzole.getSamir().setUrovenDaydreamingu(konzole.getSamir().getUrovenDaydreamingu() + 1);
+                       vypis = vypis + "\n" + konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       break;
+                   case -302:
+                       vypis = vypis + konzole.getSamir().setUrovenLucidnihoSneni(konzole.getSamir().getUrovenLucidnihoSneni() + 1);
+                       vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       break;
+                   case -303:
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
 
+                       break;
+                   case -401:
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       break;
+                   case -601:
+                       vypis = vypis + konzole.getSamir().setUrovenLucidnihoSneni(konzole.getSamir().getUrovenLucidnihoSneni() + 2);
+                       vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       break;
+                   case -602:
+                       vypis = vypis + konzole.getSamir().setUrovenLucidnihoSneni(konzole.getSamir().getUrovenLucidnihoSneni() + 2);
+                       vypis = vypis + konzole.getSamir().setUrovenDaydreamingu(konzole.getSamir().getUrovenLucidnihoSneni() + 2);
+                       vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       break;
                }
-               return "KONEC DIALOGU\n";
+               return vypis + "\nKONEC DIALOGU";
            }else return "Nemas dostupny dialog s postavou";
         }else return "Mistnost neni prozkoumana";
     }
@@ -110,14 +136,16 @@ public class Komunikace implements Command {
      * @param otazka
      * @return
      */
+
+
     public int zpracovaniOdpovedi(Otazka otazka){
-        Scanner scanner = new Scanner(System.in);
         boolean spravnyVstup = false;
         int vyberZOdpvedi = 0;
         do {
                 System.out.print(">>");
                 try{
-                    vyberZOdpvedi = scanner.nextInt();
+                    vyberZOdpvedi =Konzole.scanner.nextInt();
+                    Konzole.scanner.nextLine();
                     if (vyberZOdpvedi >= 1 && vyberZOdpvedi <= otazka.getOdpovediNaOtazky().size()){
                         spravnyVstup = true;
                     }else {
@@ -125,8 +153,7 @@ public class Komunikace implements Command {
                     }
                 }catch (InputMismatchException e){
                     System.out.println("Zadali jste spatny vstup");
-                    scanner.nextLine();
-                    spravnyVstup = false;
+                    Konzole.scanner.nextLine();
                 }
         }while(!spravnyVstup);
         System.out.println("\nOdpovedel si: " + otazka.getOdpovediNaOtazky().get(vyberZOdpvedi-1).getText() + "\n" );

@@ -1,5 +1,6 @@
 package Lokace;
 
+import Konzole.Konzole;
 import Postavy.Postavy;
 
 import java.util.ArrayList;
@@ -27,6 +28,20 @@ public class Lokace {
         this.napovedaKMistnosti = napovedaKMistnosti;
         this.idDostupnehoDialogu = idDostupnehoDialogu;
         this.jeVMistnostiSouboj = jeVMistnostiSouboj;
+    }
+
+    public Lokace(){
+
+    }
+    public String novyDostupnyDialog(Konzole konzole, int idDialogu, String kde){
+        for (int i = 0; i < konzole.getData().getLokace().size(); i++) {
+            if (konzole.getData().getLokace().get(i).getNazev().equals(kde)){
+                konzole.getData().getLokace().get(i).setIdDostupnehoDialogu(idDialogu);
+                break;
+
+            }
+        }
+        return "Mas novy dostupny dialog s Magou";
     }
 
     @Override

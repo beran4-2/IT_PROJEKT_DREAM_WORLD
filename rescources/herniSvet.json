@@ -16,7 +16,7 @@
       "ukolHotovy": false,
       "popis": "Vychozi domovska lokace hrace.",
       "napovedaKMistnosti": "vyspi se",
-      "idDostupnehoDialogu": 201,
+      "idDostupnehoDialogu": 0,
       "mistnostProzkoumana": false,
       "JeVMistnostiSouboj": false
     },
@@ -80,7 +80,6 @@
       "mistnostProzkoumana": false,
       "JeVMistnostiSouboj": false
     }
-
   ],
   "HodnePostavy": [
     {
@@ -88,14 +87,14 @@
       "kdeSeNachazi": "Civitas Sidlo",
       "zivoty": 100,
       "fyzickaSila": 1,
-      "jeZabitelny": false
+      "jeZabitelny": true
     },
     {
       "jmeno": "baba Maga",
       "kdeSeNachazi": "Jezero",
       "zivoty": 100,
       "fyzickaSila": 1,
-      "jeZabitelny": false
+      "jeZabitelny": true
     },
     {
       "jmeno": "Mulier",
@@ -133,7 +132,6 @@
     }
 
   ],
-
   "predmety": [
     {
       "nazev": "prasky na spani",
@@ -161,105 +159,274 @@
       "typPredmetu": "bojovy"
     }
   ],
-
   "ukoly": [
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Zeptat se na stav otce",
       "popisUkolu": "Musis se zpetat doktora na stav sveho otce",
-      "kdeSePrida": "Civitas Sidlo",
-      "vJakeLokaciJe": "Civitas Sidlo",
-      "kdoZadava": "Hra",
-      "otevreDalsiLokaci": true
+      "idUkolu": 1,
+      "idNaslednehoUkolu": 2,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
     },
 
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Jdi se domu vyspat",
       "popisUkolu": "jdi se domu vyspat pomoci commadndu spat",
-      "kdeSePrida": "Civitas Sidlo",
-      "vJakeLokaciJe": "Civitas Domov",
-      "kdoZadava": "Hra",
-      "otevreDalsiLokaci": false
+      "idUkolu": 2,
+      "idNaslednehoUkolu": 3,
+      "otevreDalsiLokaci": false,
+      "ukolSplnen": false
     },
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Promluv si s Mulier",
       "popisUkolu": "Oznam to o cem se ti zdalo sve zene",
-      "kdeSePrida": "Civitas Domov",
-      "vJakeLokaciJe": "Civitas Domov",
-      "kdoZadava": "Hra",
-      "otevreDalsiLokaci": true
+      "idUkolu": 3,
+      "idNaslednehoUkolu": 4,
+      "otevreDalsiLokaci": false,
+      "ukolSplnen": false
     },
 
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Zajit za Magou",
       "popisUkolu": "Jit za magou a informovat ji o snu",
-      "kdeSePrida": "Civitas Domov",
-      "vJakeLokaciJe": "Jezero",
-      "kdoZadava": "Mulier",
-      "otevreDalsiLokaci": false
+      "idUkolu": 4,
+      "idNaslednehoUkolu": 5,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
     },
     {
       "typUkolu": "hlavni",
-      "nazevUkolu": "Zformování mostu",
-      "popisUkolu": "jdi zformovat most, ktery ti otevre moznost jit dal",
-      "kdeSePrida": "Jezero",
-      "vJakeLokaciJe": "Jezero",
-      "kdoZadava": "baba Maga",
-      "otevreDalsiLokaci": true
+      "nazevUkolu": "Zformovani mostu",
+      "popisUkolu": "jdi zformovat most, ktery ti otevre moznost jit dal. Udelej to pomoci commandu prozkoumat",
+      "idUkolu": 5,
+      "idNaslednehoUkolu": 6,
+      "otevreDalsiLokaci": false,
+      "ukolSplnen": false
     },
 
     {
       "typUkolu": "hlavni",
-      "nazevUkolu": "Vyřeš hádanku v Oblasti X",
-      "popisUkolu": "XXXXX - lehka napoveda",
-      "kdeSePrida": "Jezero",
-      "vJakeLokaciJe": "Oblast X",
-      "kdoZadava": "baba Maga",
-      "otevreDalsiLokaci": true
+      "nazevUkolu": "Vrat se za Magou",
+      "popisUkolu": "pomoci commandu mluvit si promluv s Magou",
+      "idUkolu": 6,
+      "idNaslednehoUkolu": 7,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
+    },
+
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Vyres hadanku v Oblasti X",
+      "popisUkolu": "hledej opakujici se vzory - lehka napoveda",
+      "idUkolu": 7,
+      "idNaslednehoUkolu": 8,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
+    },
+
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Vrat se za Magou",
+      "popisUkolu": "pomoci commandu mluvit si promluv s Magou",
+      "idUkolu": 8,
+      "idNaslednehoUkolu": 9,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
+    },
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Zformovat horu",
+      "popisUkolu": "XXXXX",
+      "idUkolu": 9,
+      "idNaslednehoUkolu": 10,
+      "otevreDalsiLokaci": false,
+      "ukolSplnen": false
     },
 
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Vyhasnout sopku",
       "popisUkolu": "XXXXX",
-      "kdeSePrida": "Jezero",
-      "vJakeLokaciJe": "Sopka",
-      "kdoZadava": "baba Maga",
-      "otevreDalsiLokaci": true
+      "idUkolu": 10,
+      "idNaslednehoUkolu": 11,
+      "otevreDalsiLokaci": false,
+      "ukolSplnen": false
     },
-
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Vrat se za Magou",
+      "popisUkolu": "pomoci commandu mluvit si promluv s Magou",
+      "idUkolu": 11,
+      "idNaslednehoUkolu": 12,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
+    },
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Prozkoumej pekelne mesto",
       "popisUkolu": "XXXXX",
-      "kdeSePrida": "Jezero",
-      "vJakeLokaciJe": "Pekelne Mesto",
-      "kdoZadava": "baba Maga",
-      "otevreDalsiLokaci": true
+      "idUkolu": 12,
+      "idNaslednehoUkolu": 13,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
+    },
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Vrat se za Magou",
+      "popisUkolu": "pomoci commandu mluvit si promluv s Magou",
+      "idUkolu": 13,
+      "idNaslednehoUkolu": 14,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
     },
 
     {
       "typUkolu": "hlavniHlavni",
       "nazevUkolu": "Zabij Noirceura",
       "popisUkolu": "vyber si jestli s nim pujdes bojovat naprimo nebo z domova",
-      "kdeSePrida": "Jezero",
-      "vJakeLokaciJe": "Sidlo Noirceura",
-      "kdoZadava": "baba Maga",
-      "otevreDalsiLokaci": true
+      "idUkolu": 14,
+      "idNaslednehoUkolu": -34,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
     }
 
 
   ],
+  "typyUtokuDayDream": [
+    {
+      "typ": "daydreaming",
+      "nazevUtoku": "Snovy dotek",
+      "popisUtoku": "Slaba energeticka vlna ktera zmatne nepritele.",
+      "potrebnaUroven": 1,
+      "silaUtoku": 15
+    },
+    {
+      "typ": "daydreaming",
+      "nazevUtoku": "Stinovy rez",
+      "popisUtoku": "Ostre stiny se vrhnou na cil.",
+      "potrebnaUroven": 2,
+      "silaUtoku": 17
+    },
+    {
+      "typ": "daydreaming",
+      "nazevUtoku": "Myslenkova rana",
+      "popisUtoku": "Psychicky uder oslabi nepritele.",
+      "potrebnaUroven": 3,
+      "silaUtoku": 19
+    },
+    {
+      "typ": "daydreaming",
+      "nazevUtoku": "Snovy vitr",
+      "popisUtoku": "Poryv snove energie odhodi protivnika.",
+      "potrebnaUroven": 4,
+      "silaUtoku": 25
+    },
+    {
+      "typ": "daydreaming",
+      "nazevUtoku": "Zamlzeni mysli",
+      "popisUtoku": "Zmate nepritele a zpusobi poskozeni.",
+      "potrebnaUroven": 5,
+      "silaUtoku": 20
+    },
+    {
+      "typ": "daydreaming",
+      "nazevUtoku": "Snovy hrot",
+      "popisUtoku": "Koncentrovana energie prorazi obranu.",
+      "potrebnaUroven": 6,
+      "silaUtoku": 29
+    },
+    {
+      "typ": "daydreaming",
+      "nazevUtoku": "Vlna myslenek",
+      "popisUtoku": "Silna vlna tlaku zasahne vse kolem.",
+      "potrebnaUroven": 7,
+      "silaUtoku": 35
+    },
+    {
+      "typ": "daydreaming",
+      "nazevUtoku": "Stinovy vybuch",
+      "popisUtoku": "Stiny exploduji kolem cile.",
+      "potrebnaUroven": 8,
+      "silaUtoku": 39
+    },
+    {
+      "typ": "daydreaming",
+      "nazevUtoku": "Snovy roztrist",
+      "popisUtoku": "Roztristi realitu kolem nepritele.",
+      "potrebnaUroven": 9,
+      "silaUtoku": 42
+    }
+  ],
 
-
-
-
-
-
-
+  "typyUtokuLucidni": [
+    {
+  "typ": "lucidni",
+  "nazevUtoku": "Snovy plamen",
+  "popisUtoku": "Ohen vytvoreny mysli spali protivnika.",
+  "potrebnaUroven": 1,
+  "silaUtoku": 12
+},
+  {
+    "typ": "lucidni",
+    "nazevUtoku": "Realitni trhlina",
+    "popisUtoku": "Roztrhne prostor kolem nepritele.",
+    "potrebnaUroven": 2,
+    "silaUtoku": 18
+  },
+  {
+    "typ": "lucidni",
+    "nazevUtoku": "Snovy blesk",
+    "popisUtoku": "Elektricka energie z ciste mysli.",
+    "potrebnaUroven": 3,
+    "silaUtoku": 25
+  },
+  {
+    "typ": "lucidni",
+    "nazevUtoku": "Pád iluze",
+    "popisUtoku": "Zhmotni sen a rozdrti cil.",
+    "potrebnaUroven": 4,
+    "silaUtoku": 33
+  },
+  {
+    "typ": "lucidni",
+    "nazevUtoku": "Snovy rozsudek",
+    "popisUtoku": "Silny uder energie spravedlnosti.",
+    "potrebnaUroven": 5,
+    "silaUtoku": 42
+  },
+  {
+    "typ": "lucidni",
+    "nazevUtoku": "Znicujici sen",
+    "popisUtoku": "Totalni exploze snove moci.",
+    "potrebnaUroven": 6,
+    "silaUtoku": 52
+  },
+  {
+    "typ": "lucidni",
+    "nazevUtoku": "Rozpad sveta",
+    "popisUtoku": "Rozlomi bojiste samotne.",
+    "potrebnaUroven": 7,
+    "silaUtoku": 63
+  },
+  {
+    "typ": "lucidni",
+    "nazevUtoku": "Vladce snu",
+    "popisUtoku": "Absolutni kontrola nad realitou snu.",
+    "potrebnaUroven": 8,
+    "silaUtoku": 75
+  },
+  {
+    "typ": "lucidni",
+    "nazevUtoku": "Konec snu",
+    "popisUtoku": "Ultimatni utok ktery muze zlomit i bohy.",
+    "potrebnaUroven": 9,
+    "silaUtoku": 90
+  }
+],
 
 
   "otazky": [
@@ -285,11 +452,10 @@
       "odpovediNaOtazky": [
         {
           "text": "Dekuji za nabidku, asi je nechci necham je otci.",
-          "IdNasledneOtazky": -102
-        },
+          "IdNasledneOtazky": 105        },
         {
           "text": "Dekuji vezmu si je, mozna se mi nekdy budou hodit.",
-          "IdNasledneOtazky": -101
+          "IdNasledneOtazky": 104
         }
       ]
     },
@@ -300,10 +466,490 @@
       "odpovediNaOtazky": [
         {
           "text": "Dekuji",
+          "IdNasledneOtazky": 105
+        }
+      ]
+    },
+
+    {
+      "kdoMluvi": "Doktor",
+      "id": 104,
+      "replika": "A mimochodem kdykoliv muzes zamnou dorazit se nechat osetrit",
+      "odpovediNaOtazky": [
+        {
+          "text": "Dobre",
+          "IdNasledneOtazky": -101
+        }
+      ]
+    },
+
+    {
+      "kdoMluvi": "Doktor",
+      "id": 105,
+      "replika": "A mimochodem kdykoliv muzes zamnou dorazit se nechat osetrit",
+      "odpovediNaOtazky": [
+        {
+          "text": "Dobre",
           "IdNasledneOtazky": -102
         }
       ]
+    },
+
+
+
+    {
+      "kdoMluvi": "Doktor",
+      "id": 110,
+      "replika": "Chces osetrit.",
+      "odpovediNaOtazky": [
+        {
+          "text": "Ano prosim",
+          "IdNasledneOtazky": 111
+        },
+        {
+          "text": "Ne dekuji",
+          "IdNasledneOtazky": -111
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "Doktor",
+      "id": 111,
+      "replika": "Hotovo. Mel by ses citit lepe. Davat na sebe pozor, sny nejsou bezpecne.",
+      "odpovediNaOtazky": [
+        {
+          "text": "Dekuju",
+          "IdNasledneOtazky": -110
+        }
+      ]
+    },
+
+
+
+
+    {
+      "kdoMluvi": "Mulier",
+      "id": 201,
+      "replika": "Co se deje?",
+      "odpovediNaOtazky": [
+        {
+          "text": "Videl jsem strasne veci, to zlo ktere uz otec nedrzi se probudilo a chce zotrocit vsechny lidi ve meste",
+          "IdNasledneOtazky": 202
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "Mulier",
+      "id": 202,
+      "replika": "Da se s tim neco delat? Nebo uteceme",
+      "odpovediNaOtazky": [
+        {
+          "text": "Utikat nebudeme, musime to resit",
+          "IdNasledneOtazky": 203
+        },
+        {
+          "text": "Nekdo by me napadl",
+          "IdNasledneOtazky": 204
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "Mulier",
+      "id": 203,
+      "replika": "Co takhle jit za Magou, ta by ti mohla pomoct",
+      "odpovediNaOtazky": [
+        {
+          "text": "Mohla by, ale nesnasi me",
+          "IdNasledneOtazky": 214
+        },
+        {
+          "text": "To jo, ale nesnasi me, protoze neumim ovladat svoje schopnosti",
+          "IdNasledneOtazky": 215
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "Mulier",
+      "id": 204,
+      "replika": "Kdo te napadl ",
+      "odpovediNaOtazky": [
+        {
+          "text": "Maga ale nesnasi me, protoze nedokazu ovladat svoje schopnosti",
+          "IdNasledneOtazky": 215
+        },
+        {
+          "text": "Maga ale nesnasi me",
+          "IdNasledneOtazky": 214
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "Mulier",
+      "id": 214,
+      "replika": "Proc te nesnasi?",
+      "odpovediNaOtazky": [
+        {
+          "text": "Nevim jestli se mi chce ti to rikat",
+          "IdNasledneOtazky": 215
+        },
+        {
+          "text": "Nesnasi me protoze neumim ovladat svoje schopnosti",
+          "IdNasledneOtazky": 215
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "Mulier",
+      "id": 215,
+      "replika": "Jestli s tim chces neco delat tak je to asi nejlepsi volba",
+      "odpovediNaOtazky": [
+        {
+          "text": "Asi jo pujdu tam s tim ze umim lucidne snit",
+          "IdNasledneOtazky": -201
+        },
+        {
+          "text": "Asi jo pujdu tam s tim ze umim daydreaming",
+          "IdNasledneOtazky": -202
+        }
+      ]
+    },
+
+
+
+
+
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 301,
+      "replika": "Co ty tu delas?",
+      "odpovediNaOtazky": [
+        {
+          "text": "Budu potrebovat pomoc",
+          "IdNasledneOtazky": 302
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 302,
+      "replika": "Ty si delas asi srandu ne? S cim jako?",
+      "odpovediNaOtazky": [
+        {
+          "text": "Videl jsem hrozne veci ve snu, zlo, ktere chce ovladnout celou planetu",
+          "IdNasledneOtazky": 303
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 303,
+      "replika": "Takt to budeme muset rychle zacit s pripravou. Tvoje schopnosti jsou slabe, ale potencial mas obrovsky. Pujdes trenovat.",
+      "odpovediNaOtazky": [
+        {
+          "text": "Co mam delat jako prvni?",
+          "IdNasledneOtazky": 304
+        },
+        {
+          "text": "Nejsem si jisty jestli to zvladnu",
+          "IdNasledneOtazky": 305
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 304,
+      "replika": "U jezera vytvoris most jen pomoci sve mysli. A co chces vylepsit pomoci prastareho kouzla?",
+      "odpovediNaOtazky": [
+        {
+          "text": "Chtel bych zlepsit daydreaming",
+          "IdNasledneOtazky": -301
+        },
+        {
+          "text": "Chtel bych zlepsit lucidni sneni",
+          "IdNasledneOtazky": -302
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 305,
+      "replika": "Pochybnosti te zabiji driv nez zlo. Pokud uteces ted, mesto padne.",
+      "odpovediNaOtazky": [
+        {
+          "text": "Mas pravdu pujdu trenovat",
+          "IdNasledneOtazky": 304
+        }
+      ]
+    },
+
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 340,
+      "replika": "Most jsi vytvoril lepe nez jsem cekala. Tvuj otec by byl hrdy. Ale sila sama nestaci.",
+      "odpovediNaOtazky": [
+        {
+          "text": "Co tim myslis?",
+          "IdNasledneOtazky": 341
+        },
+        {
+          "text": "Bylo to tezke ale zvladl jsem to",
+          "IdNasledneOtazky": 341
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 341,
+      "replika": "Ted te ceká Oblast X. Mistni sny jsou zamcene hadankou, ktera se otevre jen tomu, kdo pochopi tok myslenek.",
+      "odpovediNaOtazky": [
+        {
+          "text": "Jak ji mam vyresit?",
+          "IdNasledneOtazky": 342
+        },
+        {
+          "text": "Zni to nebezpecne",
+          "IdNasledneOtazky": 343
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 342,
+      "replika": "Nepokousej se ji zlomit silou. Sleduj stiny snu. Co si jeste pred odchodem budes chtit zlepsit.",
+      "odpovediNaOtazky": [
+        {
+          "text": "daydreaming",
+          "IdNasledneOtazky": -303
+        },
+        {
+          "text": "lucidni sneni",
+          "IdNasledneOtazky": -304
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 343,
+      "replika": "Strach je soucast snu. Kdo mu podlehne, ten zabloudi.",
+      "odpovediNaOtazky": [
+        {
+          "text": "Rozumim pujdu tam",
+          "IdNasledneOtazky": 342
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 401,
+      "replika": "Citim to Oblast X se uklidnila Zvladl jsi zkousku lepe nez jsem cekala",
+      "odpovediNaOtazky": [
+        {
+          "text": "Bylo to tezke ale pochopil jsem co jsi myslela stiny snu",
+          "IdNasledneOtazky": 402
+        },
+        {
+          "text": "Mel jsem strach ze to pokazim",
+          "IdNasledneOtazky": 402
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 402,
+      "replika": "Strach je soucast sily Kdo ho nema ten umira prvni Ty ses mu postavil",
+      "odpovediNaOtazky": [
+        {
+          "text": "Co me ceka ted",
+          "IdNasledneOtazky": 403
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 403,
+      "replika": "Na severu se rozpadla hora snu Bez ni se zlo siri do udoli Musis ji znovu zformovat",
+      "odpovediNaOtazky": [
+        {
+          "text": "Jak to mam dokazat",
+          "IdNasledneOtazky": 404
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 404,
+      "replika": "Hora vznikne jen tehdy kdyz spojisz mysl strach a vuli v jedno Nebude to jako most Tohle te bude bolet",
+      "odpovediNaOtazky": [
+        {
+          "text": "Jdu do toho",
+          "IdNasledneOtazky": -401
+        },
+        {
+          "text": "Nevim jestli jsem pripraveny",
+          "IdNasledneOtazky": 405
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 405,
+      "replika": "Ja verim ze jsi",
+      "odpovediNaOtazky": [
+        {
+          "text": "dekji, jdu do toho",
+          "IdNasledneOtazky": -401
+        }
+
+      ]
+    },
+
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 501,
+      "replika": "Hora drzi Zlo se zpomalilo Ale ted prisel horsi problem",
+      "odpovediNaOtazky": [
+        {
+          "text": "Co se stalo",
+          "IdNasledneOtazky": 502
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 502,
+      "replika": "Sopka snu se probudila Je plna hnevu a strachu Pokud vybuchne Civitas zanikne",
+      "odpovediNaOtazky": [
+        {
+          "text": "Tak ji musim vyhasnout",
+          "IdNasledneOtazky": 503
+        },
+        {
+          "text": "To zni silnejsi nez ja",
+          "IdNasledneOtazky": 503
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 503,
+      "replika": "Sila tu nestaci Musis uklidnit jadro snu Jinak bude bojovat proti tobe",
+      "odpovediNaOtazky": [
+        {
+          "text": "Jak se uklidnuje sopka",
+          "IdNasledneOtazky": 504
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 504,
+      "replika": "Najdes tri prameny chladu Kdyz je spojisz v jadru sopky plamen zhasne",
+      "odpovediNaOtazky": [
+        {
+          "text": "Rozumim vyrazim hned",
+          "IdNasledneOtazky": -501
+        },
+        {
+          "text": "A kdyz selzu",
+          "IdNasledneOtazky": 505
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 505,
+      "replika": "Pak zhasne mesto drive nez sopka",
+      "odpovediNaOtazky": [
+        {
+          "text": "To nedopustim jdu",
+          "IdNasledneOtazky": -501
+        }
+      ]
+    },
+
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 601,
+      "replika": "Citim pach krve snu Jester padl Ze zeme se mu uz nevrati",
+      "odpovediNaOtazky": [
+        {
+          "text": "Byl silny Skoro jsem to nezvladl",
+          "IdNasledneOtazky": 602
+        },
+        {
+          "text": "Musel jsem to udelat",
+          "IdNasledneOtazky": 602
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 602,
+      "replika": "Nezabil jsi zvire Zabil jsi strach ktery ho drzel pri zivote",
+      "odpovediNaOtazky": [
+        {
+          "text": "Co to znamena",
+          "IdNasledneOtazky": 603
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 603,
+      "replika": "Znamena to ze se blizis pravde Ale ted uz neni cesty zpet",
+      "odpovediNaOtazky": [
+        {
+          "text": "Jsem pripraven pokracovat",
+          "IdNasledneOtazky": 604
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 604,
+      "replika": "Existuje misto kam se sny chodi rozpadnout Pekelne mesto",
+      "odpovediNaOtazky": [
+        {
+          "text": "Proc bych tam mel jit",
+          "IdNasledneOtazky": 605
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 605,
+      "replika": "Protoze tam prezivaji jen ti kteri prijali svou temnotu Tam se skryva odpoved na Noirceura",
+      "odpovediNaOtazky": [
+        {
+          "text": "Zni to jako past",
+          "IdNasledneOtazky": 606
+        },
+        {
+          "text": "Tak tam pujdu",
+          "IdNasledneOtazky": 606
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 606,
+      "replika": "Je to past Ale jina cesta neexistuje Pokud se tam zlomis ztratis se navzdy",
+      "odpovediNaOtazky": [
+        {
+          "text": "Nevyhybam se tomu",
+          "IdNasledneOtazky": -601
+        },
+        {
+          "text": "Jdu tam i kdyby me to melo znicit",
+          "IdNasledneOtazky": -602
+        }
+      ]
     }
+
+
+
+
+
   ]
 
 

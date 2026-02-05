@@ -1,5 +1,7 @@
 package Postavy;
 
+import Konzole.Konzole;
+
 import java.util.ArrayList;
 
 public abstract class Postavy {
@@ -30,8 +32,13 @@ public abstract class Postavy {
         return jmeno;
     }
 
-    public void setZivoty(int zivoty) {
+    public void setZivoty(Konzole konzole, int zivoty) {
         this.zivoty = zivoty;
+
+
+        if (this.zivoty >= 0){
+
+        }
     }
 
     public boolean isJeZabitelny() {

@@ -11,7 +11,7 @@ public class Samir extends Postavy {
     private int pocetSpankuDoma = 0;
     private boolean jeUkryty;
 
-    //TODO popremyslet o tom jestli je vubec potreba mit atribut spi
+
     private boolean spi;
     private boolean jeVBoji;
     private boolean zpusobilyKeSpani;

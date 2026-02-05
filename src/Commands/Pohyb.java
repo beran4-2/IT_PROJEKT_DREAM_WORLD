@@ -13,8 +13,16 @@ public class Pohyb implements Command {
         if (konzole.getAktualniLokace().getNaslednik() != null) {
             lokace = hledacDalsiLokace(konzole.getAktualniLokace(), konzole);
             konzole.setAktualniLokace(lokace);
-            return "Nachazis se v lokaci " + konzole.getAktualniLokace().getNazev();
-
+            if (konzole.getAktualniLokace().getNazev().equals("Civitas Domov")){
+                konzole.getSamir().setZpusobilyKeSpani(true);
+            }else if (konzole.getInventar().aktivniPredmet().equals("maska spanku")){
+                konzole.getSamir().setZpusobilyKeSpani(true);
+            }
+            else konzole.getSamir().setZpusobilyKeSpani(false);
+            if (konzole.getAktualniLokace().isJeVMistnostiSouboj()){
+                konzole.getSamir().setJeVBoji(true);
+            }else konzole.getSamir().setJeVBoji(false);
+            return "Sel jsi dal ";
         }else return "Dalsi mistnost neni, dale jit nemuzes";
        }else return  "Nesplnil si hlavni ukol";
 
@@ -22,6 +30,10 @@ public class Pohyb implements Command {
     else if (prikaz2.equals("zpatky")) {
         lokace = hledacPredchoziLokace(konzole.getAktualniLokace(), konzole);
         konzole.setAktualniLokace(lokace);
+        if (konzole.getAktualniLokace().getNazev().equals("Civitas Domov")){
+            konzole.getSamir().setZpusobilyKeSpani(true);
+        }else if (konzole.getInventar().aktivniPredmet().equals("maska spanku"));
+        else konzole.getSamir().setZpusobilyKeSpani(false);
         return "Sel jsi zpet, momentalne se nachazis v lokaci " + konzole.getAktualniLokace().getNazev();
 
 

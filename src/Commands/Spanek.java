@@ -6,7 +6,6 @@ import java.util.jar.JarEntry;
 
 public class Spanek implements Command{
 
-    //TODO zde doputuji 2 stringy muze i jen jeden ale ten druhy (lucidne snit) bude slouzit k souboji dostupnych nepratel, po zadani prikazu se hraci ukaze tabulka moznych zabitelnych nepratel a hrac si bude muset vybrat koho chce zabit nebo moznost x ktera vystoupi z listu a hrac neudela nic
     @Override
     public String vykonat(Konzole konzole, String string) {
         String konecnyVypis = "";
@@ -23,7 +22,6 @@ public class Spanek implements Command{
                 }
                 if (string.equals("lucidni sneni")){
                     if (konzole.getSamir().getUrovenLucidnihoSneni() > 0) {
-                        //TODO tady dolnim nejakou tabulku nebo neco kde si hrac vybere koho bude chtit zabit, pokud nebude koho vrati se ze nemuze nikoho zabit
                         konecnyVypis = konecnyVypis + konzole.getSouboj().lucidniSouboj(konzole);
 
 
