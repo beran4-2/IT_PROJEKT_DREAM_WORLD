@@ -246,13 +246,22 @@
       "otevreDalsiLokaci": false,
       "ukolSplnen": false
     },
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Vrat se za Magou",
+      "popisUkolu": "XXXXX",
+      "idUkolu": 10,
+      "idNaslednehoUkolu": 11,
+      "otevreDalsiLokaci": false,
+      "ukolSplnen": false
+    },
 
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Vyhasnout sopku",
       "popisUkolu": "XXXXX",
-      "idUkolu": 10,
-      "idNaslednehoUkolu": 11,
+      "idUkolu": 11,
+      "idNaslednehoUkolu": 12,
       "otevreDalsiLokaci": false,
       "ukolSplnen": false
     },
@@ -260,15 +269,6 @@
       "typUkolu": "hlavni",
       "nazevUkolu": "Vrat se za Magou",
       "popisUkolu": "pomoci commandu mluvit si promluv s Magou",
-      "idUkolu": 11,
-      "idNaslednehoUkolu": 12,
-      "otevreDalsiLokaci": true,
-      "ukolSplnen": false
-    },
-    {
-      "typUkolu": "hlavni",
-      "nazevUkolu": "Prozkoumej pekelne mesto",
-      "popisUkolu": "XXXXX",
       "idUkolu": 12,
       "idNaslednehoUkolu": 13,
       "otevreDalsiLokaci": true,
@@ -276,10 +276,19 @@
     },
     {
       "typUkolu": "hlavni",
-      "nazevUkolu": "Vrat se za Magou",
-      "popisUkolu": "pomoci commandu mluvit si promluv s Magou",
+      "nazevUkolu": "Prozkoumej pekelne mesto",
+      "popisUkolu": "XXXXX",
       "idUkolu": 13,
       "idNaslednehoUkolu": 14,
+      "otevreDalsiLokaci": true,
+      "ukolSplnen": false
+    },
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Vrat se za Magou",
+      "popisUkolu": "pomoci commandu mluvit si promluv s Magou",
+      "idUkolu": 14,
+      "idNaslednehoUkolu": 15,
       "otevreDalsiLokaci": true,
       "ukolSplnen": false
     },
