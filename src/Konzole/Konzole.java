@@ -59,6 +59,70 @@ public class Konzole {
     public static Scanner scanner = new Scanner(System.in);
 
 
+    public HashMap<String, Command> getMapaPrikazu() {
+        return mapaPrikazu;
+    }
+
+    public void setMapaPrikazu(HashMap<String, Command> mapaPrikazu) {
+        this.mapaPrikazu = mapaPrikazu;
+    }
+
+    public void setData(HerniNacitani data) {
+        this.data = data;
+    }
+
+    public void setSamir(Samir samir) {
+        this.samir = samir;
+    }
+
+    public void setUkol(Ukol ukol) {
+        this.ukol = ukol;
+    }
+
+    public void setInventar(Inventar inventar) {
+        this.inventar = inventar;
+    }
+
+    public void setHodnaPostava(HodnaPostava hodnaPostava) {
+        this.hodnaPostava = hodnaPostava;
+    }
+
+    public void setZlaPostava(ZlaPostava zlaPostava) {
+        this.zlaPostava = zlaPostava;
+    }
+
+    public void setOtazka(Otazka otazka) {
+        this.otazka = otazka;
+    }
+
+    public void setPredmet(Predmet predmet) {
+        this.predmet = predmet;
+    }
+
+    public MenuHry getMenu() {
+        return menu;
+    }
+
+    public void setMenu(MenuHry menu) {
+        this.menu = menu;
+    }
+
+    public void setSouboj(Souboj souboj) {
+        this.souboj = souboj;
+    }
+
+    public void setLokace(Lokace lokace) {
+        this.lokace = lokace;
+    }
+
+    public static Scanner getScanner() {
+        return scanner;
+    }
+
+    public static void setScanner(Scanner scanner) {
+        Konzole.scanner = scanner;
+    }
+
     public void hra(){
         data = HerniNacitani.nactiDataZeSlozky("/herniSvet.json");
         inicializace();

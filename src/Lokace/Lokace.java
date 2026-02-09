@@ -101,4 +101,20 @@ public class Lokace {
     public void setJeVMistnostiSouboj(boolean jeVMistnostiSouboj) {
         this.jeVMistnostiSouboj = jeVMistnostiSouboj;
     }
+
+    public void setNazev(String nazev) {
+        this.nazev = nazev;
+    }
+
+    public void setPopis(String popis) {
+        this.popis = popis;
+    }
+
+    public void setNaslednik(String naslednik) {
+        this.naslednik = naslednik;
+    }
+
+    public void setNapovedaKMistnosti(String napovedaKMistnosti) {
+        this.napovedaKMistnosti = napovedaKMistnosti;
+    }
 }

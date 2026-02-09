@@ -127,4 +127,40 @@ public class HerniNacitani {
         System.out.println("Pocet ukolu je: " + ukoly.size());
         System.out.print("Pocet otazek je: " + otazky.size());
     }
+
+    public void setLokace(ArrayList<Lokace> lokace) {
+        this.lokace = lokace;
+    }
+
+    public void setHodnePostavy(ArrayList<HodnaPostava> hodnePostavy) {
+        HodnePostavy = hodnePostavy;
+    }
+
+    public void setZlePostavy(ArrayList<ZlaPostava> zlePostavy) {
+        ZlePostavy = zlePostavy;
+    }
+
+    public void setPredmety(ArrayList<Predmet> predmety) {
+        this.predmety = predmety;
+    }
+
+    public void setUkoly(ArrayList<Ukol> ukoly) {
+        this.ukoly = ukoly;
+    }
+
+    public void setOtazky(ArrayList<Otazka> otazky) {
+        this.otazky = otazky;
+    }
+
+    public ArrayList<Souboj> getTypyUtokuDayDream() {
+        return typyUtokuDayDream;
+    }
+
+    public void setTypyUtokuDayDream(ArrayList<Souboj> typyUtokuDayDream) {
+        this.typyUtokuDayDream = typyUtokuDayDream;
+    }
+
+    public void setTypyUtokuLucidni(ArrayList<Souboj> typyUtokuLucidni) {
+        this.typyUtokuLucidni = typyUtokuLucidni;
+    }
 }
