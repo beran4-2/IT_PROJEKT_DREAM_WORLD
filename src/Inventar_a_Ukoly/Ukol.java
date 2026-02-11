@@ -17,6 +17,17 @@ public class Ukol {
     private int idAktualnihoUkolu;
 
 
+    public Ukol(String typUkolu, String nazevUkolu, String popisUkolu, int idUkolu, int idNaslednehoUkolu, boolean otevreDalsiLokaci, boolean ukolSplnen, ArrayList<Ukol> seznamMomentalnichHlavnichUkolu, ArrayList<Ukol> seznamMomentalnichVedljesichUkolu) {
+        this.typUkolu = typUkolu;
+        this.nazevUkolu = nazevUkolu;
+        this.popisUkolu = popisUkolu;
+        this.idUkolu = idUkolu;
+        this.idNaslednehoUkolu = idNaslednehoUkolu;
+        this.otevreDalsiLokaci = otevreDalsiLokaci;
+        this.ukolSplnen = ukolSplnen;
+        this.seznamMomentalnichHlavnichUkolu = seznamMomentalnichHlavnichUkolu;
+        this.seznamMomentalnichVedljesichUkolu = seznamMomentalnichVedljesichUkolu;
+    }
 
     public Ukol() {
     }

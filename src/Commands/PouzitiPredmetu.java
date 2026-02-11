@@ -1,5 +1,4 @@
 package Commands;
-
 import Konzole.Konzole;
 import Predmety.Predmet;
 import java.util.Arrays;

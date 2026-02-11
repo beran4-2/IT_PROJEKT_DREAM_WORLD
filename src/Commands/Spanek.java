@@ -2,8 +2,6 @@ package Commands;
 
 import Konzole.Konzole;
 
-import java.util.jar.JarEntry;
-
 public class Spanek implements Command{
 
     @Override
@@ -27,13 +25,13 @@ public class Spanek implements Command{
 
 
                     }else konecnyVypis = konecnyVypis + "Nemas dostatecnou uroven pro lucidni sneni\n";
+                    konecnyVypis = konecnyVypis + "vyspal ses";
 
-                }else if (string.equals("")){
+                }else if (string.equals("Vyspal ses")){
 
                 }else konecnyVypis = "neplatna 2. cast prikazu";
 
                 konzole.getSamir().setSpi(false);
-                konecnyVypis = konecnyVypis + "vyspal ses";
             }
             else konecnyVypis = "Spat nemuzes";
         return konecnyVypis;
