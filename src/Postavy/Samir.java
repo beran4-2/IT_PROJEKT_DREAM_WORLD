@@ -1,20 +1,27 @@
+/**
+ * Tato trida slouzi ke konstrukci hlavni postavy (Samira)
+ */
+
 package Postavy;
 
 import Konzole.Konzole;
 import Predmety.Predmet;
 
-import java.util.ArrayList;
 
 public class Samir extends Postavy {
     private int urovenDaydreamingu;
     private int urovenLucidnihoSneni;
     private int pocetSpankuDoma = 0;
     private boolean jeUkryty;
-
-
     private boolean spi;
     private boolean jeVBoji;
     private boolean zpusobilyKeSpani;
+
+    /**
+     * @param zpusobilyKeSpani urcuje zda je hlavni postava zpusobila ke spanku
+     * @param jeUkryty urcuje zda je hlavni postava skryta
+     */
+
 
     public Samir(String jmeno, int zivoty, int fyzickaSila, boolean jeZabitelny, int urovenDaydreamingu, int urovenLucidnihoSneni, int pocetSpankuDoma, boolean jeUkryty, boolean spi, boolean jeVBoji, boolean zpusobilyKeSpani) {
         super(jmeno, zivoty, fyzickaSila, jeZabitelny);
@@ -32,10 +39,22 @@ public class Samir extends Postavy {
     public Samir() {
     }
 
+
+    /**
+     * Tato metoda zlepsi schopnsoti kdyz uzivatel aktivuje predmet
+     * @param konzole pro pristup k vsech hernim datum
+     * @param predmet
+     */
     public void aktivaceSchopnosti(Konzole konzole, Predmet predmet) {
       konzole.getSamir().setUrovenDaydreamingu(konzole.getSamir().getUrovenDaydreamingu() + predmet.getZvyseniDaydreamingu());
       konzole.getSamir().setUrovenLucidnihoSneni(konzole.getSamir().getUrovenLucidnihoSneni() + predmet.getZvyseniLucidnihoSneni());
     }
+
+    /**
+     * Tato metoda odebere statistiky z hracovych vlastnosti po odebrani predmetu z pouzivanych
+     * @param samir
+     * @param predmet
+     */
     public void deaktivaceSchopnosti(Samir samir, Predmet predmet){
         samir.setUrovenDaydreamingu(samir.getUrovenDaydreamingu() - predmet.getZvyseniDaydreamingu());
         samir.setUrovenLucidnihoSneni(samir.getUrovenLucidnihoSneni() - predmet.getZvyseniLucidnihoSneni());

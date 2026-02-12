@@ -8,7 +8,6 @@
 
 package HerniNacitani;
 import Inventar_a_Ukoly.Ukol;
-import Komunikace.Odpoved;
 import Komunikace.Otazka;
 import Konzole.Konzole;
 import Lokace.Lokace;
@@ -34,8 +33,11 @@ public class HerniNacitani {
     private ArrayList<Souboj>typyUtokuLucidni;
 
 
-
-
+    /**
+     * Metoda ktera nacte data z jsonu
+     * @param cestaSlozky
+     * @return
+     */
     public static HerniNacitani nactiDataZeSlozky(String cestaSlozky) {
         Gson gson = new Gson();
         try (InputStream is = Konzole.class.getResourceAsStream(cestaSlozky)) {
@@ -52,6 +54,11 @@ public class HerniNacitani {
         }
     }
 
+    /**
+     * Metoda ktera nacte veci z txt souboru
+     * @param cestaKSouboru
+     * @return
+     */
     public String nactiDataZeSouboru(String cestaKSouboru){
         String vypis = "";
         try {
@@ -114,11 +121,12 @@ public class HerniNacitani {
         return typyUtokuLucidni;
     }
 
-    public void vypisLokaci(){
-        for (int i = 0; i < lokace.size(); i++) {
-            System.out.println(lokace.get(i));
-        }
-    }
+
+
+
+    /**
+     * Testovaci metoda jestli se nacetl spravny pocet z jsonu
+     */
     public void nacetliSeSouborySpravne(){
         System.out.println("Pocet lokaci je: " + lokace.size());
         System.out.println("Pocet hodnych postav je: " + HodnePostavy.size());

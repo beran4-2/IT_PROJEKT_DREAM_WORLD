@@ -1,6 +1,8 @@
+/**
+ * Tato trida slouzi ke konstrukci hodnych postav
+ */
+
 package Postavy;
-import Inventar_a_Ukoly.Ukol;
-import java.util.ArrayList;
 
 public class HodnaPostava extends Postavy {
 

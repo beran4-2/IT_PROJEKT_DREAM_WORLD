@@ -5,7 +5,5 @@
             Konzole konzole = new Konzole();
             konzole.hra();
 
-            //TODO dodelat posledmi ukol, ktery ukonci hru
-
         }
     }

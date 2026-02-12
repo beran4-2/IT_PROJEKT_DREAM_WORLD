@@ -1,9 +1,10 @@
+/**
+ * Tato trida slouzi ke konstrukci lokaci a je zde zpracovavana logika idDialogu
+ */
+
 package Lokace;
 
 import Konzole.Konzole;
-import Postavy.Postavy;
-
-import java.util.ArrayList;
 
 public class Lokace {
     private String nazev;
@@ -14,11 +15,6 @@ public class Lokace {
     private int idDostupnehoDialogu;
     private boolean mistnostProzkoumana;
     private boolean jeVMistnostiSouboj;
-
-
-    public void dejVMistonosti() {
-
-    }
 
     public Lokace(String nazev, boolean ukolHotovy, String popis, String naslednik, String napovedaKMistnosti, int idDostupnehoDialogu, boolean jeVMistnostiSouboj) {
         this.nazev = nazev;
@@ -33,6 +29,14 @@ public class Lokace {
     public Lokace(){
 
     }
+
+    /**
+     * Metoda ktera podle atributu idDialogu hleda nove odemcene dialogy
+     * @param konzole pro pristup k vsech hernim datum
+     * @param idDialogu vstup ktery zadavam podle potreby
+     * @param kde vstup ktery urci kam se ma idDialogu priradit
+     * @return
+     */
     public String novyDostupnyDialog(Konzole konzole, int idDialogu, String kde){
         for (int i = 0; i < konzole.getData().getLokace().size(); i++) {
             if (konzole.getData().getLokace().get(i).getNazev().equals(kde)){

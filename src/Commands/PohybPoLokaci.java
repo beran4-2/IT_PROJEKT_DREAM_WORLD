@@ -8,6 +8,11 @@ import java.util.ArrayList;
 
 
 public class PohybPoLokaci implements Command {
+    /**
+     * Tento command umzni hraci prozkoumat mistnost, ale pokud ma v mistnosti ukol tak se mu spusti
+     * @param konzole pro pristup k vsech hernim datum
+     * @return
+     */
     public String vykonat(Konzole konzole, String string) {
         String celyPopis = "";
         if (konzole.getUkol().najitNazevAktualniho().equals("Zformovani mostu") && konzole.getAktualniLokace().getNazev().equals("Jezero")){
@@ -40,8 +45,11 @@ public class PohybPoLokaci implements Command {
     }
 
 
-
-
+    /**
+     * Vypise hraci dostupnou postavu pro komunikaci
+     * @param konzole pro pristup k vsech hernim datum
+     * @return dostupnou postavu
+     */
     public String postavyVLokaci(Konzole konzole){
         String vypisPostavy = "dostupna hodna postava ke komunikaci: ";
         ArrayList<HodnaPostava> postavy = konzole.getData().getHodnePostavy();

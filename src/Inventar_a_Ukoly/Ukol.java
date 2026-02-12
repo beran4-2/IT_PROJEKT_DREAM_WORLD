@@ -4,6 +4,9 @@ import Konzole.Konzole;
 
 import java.util.ArrayList;
 
+/**
+ * Tato trida slouzi ke konstrukci ukolu a take se v ni zpracovavaji splnene ukoly
+ */
 public class Ukol {
     private String typUkolu;
     private String nazevUkolu;
@@ -16,7 +19,9 @@ public class Ukol {
     private ArrayList<Ukol> seznamMomentalnichVedljesichUkolu = new ArrayList<>();
     private int idAktualnihoUkolu;
 
-
+    /**
+     * Konstruktor ktery je vyuzit v testech
+     */
     public Ukol(String typUkolu, String nazevUkolu, String popisUkolu, int idUkolu, int idNaslednehoUkolu, boolean otevreDalsiLokaci, boolean ukolSplnen, ArrayList<Ukol> seznamMomentalnichHlavnichUkolu, ArrayList<Ukol> seznamMomentalnichVedljesichUkolu) {
         this.typUkolu = typUkolu;
         this.nazevUkolu = nazevUkolu;
@@ -54,7 +59,13 @@ public class Ukol {
     }
 
 
-
+    /**
+     * Metoda ktera podle vstupu splni ukol
+     * @param konzole pro pristup k vsech hernim datum
+     * @param idUkolu ktery ma byt splnen
+     * @param typUkolu ktery ma byt splnen
+     * @return vypis ze hrac splnil ukol
+     */
     public String splneniUkolu(Konzole konzole, int idUkolu, String typUkolu){
         splnitUkol(idUkolu, typUkolu);
         String vypis = "";
@@ -76,6 +87,13 @@ public class Ukol {
 
         }else return "";
     }
+
+
+    /**
+     * pomocna metoda pro splneni ukolu
+     * @param idUkolu ktery ma byt splnen
+     * @param typUkolu ktery ma byt splnen
+     */
     public void splnitUkol(int idUkolu, String typUkolu){
         if (typUkolu.equals("hlavni")){
             for (int i = 0; i < seznamMomentalnichHlavnichUkolu.size(); i++) {
@@ -95,6 +113,13 @@ public class Ukol {
         }
     }
 
+
+    /**
+     * pomocna metoda pro instantni pridani dalsiho ukolu
+     * @param konzole pro pristup k vsech hernim datum
+     * @param id dalsiho ukolu
+     * @return novy ukol
+     */
     public Ukol pridaniNovehoUkolu(Konzole konzole, int id) {
         Ukol ukol = null;
         for (int i = 0; i < konzole.getData().getUkoly().size(); i++) {
@@ -105,17 +130,28 @@ public class Ukol {
         return ukol;
     }
 
+
+    /**
+     * Pomocna metoda ktera hleda nasledny ukol
+     * @param konzole pro pristup k vsech hernim datum
+     * @param hledaneId id ktere ma metoda najit
+     * @return
+     */
     public String nalezeniDalsihoUkolu(Konzole konzole, int hledaneId){
         for (int i = 0; i < konzole.getData().getUkoly().size(); i++) {
             if (konzole.getData().getUkoly().get(i).getIdUkolu() == hledaneId){
                 seznamMomentalnichHlavnichUkolu.add(konzole.getData().getUkoly().get(i));
                 return "Mas novy ukol: " + konzole.getData().getUkoly().get(i).getNazevUkolu();
-            }if (konzole.getData().getUkoly().get(i).getIdNaslednehoUkolu() < 0){
+            }
+            if (konzole.getData().getUkoly().get(i).getIdNaslednehoUkolu() < 0){
                 konzole.setKonecHry(true);
+                return "Dohral si hru";
             }
 
+
         }
-    return "";
+        return "";
+
     }
     public String najitNazevAktualniho(){
         if (seznamMomentalnichHlavnichUkolu.size() > 0){
@@ -124,7 +160,11 @@ public class Ukol {
         }else return "ukol nemas";
     }
 
-
+    /**
+     * Hlavni ukol pro lokaci Jezero
+     * @param konzole pro pristup k vsech hernim datum
+     * @return metodu splneniUkolu
+     */
     public String herniUkolMost(Konzole konzole) {
         boolean ukolSplnen = false;
         do {
@@ -146,6 +186,12 @@ public class Ukol {
 
         return splneniUkolu(konzole, idAktualnihoUkolu, "hlavni");
     }
+
+    /**
+     * Hlavni ukol pro lokaci Oblast X
+     * @param konzole pro pristup k vsech hernim datum
+     * @return metodu splneniUkolu
+     */
     public String herniUkolOblastXStiny(Konzole konzole) {
         boolean ukolSplnen = false;
 
@@ -169,6 +215,12 @@ public class Ukol {
 
         return splneniUkolu(konzole, idAktualnihoUkolu, "hlavni");
     }
+
+    /**
+     * Hlavni ukol pro lokaci Sopka
+     * @param konzole pro pristup k vsech hernim datum
+     * @return metodu splneniUkolu
+     */
     public String herniUkolSopka(Konzole konzole) {
         boolean ukolSplnen = false;
 
@@ -196,6 +248,12 @@ public class Ukol {
         return splneniUkolu(konzole, idAktualnihoUkolu, "hlavni");
     }
 
+
+    /**
+     * Hlavni ukol pro lokaci Hory
+     * @param konzole pro pristup k vsech hernim datum
+     * @return metodu splneniUkolu
+     */
     public String herniUkolHory(Konzole konzole) {
         boolean ukolSplnen = false;
 

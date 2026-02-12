@@ -7,7 +7,12 @@ import Lokace.Lokace;
 public class Pohyb implements Command {
     private Lokace lokace;
 
-
+    /**
+     * Tento command hraci umoznuje pohybovat se mezi lokacemi
+     * @param konzole pro pristup k vsech hernim datum
+     * @param prikaz2 vstup urcuje jestli hrac chce jit dal nebo zpatky
+     * @return jestli se hraci podarilo jit dal
+     */
     public String vykonat(Konzole konzole, String prikaz2) {
     if (prikaz2.equals("dal")) {
        if (konzole.getAktualniLokace().isUkolHotovy() == true) {
@@ -46,7 +51,7 @@ public class Pohyb implements Command {
     /**
      * Tato metoda hleda predchozi lokaci, tim ze projde ArrayList lokaci, jestli se nazev aktualni lokace shoduje s naslednikem u jine lokace, pokud ano tak tato metoda vrati lokaci
      * @param aktualniLokace
-     * @param konzole
+     * @param konzole pro pristup k vsech hernim datum
      * @return
      */
     public Lokace hledacPredchoziLokace(Lokace aktualniLokace, Konzole konzole) {
@@ -67,7 +72,7 @@ public class Pohyb implements Command {
     /**
      * Tato metoda hleda dalsi lokaci, tim ze projde ArrayList lokaci, jestli se naslednik aktualni lokace shoduje s nazvem jine lokace, pokud ano tak tato metoda vrati lokaci
      * @param aktualniLokace
-     * @param konzole
+     * @param konzole pro pristup k vsech hernim datum
      * @return
      */
     public Lokace hledacDalsiLokace(Lokace aktualniLokace, Konzole konzole){

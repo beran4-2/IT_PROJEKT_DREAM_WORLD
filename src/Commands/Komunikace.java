@@ -9,7 +9,10 @@ import java.util.Scanner;
 
 public class Komunikace implements Command {
 
-
+    /**
+     * Zde se zpracuji vsechny pomocne metody a podle id u odpovedi se ve switchi vybere moznost ktera nastane
+     * @param konzole pro pristup k vsech hernim datum
+     */
     public String vykonat(Konzole konzole, String string) {
         String vypis = "";
         if (konzole.getAktualniLokace().isMistnostProzkoumana()) {
@@ -87,7 +90,7 @@ public class Komunikace implements Command {
 
     /**
      * metoda kde se vyuzivaji vsechny vytvorene metody
-     * @param konzole
+     * @param konzole pro pristup k vsech hernim datum
      * @return
      */
     public int dialogSPostavou(Konzole konzole){
@@ -120,7 +123,7 @@ public class Komunikace implements Command {
 
     /**
      * Tato metoda si vezme vstup a podle neho najde list moznych odpovedi urcite otazky
-     * @param otazka
+     * @param otazka se kterou komunikace pracuje
      * @return
      */
     public String vypisOdpovedi(Otazka otazka){
@@ -133,7 +136,7 @@ public class Komunikace implements Command {
 
     /**
      * V teto metode se zpracuje uzivateluv vstup a kam jeho dialog povede
-     * @param otazka
+     * @param otazka se kterou komunikace pracuje
      * @return
      */
 
@@ -163,10 +166,9 @@ public class Komunikace implements Command {
 
     /**
      * Tato metoda hleda v listu otazku ktere se id shoduje s idDalsiOtazky u odpovedi
-     * @param konzole
-     * @param otazka
-     * @param idDalsiOtazka
-     * @return
+     * @param konzole pro pristup k vsech hernim datum
+     * @param otazka se kterou komunikace pracuje
+     * @return dalsi otazku
      */
     public Otazka nalezeniDalsiOtazky(Konzole konzole, Otazka otazka, int idDalsiOtazka){
         for (int i = 0; i < konzole.getData().getOtazky().size(); i++) {

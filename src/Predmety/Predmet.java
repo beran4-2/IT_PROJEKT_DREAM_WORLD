@@ -1,5 +1,9 @@
 package Predmety;
 
+/**
+ * tato trida slouzi jen pro konstrukci predmetu
+ */
+
 public class Predmet {
     private String nazev;
     private int zvyseniLucidnihoSneni;
@@ -8,6 +12,15 @@ public class Predmet {
     private String popisPredmetu;
     private String typPredmetu;
     private int aktivniPredmety;
+
+    /**
+     * @param nazev
+     * @param zvyseniLucidnihoSneni zvysi uroven lucidniho sneni
+     * @param zvyseniDaydreamingu zvysi uroven daydreamingu
+     * @param jePouzivany znamena jestli je predmetu aktivni jelikoz hrac muze mit z inventare pouze 1 aktivni predmet
+     * @param popisPredmetu
+     * @param typPredmetu
+     */
 
     public Predmet(String nazev, int zvyseniLucidnihoSneni, int zvyseniDaydreamingu, boolean jePouzivany, String popisPredmetu, String typPredmetu) {
         this.nazev = nazev;

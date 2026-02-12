@@ -13,7 +13,6 @@ import Predmety.Predmet;
 import souboj.Souboj;
 
 import java.util.HashMap;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -32,29 +31,6 @@ public class Konzole {
     private MenuHry menu;
     private Souboj souboj;
     private Lokace lokace;
-
-    /*public static int zpracovaniOdpovedi(Otazka otazka){
-        boolean spravnyVstup = false;
-        int vyberZOdpvedi = 0;
-        do {
-            System.out.print(">>");
-            try{
-                vyberZOdpvedi =Konzole.scanner.nextInt();
-                Konzole.scanner.nextLine();
-                if (vyberZOdpvedi >= 1 && vyberZOdpvedi <= otazka.getOdpovediNaOtazky().size()){
-                    spravnyVstup = true;
-                }else {
-                    System.out.println("Neplatny vstup, zadej od 1 do " + otazka.getOdpovediNaOtazky().size());
-                }
-            }catch (InputMismatchException e){
-                System.out.println("Zadali jste spatny vstup");
-                Konzole.scanner.nextLine();
-            }
-        }while(!spravnyVstup);
-        System.out.println("\nOdpovedel si: " + otazka.getOdpovediNaOtazky().get(vyberZOdpvedi-1).getText() + "\n" );
-
-        return otazka.getOdpovediNaOtazky().get(vyberZOdpvedi-1).getIdNasledneOtazky();
-    }*/
 
     public static Scanner scanner = new Scanner(System.in);
 

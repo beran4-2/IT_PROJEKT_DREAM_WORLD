@@ -2,8 +2,9 @@ package Postavy;
 
 import Konzole.Konzole;
 
-import java.util.ArrayList;
-
+/**
+ * Materska trida postav
+ */
 public abstract class Postavy {
     protected String jmeno;
     protected String kdeSeNachazi;

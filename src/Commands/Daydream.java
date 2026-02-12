@@ -3,8 +3,11 @@ package Commands;
 import Konzole.Konzole;
 
 public class Daydream implements Command {
-
-
+    /**
+     * Command ktery hracovi umozni pomoci prikauzu se schovat, ukryt a nebo bojovat
+     * @param konzole pro pristup k vsech hernim datum
+     * @return
+     */
     @Override
     public String vykonat(Konzole konzole, String string) {
         if (konzole.getSamir().getUrovenDaydreamingu() > 0) {

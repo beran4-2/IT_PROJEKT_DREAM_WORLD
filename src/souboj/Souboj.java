@@ -1,9 +1,12 @@
+/**
+ * V teto tride se zpracovava souboj hrace i protivniku
+ */
+
 package souboj;
 
 import Konzole.Konzole;
 import Lokace.Lokace;
 import Postavy.HodnaPostava;
-import Postavy.Postavy;
 import Postavy.ZlaPostava;
 
 import java.util.ArrayList;
@@ -31,9 +34,13 @@ public class Souboj {
 
     }
 
+
+    /**
+     * toto je mtoda pro souboj ve snu, hraci vyskoci tabulka s vypasnyma lokacema a vybere si v jake mistnosti chce zautocit, pokuud je v mistnosti posataa ktera nechce bojovat
+     * @param konzole pro pristup k vsech hernim datum
+     * @return pokud je v mistnosti protivnik tak to vrati kolik mu uzivatel ubral, pokud ne program ho upozorni ze v mistnosti nikdo neni
+     */
     public String lucidniSouboj(Konzole konzole){
-        Souboj utok;
-        String celkovyVypis = "";
         for (int i = 0; i < konzole.getData().getLokace().size(); i++) {
             System.out.println((i+1) + ". " + konzole.getData().getLokace().get(i).getNazev());
         }
@@ -59,11 +66,16 @@ public class Souboj {
                 hodnaPostava.setZivoty(konzole,hodnaPostava.getZivoty()-silaUtoku);
                 return "Protivnikovi si ubral " + silaUtoku + " zivotu" ;
             }
+            else return "V lokaci neni zdna postava";
 
         }else return "V mistnosti neni souboj nemas s kym bojovat";
-        return "";
     }
 
+    /**
+     * Pomocna metoda pro zpracovani uzivatelova vstupu
+     * @param maxHodnota maximalni hodnota ktera jde zadat
+     * @return cislo ktere uzivatel zadal
+     */
     public int SoubojZpracovaniOdpovedi(int maxHodnota){
         boolean spravnyVstup = false;
         int vyberZOdpvedi;
@@ -87,6 +99,13 @@ public class Souboj {
         return index;
     }
 
+
+    /**
+     * Metoda pro smaotny utok, kde se hraci ukazi 3 moznosti utoku, jsou nahodne vybrane z nacteneho arraylistu v hernim nacitani, ale 1 utok bude urcite dostupny
+     * @param konzole pro pristup k vsech hernim datum
+     * @param lokaceBoje
+     * @return int silu utoku a to znamena kolik souperi ubere
+     */
     public int lucidniSneniVyberUtoku(Konzole konzole, Lokace lokaceBoje){
         ArrayList<Souboj> triUtoky = new ArrayList<>(3);
         Souboj nejsilnejsiDostupnyUtok =  new Souboj("","lucidni","c",0,0);
@@ -112,7 +131,12 @@ public class Souboj {
     }
 
 
-
+    /**
+     * Tato metoda zpracovava uzivateluv boj nablizko tzv daydream utok
+     * @param konzole pro pristup k vsech hernim datum
+     * @param lokaceBoje
+     * @return
+     */
     public String daydreamUtok(Konzole konzole, Lokace lokaceBoje){
         ZlaPostava zlaPostava = hledaniZlePostavy(konzole,lokaceBoje);
         HodnaPostava hodnaPostava = hledaniHodnePostavy(konzole, lokaceBoje);
@@ -140,43 +164,42 @@ public class Souboj {
     }
 
 
-    public int daydreamingVyberUtoku(Konzole konzole, Lokace lokaceBoje){
+    /**
+     * pomocna metoda ktera najde nahodne 3 daydream utoky a vypise je
+     * @param konzole pro pristup k vsech hernim datum
+     * @param lokaceBoje
+     * @return vraci silu utoku  = kolik zivotu uzivatel ubere protivnikovi
+     */
+    public int daydreamingVyberUtoku(Konzole konzole, Lokace lokaceBoje) {
         ArrayList<Souboj> triUtoky = new ArrayList<>(3);
-        Souboj nejsilnejsiDostupnyUtok =  new Souboj("","daydreaming","c",0,0);
+        Souboj nejsilnejsiDostupnyUtok = new Souboj("", "daydreaming", "c", 0, 0);
         for (int i = 0; i < konzole.getData().getTypyUtokuDaydreaming().size(); i++) {
-            if (konzole.getData().getTypyUtokuDaydreaming().get(i).getPotrebnaUroven() <= konzole.getSamir().getUrovenDaydreamingu() && konzole.getData().getTypyUtokuDaydreaming().get(i).getPotrebnaUroven() > nejsilnejsiDostupnyUtok.getPotrebnaUroven()){
+            if (konzole.getData().getTypyUtokuDaydreaming().get(i).getPotrebnaUroven() <= konzole.getSamir().getUrovenDaydreamingu() && konzole.getData().getTypyUtokuDaydreaming().get(i).getPotrebnaUroven() > nejsilnejsiDostupnyUtok.getPotrebnaUroven()) {
                 nejsilnejsiDostupnyUtok = konzole.getData().getTypyUtokuDaydreaming().get(i);
             }
         }
         triUtoky.add(nejsilnejsiDostupnyUtok);
         Random rd = new Random();
-        for (int i = 0; i < 2 ; i++) {
+        for (int i = 0; i < 2; i++) {
             int rozhodovac = rd.nextInt(konzole.getData().getTypyUtokuDaydreaming().size());
             triUtoky.add(konzole.getData().getTypyUtokuDaydreaming().get(rozhodovac));
         }
         for (int i = 0; i < triUtoky.size(); i++) {
-            System.out.print((1+i) + ". " + triUtoky.get(i).getNazevUtoku() + ":    Sila utoku: " + triUtoky.get(i).getSilaUtoku()  + "     Potrebna uroven: " + triUtoky.get(i).getPotrebnaUroven());
-            if (konzole.getSamir().getUrovenLucidnihoSneni()<triUtoky.get(i).getPotrebnaUroven()){
+            System.out.print((1 + i) + ". " + triUtoky.get(i).getNazevUtoku() + ":    Sila utoku: " + triUtoky.get(i).getSilaUtoku() + "     Potrebna uroven: " + triUtoky.get(i).getPotrebnaUroven());
+            if (konzole.getSamir().getUrovenLucidnihoSneni() < triUtoky.get(i).getPotrebnaUroven()) {
                 System.out.println("    NEDOSTUPNY UTOK");
             } else System.out.println(" ");
         }
         System.out.println("Jaky typ utoku si vyberes?");
-        return  triUtoky.get(SoubojZpracovaniOdpovedi(triUtoky.size())).getSilaUtoku();
+        return triUtoky.get(SoubojZpracovaniOdpovedi(triUtoky.size())).getSilaUtoku();
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    /**
+     * tato metoda s spousti vzdy po 1 cyklu hry, je spustena pozue kdyz je Samir v souboji, a pokud se v nem vyskytuje tak mu ubere zivoty pokud se nebude branit
+     * @param konzole pro pristup k vsech hernim datum
+     * @return text a kolik bylo hlavni postave ubrano zivotu
+     */
     public String protihracuvTah(Konzole konzole) {
         if (konzole.getSamir().isJeVBoji()) {
             ZlaPostava zlaPostava = hledaniZlePostavy(konzole,konzole.getAktualniLokace());
@@ -200,21 +223,12 @@ public class Souboj {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /**
+     * pomocna metoda ktera hleda zlou postavu v lokaci
+     * @param konzole pro pristup k vsech hernim datum
+     * @param lokaceSeSoubojem
+     * @return zlou postavu
+     */
     public ZlaPostava hledaniZlePostavy(Konzole konzole, Lokace lokaceSeSoubojem){
         ZlaPostava zlaPostava = null;
         for (int i = 0; i < konzole.getData().getZlePostavy().size(); i++) {
@@ -224,6 +238,13 @@ public class Souboj {
         }
         return zlaPostava;
     }
+
+    /**
+     *pomocna metoda ktera hleda hodnou postavu v lokaci
+     * @param konzole pro pristup k vsech hernim datum
+     * @param lokaceSeSoubojem
+     * @return vraci hodnou postavu
+     */
     public HodnaPostava hledaniHodnePostavy(Konzole konzole, Lokace lokaceSeSoubojem){
         HodnaPostava hodnaPostava = null;
         for (int i = 0; i < konzole.getData().getHodnePostavy().size(); i++) {
@@ -234,9 +255,6 @@ public class Souboj {
         }
         return hodnaPostava;
     }
-
-
-
 
     public String getTyp() {
         return typ;

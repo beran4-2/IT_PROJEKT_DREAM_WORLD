@@ -1,6 +1,16 @@
 package Konzole;
 
+/**
+ * Tato trida obsahuje pouze metodu menuHry
+ */
+
 public class MenuHry {
+
+    /**
+     * Tato metoda po kazdem cyklu vypise hlavni menu hry
+     * @param konzole pro pristup k vsech hernim datum
+     * @return vypis celeho menu
+     */
     public String menuHry(Konzole konzole){
         String vypisMenu = "";
         vypisMenu = "\n--------------------------------\n";

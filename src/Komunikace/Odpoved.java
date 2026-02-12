@@ -1,5 +1,8 @@
 package Komunikace;
 
+/**
+ * Tato trida slouzi ke konstrukci odpovedi na otazky
+ */
 public class Odpoved {
 
     /**

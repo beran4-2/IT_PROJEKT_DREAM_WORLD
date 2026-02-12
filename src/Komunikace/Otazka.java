@@ -1,7 +1,8 @@
-package Komunikace;
+/**
+ * Tato trida slouzi ke konstrukci otazkek
+ */
 
-import Konzole.Konzole;
-import Postavy.Postavy;
+package Komunikace;
 
 import java.util.ArrayList;
 

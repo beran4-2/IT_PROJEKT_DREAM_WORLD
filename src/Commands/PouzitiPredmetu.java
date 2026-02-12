@@ -5,6 +5,13 @@ import java.util.Arrays;
 
 
 public class PouzitiPredmetu implements Command {
+
+    /**
+     * Command ktery hrac vyuzije kdyz chce aktivvovat predmet,
+     * @param konzole pro pristup k vsech hernim datum
+     * @param prikaz2 vstup ktery urci zda hrac chce pridat predmet nebo odebrat predmet z aktivnich
+     * @return
+     */
     public String vykonat(Konzole konzole, String prikaz2) {
         Predmet vyuzivanyPredmet = null;
         String[] rozdeleni = prikaz2.split(" ", 2);

@@ -1,7 +1,8 @@
 package Postavy;
 
-import java.util.ArrayList;
-
+/**
+ * Tato trida slouzi ke konstrukci zlych postav
+ */
 public class ZlaPostava extends Postavy {
     public int silaSnu;
 

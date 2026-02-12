@@ -3,6 +3,9 @@ package Commands;
 import Konzole.Konzole;
 import Postavy.Samir;
 
+/**
+ * Command ktery vypise hracovy vlastnosti
+ */
 public class Vlastnosti implements Command{
     @Override
     public String vykonat(Konzole konzole, String string) {

@@ -7,6 +7,12 @@ public class Inventar {
 
     ArrayList<Predmet> inventar = new ArrayList<>();
 
+    /**
+     * Metoda ktera pridava veci do arrayListu inventar
+     * @param konzole pro pristup k vsech hernim datum
+     * @param string predmet ktery se ma pridat
+     * @return vypis co bylo pridano
+     */
     public String pridatPredmet(Konzole konzole, String string) {
         String pridanyPredmet = "";
         for (int i = 0; i < konzole.getData().getPredmety().size(); i++) {
@@ -18,6 +24,11 @@ public class Inventar {
         return "byl pridany predmet " + pridanyPredmet;
     }
 
+
+    /**
+     * Metoda ktera hleda aktivni predmet
+     * @return aktivni predmet nebo nic neni aktivovano
+     */
     public String aktivniPredmet(){
         for (int i = 0; i < inventar.size(); i++) {
             if (inventar.get(i).isJePouzivany()){
@@ -27,10 +38,11 @@ public class Inventar {
         return "nic neni aktivovano";
     }
 
-    public String odebratPredmet(Konzole konzole, String string) {
-        return "";
-    }
 
+    /**
+     * Metoda ktera vypise vsechny predmety v inventari
+     * @return vypis inventare
+     */
     public String zobrazitInventar() {
         String vypisInventare = "";
         if (!inventar.isEmpty()) {

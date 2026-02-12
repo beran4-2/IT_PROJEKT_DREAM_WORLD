@@ -4,6 +4,11 @@ import Konzole.Konzole;
 
 public class Spanek implements Command{
 
+    /**
+     * Command ktery hrace dostane bud jen do spanku nebo do lucidniho souboje
+     * @param konzole pro pristup k vsech hernim datum
+     * @param string vstup podle ktereho se urci jestli hrac jde pouze spat nebo bojovat
+     */
     @Override
     public String vykonat(Konzole konzole, String string) {
         String konecnyVypis = "";
