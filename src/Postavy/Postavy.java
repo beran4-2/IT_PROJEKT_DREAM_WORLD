@@ -4,6 +4,7 @@ import Konzole.Konzole;
 
 /**
  * Materska trida postav
+ * @author Ondrej Beran
  */
 public abstract class Postavy {
     protected String jmeno;

@@ -3,6 +3,11 @@ import Konzole.Konzole;
 import Predmety.Predmet;
 import java.util.ArrayList;
 
+/**
+ * Kde se pridavaji predmety do inventare
+ * @author Ondrej Beran
+ */
+
 public class Inventar {
 
     ArrayList<Predmet> inventar = new ArrayList<>();

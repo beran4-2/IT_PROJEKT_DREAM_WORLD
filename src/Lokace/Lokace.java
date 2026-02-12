@@ -1,5 +1,6 @@
 /**
  * Tato trida slouzi ke konstrukci lokaci a je zde zpracovavana logika idDialogu
+ * @author Ondrej Beran
  */
 
 package Lokace;

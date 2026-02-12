@@ -16,6 +16,10 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 
+/**
+ * Trida kde probiha cela logika hry
+ * @author Ondrej Beran
+ */
 public class Konzole {
     private HashMap<String, Command> mapaPrikazu = new HashMap<>();
     private boolean konecHry;
@@ -128,7 +132,9 @@ public class Konzole {
     }
 
 
-
+    /**
+     * metoda ktera incializuje prikazy
+     */
     private void inicializace() {
         mapaPrikazu.put("jit", new Pohyb());
         mapaPrikazu.put("pomoc", new Pomoc());
@@ -144,6 +150,10 @@ public class Konzole {
         mapaPrikazu.put("vlastnosti", new Vlastnosti());
     }
 
+
+    /**
+     * Hlavni cyklus hry
+     */
     private void provedPrikaz() {
         String prikaz;
         System.out.println(menu.menuHry(this));

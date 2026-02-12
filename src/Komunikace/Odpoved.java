@@ -2,6 +2,7 @@ package Komunikace;
 
 /**
  * Tato trida slouzi ke konstrukci odpovedi na otazky
+ * @author Ondrej Beran
  */
 public class Odpoved {
 

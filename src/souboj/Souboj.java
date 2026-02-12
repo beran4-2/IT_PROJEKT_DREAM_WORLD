@@ -1,5 +1,6 @@
 /**
  * V teto tride se zpracovava souboj hrace i protivniku
+ * @author Ondrej Beran
  */
 
 package souboj;

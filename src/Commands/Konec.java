@@ -2,6 +2,9 @@ package Commands;
 
 import Konzole.Konzole;
 
+/**
+ * @author Ondrej Beran
+ */
 public class Konec implements Command {
     /**
      * Command ktery hraci umozni ukoncit hru

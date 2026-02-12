@@ -1,5 +1,6 @@
 /**
  * Tato trida slouzi ke konstrukci hodnych postav
+ * @author Ondrej Beran
  */
 
 package Postavy;

@@ -1,5 +1,6 @@
 /**
  * Tato trida slouzi ke konstrukci hlavni postavy (Samira)
+ * @author Ondrej Beran
  */
 
 package Postavy;

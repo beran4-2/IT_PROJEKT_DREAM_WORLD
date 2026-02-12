@@ -2,6 +2,7 @@ package Predmety;
 
 /**
  * tato trida slouzi jen pro konstrukci predmetu
+ * @author Ondrej Beran
  */
 
 public class Predmet {

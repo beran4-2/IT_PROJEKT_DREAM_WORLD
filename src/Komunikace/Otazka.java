@@ -1,5 +1,6 @@
 /**
  * Tato trida slouzi ke konstrukci otazkek
+ * @author Ondrej Beran
  */
 
 package Komunikace;

@@ -22,6 +22,11 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
+
+/**
+ * Trida ve ktere se nacitaji data ze souboru
+ * @author Ondrej Beran
+ */
 public class HerniNacitani {
     private ArrayList<Lokace> lokace;
     private ArrayList<HodnaPostava> HodnePostavy;

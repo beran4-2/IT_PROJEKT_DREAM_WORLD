@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Tato trida slouzi ke konstrukci ukolu a take se v ni zpracovavaji splnene ukoly
+ * @author Ondrej Beran
  */
 public class Ukol {
     private String typUkolu;

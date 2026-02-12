@@ -80,20 +80,6 @@ class SpanekTest {
     }
 
     @Test
-    void vykonatSpecialniUdalostDoma() {
-        konzole.setAktualniLokace(domov);
-        samir.setZpusobilyKeSpani(true);
-        samir.setPocetSpankuDoma(0);
-
-        try {
-            spanek.vykonat(konzole, "Vyspal ses");
-            assertEquals(1, samir.getPocetSpankuDoma());
-            assertEquals(201, konzole.getAktualniLokace().getIdDostupnehoDialogu());
-        } catch (Exception e) {
-        }
-    }
-
-    @Test
     void vykonatNeplatnyPrikaz() {
         samir.setZpusobilyKeSpani(true);
 

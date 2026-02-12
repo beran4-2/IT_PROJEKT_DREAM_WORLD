@@ -3,7 +3,9 @@ import Konzole.Konzole;
 import Predmety.Predmet;
 import java.util.Arrays;
 
-
+/**
+ * @author Ondrej Beran
+ */
 public class PouzitiPredmetu implements Command {
 
     /**

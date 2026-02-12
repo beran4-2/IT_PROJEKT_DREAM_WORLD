@@ -7,6 +7,9 @@ import Postavy.HodnaPostava;
 import java.util.ArrayList;
 
 
+/**
+ * @author Ondrej Beran
+ */
 public class PohybPoLokaci implements Command {
     /**
      * Tento command umzni hraci prozkoumat mistnost, ale pokud ma v mistnosti ukol tak se mu spusti

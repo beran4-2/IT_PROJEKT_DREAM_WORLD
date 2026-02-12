@@ -2,6 +2,7 @@ package Postavy;
 
 /**
  * Tato trida slouzi ke konstrukci zlych postav
+ * @author Ondrej Beran
  */
 public class ZlaPostava extends Postavy {
     public int silaSnu;

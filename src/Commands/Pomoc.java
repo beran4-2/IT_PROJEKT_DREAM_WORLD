@@ -2,6 +2,9 @@ package Commands;
 
 import Konzole.Konzole;
 
+/**
+ * @author Ondrej Beran
+ */
 public class Pomoc implements Command {
 
     /**

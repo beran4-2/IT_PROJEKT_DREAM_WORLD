@@ -2,6 +2,7 @@ package Konzole;
 
 /**
  * Tato trida obsahuje pouze metodu menuHry
+ * @author Ondrej Beran
  */
 
 public class MenuHry {

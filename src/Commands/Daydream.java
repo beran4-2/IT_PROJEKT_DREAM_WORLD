@@ -6,6 +6,7 @@ public class Daydream implements Command {
     /**
      * Command ktery hracovi umozni pomoci prikauzu se schovat, ukryt a nebo bojovat
      * @param konzole pro pristup k vsech hernim datum
+     * @author Ondrej Beran
      * @return
      */
     @Override

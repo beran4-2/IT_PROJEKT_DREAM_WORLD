@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PouzitiPredmetuTest {
 
+    //TODO dodelat upravit testy (odtranit carky)
+
     PouzitiPredmetu pouzitiPredmetu;
     Konzole konzole;
     HerniNacitani data;
@@ -27,10 +29,10 @@ class PouzitiPredmetuTest {
         inventar = new Inventar();
         data = new HerniNacitani();
 
-        mec = new Predmet("mec", 10, 5, false, "ostrý meč", "zbraň");
-        stit = new Predmet("stit", 5, 10, false, "kovový štít", "obrana");
-        maska = new Predmet("maska spanku", 0, 0, false, "maska pro klidný spánek", "speciální");
-        systemovyPredmet = new Predmet("system", 0, 0, false, "systémový předmět", "systém");
+        mec = new Predmet("mec", 10, 5, false, "ostry mec", "zbran");
+        stit = new Predmet("stit", 5, 10, false, "kovovy stit", "obrana");
+        maska = new Predmet("maska spanku", 0, 0, false, "maska pro spanek", "specialni");
+        systemovyPredmet = new Predmet("system", 0, 0, false, "systémový předmět", "system");
 
         inventar.getInventar().add(mec);
         inventar.getInventar().add(stit);

@@ -5,6 +5,7 @@ import Postavy.Samir;
 
 /**
  * Command ktery vypise hracovy vlastnosti
+ * @author Ondrej Beran
  */
 public class Vlastnosti implements Command{
     @Override

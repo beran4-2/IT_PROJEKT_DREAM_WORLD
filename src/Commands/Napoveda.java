@@ -5,6 +5,7 @@ import Konzole.Konzole;
 
 /**
  * Command ktery hraci vypise napovedu pro mistnost
+ * @author Ondrej Beran
  */
 public class Napoveda implements Command {
     public String vykonat(Konzole konzole, String string) {

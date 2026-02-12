@@ -12,6 +12,7 @@ public class Komunikace implements Command {
     /**
      * Zde se zpracuji vsechny pomocne metody a podle id u odpovedi se ve switchi vybere moznost ktera nastane
      * @param konzole pro pristup k vsech hernim datum
+     * @author Ondrej Beran
      */
     public String vykonat(Konzole konzole, String string) {
         String vypis = "";

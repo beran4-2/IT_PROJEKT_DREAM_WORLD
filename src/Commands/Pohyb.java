@@ -4,6 +4,9 @@ package Commands;
 import Konzole.Konzole;
 import Lokace.Lokace;
 
+/**
+ * * @author Ondrej Beran
+ */
 public class Pohyb implements Command {
     private Lokace lokace;
 
