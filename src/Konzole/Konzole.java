@@ -12,7 +12,9 @@ import Komunikace.Otazka;
 import Predmety.Predmet;
 import souboj.Souboj;
 
+import java.awt.*;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -37,6 +39,7 @@ public class Konzole {
     private Lokace lokace;
 
     public static Scanner scanner = new Scanner(System.in);
+    public static Random random = new Random();
 
 
     public HashMap<String, Command> getMapaPrikazu() {
@@ -118,12 +121,12 @@ public class Konzole {
         konecHry = false;
         aktualniLokace = data.getLokace().get(0);
         ukol.setIdAktualnihoUkolu(1);
-        samir = new Samir("Samir",100,1,true,0,1,0,false,false,false,false);
+        samir = new Samir("Samir",100,1,true,0,0,0,false,false,false,false);
         ukol.getSeznamMomentalnichHlavnichUkolu().add(ukol.pridaniNovehoUkolu(this, ukol.getIdAktualnihoUkolu()));
        // data.nacetliSeSouborySpravne();
 
 
-
+        System.out.println("Vitej ve hre");
         do{
             provedPrikaz();
         }while(!konecHry);

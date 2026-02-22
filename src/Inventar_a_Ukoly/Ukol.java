@@ -76,17 +76,32 @@ public class Ukol {
                 if (seznamMomentalnichHlavnichUkolu.get(i).isUkolSplnen()){
                     splnenyUkol = seznamMomentalnichHlavnichUkolu.get(i);
                     vypis = vypis + "Splnil si ukol " + splnenyUkol.getNazevUkolu();
-                    konzole.getAktualniLokace().setUkolHotovy(true);
-                    vypis = vypis + "\nbyla odemcena dalsi mistnost";
+                    if (seznamMomentalnichHlavnichUkolu.get(i).isOtevreDalsiLokaci()){
+                        //konzole.getAktualniLokace().setUkolHotovy(true);
+                        otevritDalsiMistnost(konzole);
+                        vypis = vypis + "\nbyla odemcena dalsi mistnost";
+                    }
                     vypis =vypis + "\n" + nalezeniDalsihoUkolu(konzole, splnenyUkol.getIdNaslednehoUkolu());
                     seznamMomentalnichHlavnichUkolu.remove(splnenyUkol);
                     setIdAktualnihoUkolu(splnenyUkol.idNaslednehoUkolu);
+
 
                 }
             }
             return vypis;
 
         }else return "";
+    }
+
+    public void otevritDalsiMistnost(Konzole konzole){
+        int i;
+        for (i = 0; i < konzole.getData().getLokace().size(); i++) {
+            if (!konzole.getData().getLokace().get(i).isUkolHotovy()){
+                break;
+            }
+        }
+        konzole.getData().getLokace().get(i).setUkolHotovy(true);
+
     }
 
 
@@ -142,7 +157,7 @@ public class Ukol {
         for (int i = 0; i < konzole.getData().getUkoly().size(); i++) {
             if (konzole.getData().getUkoly().get(i).getIdUkolu() == hledaneId){
                 seznamMomentalnichHlavnichUkolu.add(konzole.getData().getUkoly().get(i));
-                return "Mas novy ukol: " + konzole.getData().getUkoly().get(i).getNazevUkolu();
+                return "Mas novy ukol: " + konzole.getData().getUkoly().get(i).getNazevUkolu()+"\n";
             }
             if (konzole.getData().getUkoly().get(i).getIdNaslednehoUkolu() < 0){
                 konzole.setKonecHry(true);

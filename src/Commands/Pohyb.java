@@ -17,36 +17,41 @@ public class Pohyb implements Command {
      * @return jestli se hraci podarilo jit dal
      */
     public String vykonat(Konzole konzole, String prikaz2) {
-    if (prikaz2.equals("dal")) {
-       if (konzole.getAktualniLokace().isUkolHotovy() == true) {
-        if (konzole.getAktualniLokace().getNaslednik() != null) {
-            lokace = hledacDalsiLokace(konzole.getAktualniLokace(), konzole);
-            konzole.setAktualniLokace(lokace);
-            if (konzole.getAktualniLokace().getNazev().equals("Civitas Domov")){
-                konzole.getSamir().setZpusobilyKeSpani(true);
-            }else if (konzole.getInventar().aktivniPredmet().equals("maska spanku")){
-                konzole.getSamir().setZpusobilyKeSpani(true);
+
+        if (konzole.getSamir().isJeVBoji() && konzole.getSouboj().bojovaNahoda()){
+            return "Nepodario se ti uniknout ze souboje";
+        }else {
+            if (prikaz2.equals("dal")) {
+                if (konzole.getAktualniLokace().isUkolHotovy() == true) {
+                    if (konzole.getAktualniLokace().getNaslednik() != null) {
+                        lokace = hledacDalsiLokace(konzole.getAktualniLokace(), konzole);
+                        konzole.setAktualniLokace(lokace);
+                        if (konzole.getAktualniLokace().getNazev().equals("Civitas Domov")) {
+                            konzole.getSamir().setZpusobilyKeSpani(true);
+                        } else if (konzole.getInventar().aktivniPredmet().equals("maska spanku")) {
+                            konzole.getSamir().setZpusobilyKeSpani(true);
+                        } else konzole.getSamir().setZpusobilyKeSpani(false);
+                        if (konzole.getAktualniLokace().isJeVMistnostiSouboj()) {
+                            konzole.getSamir().setJeVBoji(true);
+                        } else konzole.getSamir().setJeVBoji(false);
+                        return "Sel jsi dal ";
+                    } else return "Dalsi mistnost neni, dale jit nemuzes";
+                } else return "Nesplnil si hlavni ukol";
+
+            } else if (prikaz2.equals("zpatky")) {
+                lokace = hledacPredchoziLokace(konzole.getAktualniLokace(), konzole);
+                konzole.setAktualniLokace(lokace);
+                if (konzole.getAktualniLokace().getNazev().equals("Civitas Domov")) {
+                    konzole.getSamir().setZpusobilyKeSpani(true);
+                } else if (konzole.getInventar().aktivniPredmet().equals("maska spanku")) ;
+                else konzole.getSamir().setZpusobilyKeSpani(false);
+                return "Sel jsi zpet, momentalne se nachazis v lokaci " + konzole.getAktualniLokace().getNazev();
+
+
+            } else {
+                return "takovy prikaz neni";
             }
-            else konzole.getSamir().setZpusobilyKeSpani(false);
-            if (konzole.getAktualniLokace().isJeVMistnostiSouboj()){
-                konzole.getSamir().setJeVBoji(true);
-            }else konzole.getSamir().setJeVBoji(false);
-            return "Sel jsi dal ";
-        }else return "Dalsi mistnost neni, dale jit nemuzes";
-       }else return  "Nesplnil si hlavni ukol";
-
     }
-    else if (prikaz2.equals("zpatky")) {
-        lokace = hledacPredchoziLokace(konzole.getAktualniLokace(), konzole);
-        konzole.setAktualniLokace(lokace);
-        if (konzole.getAktualniLokace().getNazev().equals("Civitas Domov")){
-            konzole.getSamir().setZpusobilyKeSpani(true);
-        }else if (konzole.getInventar().aktivniPredmet().equals("maska spanku"));
-        else konzole.getSamir().setZpusobilyKeSpani(false);
-        return "Sel jsi zpet, momentalne se nachazis v lokaci " + konzole.getAktualniLokace().getNazev();
-
-
-    }else {return "takovy prikaz neni";}
 
     }
 

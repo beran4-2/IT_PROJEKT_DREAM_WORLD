@@ -18,7 +18,9 @@ public class ZlaPostava extends Postavy {
 
     @Override
     public boolean jeNaZivu() {
-        return false;
+        if (this.zivoty > 0){
+        return true;
+        }else return false;
     }
 
     @Override

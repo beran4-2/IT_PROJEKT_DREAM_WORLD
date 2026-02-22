@@ -11,7 +11,6 @@ import Postavy.HodnaPostava;
 import Postavy.ZlaPostava;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import java.util.InputMismatchException;
 
@@ -51,25 +50,27 @@ public class Souboj {
         HodnaPostava hodnaPostava = hledaniHodnePostavy(konzole, lokaceBoje);
         ZlaPostava zlaPostava = hledaniZlePostavy(konzole, lokaceBoje);
         int silaUtoku;
-        if (hodnaPostava.isJeZabitelny() || zlaPostava.isJeZabitelny()){
+
             System.out.println("Vybral sis " + lokaceBoje.getNazev());
             if (zlaPostava!=null){
-                System.out.println("Bojujes s " + zlaPostava.getJmeno() + ": ");
-                System.out.println("Zivoty protivnika: " + zlaPostava.getZivoty());
-                silaUtoku = lucidniSneniVyberUtoku(konzole, lokaceBoje);
-                zlaPostava.setZivoty(konzole,zlaPostava.getZivoty()-silaUtoku);
-                return "Protivnikovi si ubral " + silaUtoku + " zivotu" ;
+                if (zlaPostava.isJeZabitelny()){
+                    System.out.println("Bojujes s " + zlaPostava.getJmeno() + ": ");
+                    System.out.println("Zivoty protivnika: " + zlaPostava.getZivoty());
+                    silaUtoku = lucidniSneniVyberUtoku(konzole, lokaceBoje);
+                    System.out.println(zlaPostava.setZivoty(konzole,zlaPostava.getZivoty()-silaUtoku));
+                    return "Protivnikovi si ubral " + silaUtoku + " zivotu" ;
+                }else return "V mistnosti neni nekdo s kym bys mohl bojovat";
 
             }else if (hodnaPostava!=null){
-                System.out.println("Bojujes s " + hodnaPostava.getJmeno() + ":" );
-                System.out.println("Zivoty protivnika: " + hodnaPostava.getZivoty());
-                silaUtoku = lucidniSneniVyberUtoku(konzole, lokaceBoje);
-                hodnaPostava.setZivoty(konzole,hodnaPostava.getZivoty()-silaUtoku);
-                return "Protivnikovi si ubral " + silaUtoku + " zivotu" ;
+                if (hodnaPostava.isJeZabitelny()){
+                    System.out.println("Bojujes s " + hodnaPostava.getJmeno() + ":" );
+                    System.out.println("Zivoty protivnika: " + hodnaPostava.getZivoty());
+                    silaUtoku = lucidniSneniVyberUtoku(konzole, lokaceBoje);
+                    System.out.println(hodnaPostava.setZivoty(konzole,hodnaPostava.getZivoty()-silaUtoku));
+                    return "Protivnikovi si ubral " + silaUtoku + " zivotu" ;
+                }else return "V mistnosti neni nekdo s kym bys mohl bojovat";
             }
             else return "V lokaci neni zdna postava";
-
-        }else return "V mistnosti neni souboj nemas s kym bojovat";
     }
 
     /**
@@ -109,16 +110,17 @@ public class Souboj {
      */
     public int lucidniSneniVyberUtoku(Konzole konzole, Lokace lokaceBoje){
         ArrayList<Souboj> triUtoky = new ArrayList<>(3);
-        Souboj nejsilnejsiDostupnyUtok =  new Souboj("","lucidni","c",0,0);
+        ArrayList<Souboj> nahodneDostupneUtoky = new ArrayList<>(konzole.getData().getTypyUtokuLucidni().size());
+
         for (int i = 0; i < konzole.getData().getTypyUtokuLucidni().size(); i++) {
-            if (konzole.getData().getTypyUtokuLucidni().get(i).getPotrebnaUroven() <= konzole.getSamir().getUrovenLucidnihoSneni() && konzole.getData().getTypyUtokuLucidni().get(i).getPotrebnaUroven() > nejsilnejsiDostupnyUtok.getPotrebnaUroven()){
-            nejsilnejsiDostupnyUtok = konzole.getData().getTypyUtokuLucidni().get(i);
+            if (konzole.getData().getTypyUtokuLucidni().get(i).getPotrebnaUroven() <= konzole.getSamir().getUrovenLucidnihoSneni()){
+                nahodneDostupneUtoky.add(konzole.getData().getTypyUtokuLucidni().get(i));
             }
         }
-        triUtoky.add(nejsilnejsiDostupnyUtok);
-        Random rd = new Random();
+        triUtoky.add(nahodneDostupneUtoky.get(konzole.random.nextInt(0,nahodneDostupneUtoky.size())));
+
         for (int i = 0; i < 2 ; i++) {
-            int rozhodovac = rd.nextInt(konzole.getData().getTypyUtokuLucidni().size());
+            int rozhodovac = Konzole.random.nextInt(konzole.getData().getTypyUtokuLucidni().size());
             triUtoky.add(konzole.getData().getTypyUtokuLucidni().get(rozhodovac));
         }
         for (int i = 0; i < triUtoky.size(); i++) {
@@ -128,7 +130,17 @@ public class Souboj {
             } else System.out.println(" ");
         }
         System.out.println("Jaky typ utoku si vyberes?");
-        return  triUtoky.get(SoubojZpracovaniOdpovedi(triUtoky.size())).getSilaUtoku();
+        int silaUtoku;
+        boolean spravnyVstup = false;
+        do{
+            Souboj vybranyUtok = triUtoky.get(SoubojZpracovaniOdpovedi(triUtoky.size()));
+            int ulozenaUroven =  vybranyUtok.getPotrebnaUroven();
+            silaUtoku = vybranyUtok.getSilaUtoku();
+            if (konzole.getSamir().getUrovenLucidnihoSneni() >= ulozenaUroven){
+                spravnyVstup = true;
+            }else System.out.println("Nemas dostatecnu uroven");
+        }while (!spravnyVstup);
+        return  silaUtoku;
     }
 
 
@@ -141,8 +153,34 @@ public class Souboj {
     public String daydreamUtok(Konzole konzole, Lokace lokaceBoje){
         ZlaPostava zlaPostava = hledaniZlePostavy(konzole,lokaceBoje);
         HodnaPostava hodnaPostava = hledaniHodnePostavy(konzole, lokaceBoje);
-        int SilaUtoku;
 
+        if (zlaPostava!=null){
+            if (zlaPostava.jeNaZivu()) {
+                if (zlaPostava.isJeZabitelny()) {
+                    System.out.println("Bojujes s " + zlaPostava.getJmeno() + ": ");
+                    System.out.println("Zivoty protivnika: " + zlaPostava.getZivoty());
+                    silaUtoku = daydreamingVyberUtoku(konzole, lokaceBoje);
+                    System.out.println(zlaPostava.setZivoty(konzole, zlaPostava.getZivoty() - silaUtoku));
+
+                } else return "V mistnosti neni nekdo s kym bys mohl bojovat";
+            }else return zlaPostava.getJmeno() + " je uz mrtva";
+
+        }else if (hodnaPostava!=null){
+            if (hodnaPostava.jeNaZivu()) {
+                if (hodnaPostava.isJeZabitelny()) {
+                    System.out.println("Bojujes s " + hodnaPostava.getJmeno() + ":");
+                    System.out.println("Zivoty protivnika: " + hodnaPostava.getZivoty());
+                    silaUtoku = daydreamingVyberUtoku(konzole, lokaceBoje);
+                    System.out.println(hodnaPostava.setZivoty(konzole, hodnaPostava.getZivoty() - silaUtoku));
+
+                } else return "V mistnosti neni nekdo s kym bys mohl bojovat";
+            }else return hodnaPostava.getJmeno() + " je uz mrtva";
+        } else return "V lokaci neni zdna postava";
+
+        return "Protivnikovi si ubral " + silaUtoku + " zivotu" ;
+
+
+        /*
         if (hodnaPostava.isJeZabitelny() || zlaPostava.isJeZabitelny()){
             System.out.println("Vybral sis " + lokaceBoje.getNazev());
             if (zlaPostava!=null){
@@ -161,7 +199,7 @@ public class Souboj {
             }
 
         }else return "V mistnosti neni souboj nemas s kym bojovat";
-        return "";
+        return "";*/
     }
 
 
@@ -173,21 +211,28 @@ public class Souboj {
      */
     public int daydreamingVyberUtoku(Konzole konzole, Lokace lokaceBoje) {
         ArrayList<Souboj> triUtoky = new ArrayList<>(3);
-        Souboj nejsilnejsiDostupnyUtok = new Souboj("", "daydreaming", "c", 0, 0);
+        ArrayList<Souboj> nahodneDostupneUtoky = new ArrayList<>(konzole.getData().getTypyUtokuDayDream().size());
         for (int i = 0; i < konzole.getData().getTypyUtokuDaydreaming().size(); i++) {
-            if (konzole.getData().getTypyUtokuDaydreaming().get(i).getPotrebnaUroven() <= konzole.getSamir().getUrovenDaydreamingu() && konzole.getData().getTypyUtokuDaydreaming().get(i).getPotrebnaUroven() > nejsilnejsiDostupnyUtok.getPotrebnaUroven()) {
-                nejsilnejsiDostupnyUtok = konzole.getData().getTypyUtokuDaydreaming().get(i);
+            if (konzole.getData().getTypyUtokuDaydreaming().get(i).getPotrebnaUroven() <= konzole.getSamir().getUrovenDaydreamingu()){
+            nahodneDostupneUtoky.add(konzole.getData().getTypyUtokuDaydreaming().get(i));
             }
         }
-        triUtoky.add(nejsilnejsiDostupnyUtok);
-        Random rd = new Random();
+        triUtoky.add(nahodneDostupneUtoky.get(Konzole.random.nextInt(0, konzole.getData().getTypyUtokuDaydreaming().size())));
         for (int i = 0; i < 2; i++) {
-            int rozhodovac = rd.nextInt(konzole.getData().getTypyUtokuDaydreaming().size());
-            triUtoky.add(konzole.getData().getTypyUtokuDaydreaming().get(rozhodovac));
+            int rozhodovac = konzole.random.nextInt(konzole.getData().getTypyUtokuDaydreaming().size());
+                triUtoky.add(konzole.getData().getTypyUtokuDaydreaming().get(rozhodovac));
         }
+        String nazePredchoziho = "Predchozi";
         for (int i = 0; i < triUtoky.size(); i++) {
+            if (nazePredchoziho.equals(triUtoky.get(i).getNazevUtoku())){
+                triUtoky.remove(i);
+                triUtoky.add(konzole.getData().getTypyUtokuDaydreaming().get(Konzole.random.nextInt(konzole.getData().getTypyUtokuDaydreaming().size())));
+            }else {nazePredchoziho = triUtoky.get(i).getNazevUtoku();}
+        }
+        int i;
+        for (i = 0; i < triUtoky.size(); i++) {
             System.out.print((1 + i) + ". " + triUtoky.get(i).getNazevUtoku() + ":    Sila utoku: " + triUtoky.get(i).getSilaUtoku() + "     Potrebna uroven: " + triUtoky.get(i).getPotrebnaUroven());
-            if (konzole.getSamir().getUrovenLucidnihoSneni() < triUtoky.get(i).getPotrebnaUroven()) {
+            if (konzole.getSamir().getUrovenDaydreamingu() < triUtoky.get(i).getPotrebnaUroven()) {
                 System.out.println("    NEDOSTUPNY UTOK");
             } else System.out.println(" ");
         }
@@ -255,6 +300,17 @@ public class Souboj {
             }
         }
         return hodnaPostava;
+    }
+
+    /**
+     * Metoda vyuzita v commandu Pohyb, delat to ze kdyz random cislo bude mensi nez 5 tak hrac nepriteli neutece, pokud padne 5 a vice tak se mu to podari
+     * @return true hrac neutece, false hrac utece
+     */
+    public boolean bojovaNahoda(){
+        int bojovaNahoda = Konzole.random.nextInt(1,11);
+        if (bojovaNahoda <5){
+            return true;
+        }else return false;
     }
 
     public String getTyp() {

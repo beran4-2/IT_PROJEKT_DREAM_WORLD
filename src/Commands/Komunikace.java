@@ -72,16 +72,44 @@ public class Komunikace implements Command {
                    case -401:
                        konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
                        vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       vypis = vypis + konzole.getInventar().pridatPredmet(konzole, "prasky na spani");
+                       break;
+                   case -501:
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       konzole.getZlaPostava().setJeZabitelnyZlaPostava(konzole,"Sopka");
+
                        break;
                    case -601:
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
                        vypis = vypis + konzole.getSamir().setUrovenLucidnihoSneni(konzole.getSamir().getUrovenLucidnihoSneni() + 2);
                        vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       vypis = vypis + konzole.getInventar().pridatPredmet(konzole,"hudebni krabicka");
+                       konzole.getZlaPostava().setJeZabitelnyZlaPostava(konzole,"Pekelne Mesto");
                        break;
                    case -602:
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
                        vypis = vypis + konzole.getSamir().setUrovenLucidnihoSneni(konzole.getSamir().getUrovenLucidnihoSneni() + 2);
                        vypis = vypis + konzole.getSamir().setUrovenDaydreamingu(konzole.getSamir().getUrovenLucidnihoSneni() + 2);
                        vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       vypis = vypis + konzole.getInventar().pridatPredmet(konzole,"hudebni krabicka");
+                       konzole.getZlaPostava().setJeZabitelnyZlaPostava(konzole,"Pekelne Mesto");
                        break;
+                   case -702:
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       vypis = vypis + konzole.getSamir().setUrovenDaydreamingu(konzole.getSamir().getUrovenLucidnihoSneni() + 2);
+                       vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       konzole.getZlaPostava().setJeZabitelnyZlaPostava(konzole,"Sidlo Noirceura");
+                       break;
+                   case -703:
+                       konzole.getAktualniLokace().setIdDostupnehoDialogu(0);
+                       vypis = vypis + konzole.getSamir().setUrovenLucidnihoSneni(konzole.getSamir().getUrovenLucidnihoSneni() + 2);
+                       vypis = vypis +"\n"+ konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                       konzole.getZlaPostava().setJeZabitelnyZlaPostava(konzole,"Sidlo Noirceura");
+                       break;
+                       case -999:
+                           vypis = vypis + "Postava je uz mrtva";
+
                }
                return vypis + "\nKONEC DIALOGU";
            }else return "Nemas dostupny dialog s postavou";
@@ -102,6 +130,11 @@ public class Komunikace implements Command {
             if (konzole.getData().getOtazky().get(i).getId() == konzole.getAktualniLokace().getIdDostupnehoDialogu()){
                 kdoMluvi = konzole.getData().getOtazky().get(i).getKdoMluvi();
                 otazka = konzole.getData().getOtazky().get(i);
+                for (int j = 0; j < konzole.getData().getHodnePostavy().size(); j++) {
+                    if (!konzole.getData().getHodnePostavy().get(j).jeNaZivu() && konzole.getData().getHodnePostavy().get(j).getJmeno().equals(kdoMluvi)){
+                        return -999;
+                    }
+                }
                 otazkaInicializovana = true;
                 break;
             }

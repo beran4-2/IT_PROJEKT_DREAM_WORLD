@@ -34,17 +34,36 @@ public abstract class Postavy {
         return jmeno;
     }
 
-    public void setZivoty(Konzole konzole, int zivoty) {
+    public String setZivoty(Konzole konzole, int zivoty) {
         this.zivoty = zivoty;
-
-
-        if (this.zivoty >= 0){
-
+        if (this.zivoty <= 0){
+            if (this.jmeno.equals("Jester")){
+                return konzole.getData().nactiDataZeSouboru("JesterSouboj") + "\n";
+            }
+            if (this.jmeno.equals("Negani")){
+                konzole.getUkol().splneniUkolu(konzole, konzole.getUkol().getIdAktualnihoUkolu(), "hlavni");
+                konzole.getLokace().novyDostupnyDialog(konzole, 702, "Jezero");
+                return konzole.getData().nactiDataZeSouboru("Negani");
+            }
+            if (this.jmeno.equals("Noiceur")){
+                konzole.getUkol().splneniUkolu(konzole,konzole.getUkol().getIdAktualnihoUkolu(),"hlavni");
+                return konzole.getData().nactiDataZeSouboru("konec");
+            }
+            return "Zabil si " + this.jmeno;
         }
+        return "";
     }
 
     public boolean isJeZabitelny() {
         return jeZabitelny;
+    }
+
+    public void setJeZabitelnyZlaPostava(Konzole konzole, String kde) {
+        for (int i = 0; i < konzole.getData().getZlePostavy().size(); i++) {
+            if (konzole.getData().getZlePostavy().get(i).getKdeSeNachazi().equals(kde)) {
+                konzole.getData().getZlePostavy().get(i).setJeZabitelny(true);
+            }
+        }
     }
 
     public void setJeZabitelny(boolean jeZabitelny) {

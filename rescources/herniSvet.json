@@ -17,7 +17,7 @@
       "popis": "Vychozi domovska lokace hrace.",
       "napovedaKMistnosti": "vyspi se",
       "idDostupnehoDialogu": 0,
-      "mistnostProzkoumana": false,
+      "mistnostProzkoumana": true,
       "JeVMistnostiSouboj": false
     },
     {
@@ -111,7 +111,7 @@
       "kdeSeNachazi": "Sopka",
       "zivoty": 100,
       "fyzickaSila": 4,
-      "jeZabitelny": true,
+      "jeZabitelny": false,
       "silaSnu": 1
     },
     {
@@ -119,7 +119,7 @@
       "kdeSeNachazi": "Pekelne Mesto",
       "zivoty": 100,
       "fyzickaSila": 4,
-      "jeZabitelny": true,
+      "jeZabitelny": false,
       "silaSnu": 1
     },
     {
@@ -127,7 +127,7 @@
       "kdeSeNachazi": "Sidlo Noirceura",
       "zivoty": 150,
       "fyzickaSila": 8,
-      "jeZabitelny": true,
+      "jeZabitelny": false,
       "silaSnu": 10
     }
 
@@ -185,7 +185,7 @@
       "popisUkolu": "Oznam to o cem se ti zdalo sve zene",
       "idUkolu": 3,
       "idNaslednehoUkolu": 4,
-      "otevreDalsiLokaci": false,
+      "otevreDalsiLokaci": true,
       "ukolSplnen": false
     },
 
@@ -195,7 +195,7 @@
       "popisUkolu": "Jit za magou a informovat ji o snu",
       "idUkolu": 4,
       "idNaslednehoUkolu": 5,
-      "otevreDalsiLokaci": true,
+      "otevreDalsiLokaci": false,
       "ukolSplnen": false
     },
     {
@@ -224,7 +224,7 @@
       "popisUkolu": "hledej opakujici se vzory - lehka napoveda",
       "idUkolu": 7,
       "idNaslednehoUkolu": 8,
-      "otevreDalsiLokaci": true,
+      "otevreDalsiLokaci": false,
       "ukolSplnen": false
     },
 
@@ -252,7 +252,7 @@
       "popisUkolu": "XXXXX",
       "idUkolu": 10,
       "idNaslednehoUkolu": 11,
-      "otevreDalsiLokaci": false,
+      "otevreDalsiLokaci": true,
       "ukolSplnen": false
     },
 
@@ -280,15 +280,24 @@
       "popisUkolu": "XXXXX",
       "idUkolu": 13,
       "idNaslednehoUkolu": 14,
-      "otevreDalsiLokaci": true,
+      "otevreDalsiLokaci": false,
+      "ukolSplnen": false
+    },
+    {
+      "typUkolu": "hlavni",
+      "nazevUkolu": "Zabij negany",
+      "popisUkolu": "Zabij nepratelske negany",
+      "idUkolu": 14,
+      "idNaslednehoUkolu": 15,
+      "otevreDalsiLokaci": false,
       "ukolSplnen": false
     },
     {
       "typUkolu": "hlavni",
       "nazevUkolu": "Vrat se za Magou",
       "popisUkolu": "pomoci commandu mluvit si promluv s Magou",
-      "idUkolu": 14,
-      "idNaslednehoUkolu": 15,
+      "idUkolu": 15,
+      "idNaslednehoUkolu": 16,
       "otevreDalsiLokaci": true,
       "ukolSplnen": false
     },
@@ -297,7 +306,7 @@
       "typUkolu": "hlavniHlavni",
       "nazevUkolu": "Zabij Noirceura",
       "popisUkolu": "vyber si jestli s nim pujdes bojovat naprimo nebo z domova",
-      "idUkolu": 14,
+      "idUkolu": 16,
       "idNaslednehoUkolu": -34,
       "otevreDalsiLokaci": true,
       "ukolSplnen": false
@@ -370,7 +379,6 @@
       "silaUtoku": 42
     }
   ],
-
   "typyUtokuLucidni": [
     {
   "typ": "lucidni",
@@ -479,7 +487,6 @@
         }
       ]
     },
-
     {
       "kdoMluvi": "Doktor",
       "id": 104,
@@ -491,7 +498,6 @@
         }
       ]
     },
-
     {
       "kdoMluvi": "Doktor",
       "id": 105,
@@ -503,8 +509,6 @@
         }
       ]
     },
-
-
 
     {
       "kdoMluvi": "Doktor",
@@ -532,8 +536,6 @@
         }
       ]
     },
-
-
 
 
     {
@@ -592,6 +594,7 @@
         }
       ]
     },
+
     {
       "kdoMluvi": "Mulier",
       "id": 214,
@@ -622,9 +625,6 @@
         }
       ]
     },
-
-
-
 
 
     {
@@ -747,6 +747,7 @@
         }
       ]
     },
+
     {
       "kdoMluvi": "baba Maga",
       "id": 401,
@@ -802,7 +803,7 @@
     {
       "kdoMluvi": "baba Maga",
       "id": 405,
-      "replika": "Ja verim ze jsi",
+      "replika": "Ja verim ze jsi, take ti dam prasky na spani muzou se ti hodit",
       "odpovediNaOtazky": [
         {
           "text": "dekji, jdu do toho",
@@ -916,10 +917,10 @@
     {
       "kdoMluvi": "baba Maga",
       "id": 604,
-      "replika": "Existuje misto kam se sny chodi rozpadnout Pekelne mesto",
+      "replika": "Existuje misto pekelne kam se sny chodi rozpadnout dam ti na to takvou hudebni krabicku muze se ti nekdy hodit",
       "odpovediNaOtazky": [
         {
-          "text": "Proc bych tam mel jit",
+          "text": "Dekuji ale, proc bych tam mel jit",
           "IdNasledneOtazky": 605
         }
       ]
@@ -951,6 +952,33 @@
         {
           "text": "Jdu tam i kdyby me to melo znicit",
           "IdNasledneOtazky": -602
+        }
+      ]
+    },
+
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 701,
+      "replika": "Tak co povedlo se ti ziskat odpoved na Noirceura",
+      "odpovediNaOtazky": [
+        {
+          "text": "Ano chci ho uz zabit",
+          "IdNasledneOtazky": 702
+        }
+      ]
+    },
+    {
+      "kdoMluvi": "baba Maga",
+      "id": 702,
+      "replika": "Myslim si ze jsi pripraveny, muzes jit zabit ho, co chces naposledy zlepsit",
+      "odpovediNaOtazky": [
+        {
+          "text": "daydreaming, sbohem",
+          "IdNasledneOtazky": -702
+        },
+        {
+          "text": "lucidni sneni, sbohem",
+          "IdNasledneOtazky": -703
         }
       ]
     }

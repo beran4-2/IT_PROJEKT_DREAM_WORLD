@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PouzitiPredmetuTest {
 
-    //TODO dodelat upravit testy (odtranit carky)
 
     PouzitiPredmetu pouzitiPredmetu;
     Konzole konzole;

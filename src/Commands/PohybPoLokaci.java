@@ -35,6 +35,7 @@ public class PohybPoLokaci implements Command {
             konzole.getLokace().novyDostupnyDialog(konzole, 601,"Jezero");
         }
         if (konzole.getUkol().najitNazevAktualniho().equals("Prozkoumej pekelne mesto") && konzole.getAktualniLokace().getNazev().equals("Pekelne Mesto")){
+            konzole.getUkol().splneniUkolu(konzole,konzole.getUkol().getIdAktualnihoUkolu(),"hlavni");
             celyPopis = celyPopis + "V teto lokaci jsou negani, ktere musis zabit";
 
         }

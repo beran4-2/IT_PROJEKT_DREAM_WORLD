@@ -39,7 +39,7 @@ public class PouzitiPredmetu implements Command {
                     }
                 }
                 return "nemas takovy predmet";
-            }
+            }else return "Nemas aktivni zadny aktivni predmet";
 
         }
         else if (vyuzivanyPredmet != null){
